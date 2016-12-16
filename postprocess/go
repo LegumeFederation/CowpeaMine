@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "********** cowpeamine/postprocess **********"
+ant clean
+ant -v

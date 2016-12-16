@@ -1,0 +1,8 @@
+#!/bin/sh
+echo "********** cowpeamine/webapp **********"
+~/tomcat/bin/shutdown.sh
+ant clean
+rm ~/tomcat/webapps/cowpeamine.war
+rm -rf ~/tomcat/webapps/cowpeamine
+~/tomcat/bin/startup.sh
+ant default release-webapp

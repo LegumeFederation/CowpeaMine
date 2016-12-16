@@ -1,0 +1,7 @@
+#!/bin/sh
+echo "********** cowpeamine/integrate **********"
+ant clean
+ant -v -Dsource=cowpea-genotypes,cowpea-geneticmaps,cowpea-germplasms,so,entrez-organism
+#ant -v -Dsource=crop-ontology
+#ant -v -Dsource=cowpea-genotypes
+#ant -v -Dsource=cowpea-geneticmaps,cowpea-cultivars,so,entrez-organism
