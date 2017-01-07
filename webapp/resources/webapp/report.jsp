@@ -289,9 +289,9 @@
                     <c:set var="object_bk" value="${object}"/>
                     <c:set var="object" value="${reportObject.object}" scope="request"/>
 
-                    <%-- block friendly links from all but gene reports --%>
+                    <%-- block friendly links from all but genetic marker reports --%>
                     <c:set var="getFriendly" value="no"></c:set>
-                    <c:if test="${fn:contains(object.class, 'GeneShadow')}">
+                    <c:if test="${fn:contains(object.class, 'GeneticMarkerShadow')}">
                         <c:set var="getFriendly" value="yes"></c:set>
                     </c:if>
                     

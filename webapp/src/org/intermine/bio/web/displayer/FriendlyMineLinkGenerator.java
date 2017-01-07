@@ -37,11 +37,9 @@ import org.intermine.webservice.server.core.Predicate;
  *
  * @author Julie Sullivan
  */
-public final class FriendlyMineLinkGenerator implements InterMineLinkGenerator
-{
+public final class FriendlyMineLinkGenerator implements InterMineLinkGenerator {
 
-    private class MustBeIn implements Predicate<List<Object>>
-    {
+    private class MustBeIn implements Predicate<List<Object>> {
 
         private final Set<String> collection;
 
@@ -85,93 +83,67 @@ public final class FriendlyMineLinkGenerator implements InterMineLinkGenerator
         return fetcher.fetch(req);
     }
 
-    private class LinkFetcher
-    {
+    private class LinkFetcher {
 
         private final Mine thisMine, thatMine;
         private MustBeIn predicate;
 
         LinkFetcher(Mine thisMine, Mine mine) {
             this.thisMine = thisMine; // The local mine, where the idents come from
-            this.thatMine = mine; // The remote mine, where we want to find things.
+            this.thatMine = mine;     // The remote mine, where we want to find things.
             this.predicate = new MustBeIn(thatMine.getDefaultValues());
         }
 
         Collection<PartnerLink> fetch(ObjectRequest req) {
 
-            // Phase one -- query the remote mine for homologues.
-            LOG.info("Executing Phase one: remoteHomologueStrategy()...");
-            Map<String, Set<ObjectDetails>> genes = remoteHomologueStrategy(req);
-            if (genes==null) LOG.info("FMLG:genes is null"); else LOG.info("genes.size()="+genes.size());
+            // SPECIAL CASE: query the local mine for genes associated with this genetic marker!
+            LOG.info("Executing search for associated genes on friendly mines...");
+            Map<String, Set<ObjectDetails>> genes = localAssociatedGeneStrategy(req);
+            if (genes==null) LOG.info("No genes returned"); else LOG.info("Returned genes.size()="+genes.size());
             
-            // Phase two -- query this mine for homologues.
-            if (genes == null || genes.isEmpty()) {
-                LOG.info("Executing Phase two: localHomologueStrategy()...");
-                genes = localHomologueStrategy(req);
-                if (genes==null) LOG.info("genes is null"); else LOG.info("genes.size()="+genes.size());
-            }
-
-            // Phase three - check if the remote mine contains this actual object.
-            LOG.info("Executing Phase three: runQuery()...");
-            PathQuery q = getGeneQuery(thatMine, req);
-            Map<String, Set<ObjectDetails>> matches = runQuery(thatMine, q);
-            if (matches != null) {
-                genes.putAll(matches);
-            }
-            if (matches==null) LOG.info("matches is null"); else LOG.info("matches.size()="+matches.size());
-
             return toLinks(genes);
         }
 
         /**
-         * Look for homologues to the requested objects in the remote mine, but only accept
-         * homologues for organisms that mine specialises in.
+         * Look for associated genes in the local mine.
          * @param req The definition of the thing we are looking for.
          * @return A mapping from organisms to groups of identifiers.
          */
-        private Map<String, Set<ObjectDetails>> remoteHomologueStrategy(ObjectRequest req) {
-            PathQuery q = getHomologueQuery(thatMine, req);
-            return runQuery(thatMine, q);
-        }
-
-        /**
-         * Look for homologues to the requested objects in the local mine, and accept
-         * all answers.
-         * @param req The definition of the thing we are looking for.
-         * @return A mapping from organisms to groups of identifiers.
-         */
-        private Map<String, Set<ObjectDetails>> localHomologueStrategy(ObjectRequest req) {
-            PathQuery q = getHomologueQuery(thisMine, req);
+        private Map<String, Set<ObjectDetails>> localAssociatedGeneStrategy(ObjectRequest req) {
+            PathQuery q = getAssociatedGeneQuery(thisMine, req);
             return runQuery(thisMine, q);
         }
 
-        private PathQuery getHomologueQuery(Mine mine, ObjectRequest req) {
+        /**
+         * Find genes associated with the current genetic marker
+         */
+        private PathQuery getAssociatedGeneQuery(Mine mine, ObjectRequest req) {
+            // DEBUG START
+            LOG.info("ObjectRequest.getIdentifier()="+req.getIdentifier());
+            LOG.info("ObjectRequest.getDomain()="+req.getDomain());
+            // DEBUG END
             PathQuery q = new PathQuery(mine.getModel());
             q.addViews(
-                "Gene.homologues.homologue.primaryIdentifier",
-                "Gene.homologues.homologue.symbol",
-                "Gene.homologues.homologue.organism.shortName"
-            );
-            q.addOrderBy("Gene.homologues.homologue.organism.shortName", OrderDirection.ASC);
-            q.addConstraint(Constraints.lookup("Gene", req.getIdentifier(), req.getDomain()));
-            q.addConstraint(Constraints.neq("Gene.homologues.type", "paralogue"));
+                       "GeneticMarker.associatedGenes.primaryIdentifier",
+                       "GeneticMarker.associatedGenes.symbol",
+                       "GeneticMarker.associatedGenes.organism.shortName"
+                       );
+            q.addOrderBy("GeneticMarker.associatedGenes.organism.shortName", OrderDirection.ASC);
+            q.addConstraint(Constraints.lookup("GeneticMarker", req.getIdentifier(), req.getDomain()));
             return q;
         }
 
         /**
-         * Processes the results of queries produced by getHomologueQuery - ie. they
-         * have three views: Gene.primaryIdentifier, Gene.symbol, Organism.shortName
+         * Processes the results of queries which have three views: Gene.primaryIdentifier, Gene.symbol, Organism.shortName
          * @param mine The data source
          * @param q The query
          * @return
          */
-        private Map<String, Set<ObjectDetails>> runQuery(
-                Mine mine,
-                PathQuery q) {
+        private Map<String, Set<ObjectDetails>> runQuery(Mine mine, PathQuery q) {
             Map<String, Set<ObjectDetails>> retval = new HashMap<String, Set<ObjectDetails>>();
 
             List<List<Object>> results = mine.getRows(q);
-
+            
             for (List<Object> row: results) {
                 if (!predicate.call(row)) {
                     continue;
@@ -184,7 +156,7 @@ public final class FriendlyMineLinkGenerator implements InterMineLinkGenerator
                 if (row.get(0) != null) {
                     details.setIdentifier((String) row.get(0));
                 }
-
+                
                 Util.addToSetMap(retval, String.valueOf(row.get(2)), details);
             }
             return retval;

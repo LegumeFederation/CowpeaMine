@@ -22,6 +22,11 @@
       <property name="src.data.dir" location="/home/intermine/data/cowpea-genotyping"/>
     </source>
 
+    <!-- SNP marker details -->
+    <source name="cowpea-snpmarkers" type="legfed-snpmarker-file" dump="true">
+	<property name="src.data.dir" location="/home/intermine/data/cowpea-iSelect-snps"/>
+    </source>
+
     <!-- sequence ontology -->
     <source name="so" type="so">
       <property name="src.data.file" location="../../bio/sources/so/so.obo"/>

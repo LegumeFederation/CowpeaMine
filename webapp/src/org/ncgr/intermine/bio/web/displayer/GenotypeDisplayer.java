@@ -71,6 +71,19 @@ public class GenotypeDisplayer extends ReportDisplayer {
             linkageGroups.add(lg);
         }
 
+        // query the QTLs for this mapping population
+        PathQuery qtlQuery = new PathQuery(im.getModel());
+        qtlQuery.addViews("GeneticMarker.QTLs.primaryIdentifier");
+        qtlQuery.addConstraint(Constraints.eq("GeneticMarker.mappingPopulations.primaryIdentifier", mappingPopulation));
+        qtlQuery.addOrderBy("GeneticMarker.QTLs.primaryIdentifier", OrderDirection.ASC);
+        ExportResultsIterator qtlResult = getResults(executor, qtlQuery);
+        List<String> qtls = new ArrayList<String>();
+        while (qtlResult.hasNext()) {
+            List<ResultElement> row = qtlResult.next();
+            String qtl = (String) row.get(0).getField();
+            qtls.add(qtl);
+        }
+
         // query the number of markers on each linkage group
         Map<Integer,Integer> linkageGroupCounts = new LinkedHashMap<Integer,Integer>();
         for (Integer lg : linkageGroups) {
@@ -93,6 +106,7 @@ public class GenotypeDisplayer extends ReportDisplayer {
         request.setAttribute("mappingPopulation", mappingPopulation);
         request.setAttribute("linkageGroups", linkageGroups);
         request.setAttribute("linkageGroupCounts", linkageGroupCounts);
+        request.setAttribute("qtls", qtls);
 
     }
 

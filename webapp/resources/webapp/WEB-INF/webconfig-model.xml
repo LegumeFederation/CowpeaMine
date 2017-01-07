@@ -70,11 +70,7 @@
     <fields>
       <fieldconfig fieldExpr="organism.name" label="Organism" />
       <fieldconfig fieldExpr="primaryIdentifier" label="DB identifier" />
-      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" showInInlineCollection="true" showInSummary="true" />
     </fields>
-    <bagdisplayers>
-      <displayer src="heatMap.tile" showOnLeft="true" />
-    </bagdisplayers>
   </class>
 
   <class className="org.intermine.model.bio.GeneFlankingRegion">
@@ -295,6 +291,7 @@
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier" label="Name"/>
       <fieldconfig fieldExpr="type" label="Type"/>
+      <!-- can't includ these since they are not attributes -->
       <!-- <fieldconfig fieldExpr="linkageGroupPositions.linkageGroup.primaryIdentifier" label="Linkage Group"/> -->
       <!-- <fieldconfig fieldExpr="linkageGroupPositions.position" label="Position (cM)"/> -->
     </fields>
@@ -378,8 +375,6 @@
     </headerconfig>
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier" label="DB Identifier"/>
-      <fieldconfig fieldExpr="parentA.primaryIdentifier" label="Parent A"/>
-      <fieldconfig fieldExpr="parentB.primaryIdentifier" label="Parent B"/>
       <fieldconfig fieldExpr="publication.pubMedId" label="PubMed"/>
       <fieldconfig fieldExpr="publication.title" label="Pub. Title"/>
     </fields>

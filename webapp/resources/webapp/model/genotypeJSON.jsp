@@ -33,7 +33,7 @@ Model model = factory.getModel();
 // DataTables paging request parameters
 int draw = Integer.parseInt(request.getParameter("draw"));     // increases monotonically on each page draw
 int start = Integer.parseInt(request.getParameter("start"));   // starting row, zero-based: 0, 25, 50, ...
-int length = Integer.parseInt(request.getParameter("length")); // number of rows: 25
+int length = Integer.parseInt(request.getParameter("length")); // number of rows: 25, 50, etc. -1 means "all"
 
 // linkage group choice
 int linkageGroup = Integer.parseInt(request.getParameter("linkageGroup"));
@@ -41,6 +41,14 @@ int linkageGroup = Integer.parseInt(request.getParameter("linkageGroup"));
 // markers IM paging
 int markerStart = Integer.parseInt(request.getParameter("markerStart"));
 int markerLength = Integer.parseInt(request.getParameter("markerLength"));
+
+// optional QTL search
+String qtl = request.getParameter("qtl");
+boolean qtlSearch = (qtl!=null && qtl.length()>0);
+
+// optional trait term search
+String traitTerm = request.getParameter("traitTerm");
+boolean traitSearch = (traitTerm!=null && traitTerm.length()>0);
 
 // // column ordering
 // Map<String,String> orderMap = new LinkedHashMap<String,String>();
@@ -58,10 +66,6 @@ Map<String,Object> jsonMap = new LinkedHashMap<String,Object>();
     
 try {
         
-    // InterMine paging
-    Page linePage = new Page(start, length);
-    Page markerPage = new Page(markerStart, markerLength);
-
     // query lines for this line page
     PathQuery lineQuery = new PathQuery(model);
     lineQuery.addViews(
@@ -78,8 +82,15 @@ try {
     //         default: break;
     //     }
     // }
+    lineQuery.addOrderBy("GenotypingLine.number", OrderDirection.ASC);
     lineQuery.addOrderBy("GenotypingLine.primaryIdentifier", OrderDirection.ASC);
-    List<List<String>> lineResults = service.getResults(lineQuery, linePage);
+    List<List<String>> lineResults;
+    if (length>0) {
+        Page linePage = new Page(start, length);
+        lineResults = service.getResults(lineQuery, linePage);
+    } else {
+        lineResults = service.getAllResults(lineQuery);
+    }
     List<String> lines = new ArrayList<String>();
     Map<String,Integer> lineIDs = new LinkedHashMap<String,Integer>();
     for (List<String> result : lineResults) {
@@ -88,7 +99,7 @@ try {
         lines.add(line);
         lineIDs.put(line, id);
     }
-    int recordsTotal = service.getCount(lineQuery); // for DataTables pagination
+    int recordsTotal = service.getCount(lineQuery) + 1; // for DataTables pagination, add the header row!
 
     // query markers, linkage groups and positions for this marker page
     // NOTE: this breaks for multiple genetic maps (multiple linkage groups per marker)!!!
@@ -100,10 +111,17 @@ try {
         "GeneticMarker.linkageGroupPositions.position"
     );
     markerQuery.addConstraint(Constraints.eq("GeneticMarker.mappingPopulations.primaryIdentifier", mappingPopulation));
-    markerQuery.addConstraint(Constraints.eq("GeneticMarker.linkageGroupPositions.linkageGroup.number", String.valueOf(linkageGroup)));
+    if (traitSearch) {
+        markerQuery.addConstraint(Constraints.contains("GeneticMarker.QTLs.secondaryIdentifier", traitTerm));
+    } else if (qtlSearch) {
+        markerQuery.addConstraint(Constraints.eq("GeneticMarker.QTLs.primaryIdentifier", qtl));
+    } else {
+        markerQuery.addConstraint(Constraints.eq("GeneticMarker.linkageGroupPositions.linkageGroup.number", String.valueOf(linkageGroup)));
+    }
     markerQuery.addOrderBy("GeneticMarker.linkageGroupPositions.linkageGroup.number", OrderDirection.ASC); // in case we have multiple LGs from a search
     markerQuery.addOrderBy("GeneticMarker.linkageGroupPositions.position", OrderDirection.ASC);
     markerQuery.addOrderBy("GeneticMarker.primaryIdentifier", OrderDirection.ASC); // for two markers at the same position, which is common
+    Page markerPage = new Page(markerStart, markerLength);
     List<List<String>> markerResults = service.getResults(markerQuery, markerPage);
     List<String> markers = new ArrayList<String>();
     Map<String,Integer> markerIDs = new LinkedHashMap<String,Integer>();
@@ -155,6 +173,13 @@ try {
         String heading = linkageGroups.get(marker)+"<br/>"+df.format(positions.get(marker))+"<br/>"+"<a class='marker' href='report.do?id="+markerIDs.get(marker)+"'>"+marker+"</a>";
         markersRow.add(heading);
     }
+    // buffer if less than markerLength values
+    int bufferNum = markerLength - markers.size();
+    if (bufferNum>0) {
+        for (int i=0; i<bufferNum; i++) {
+            markersRow.add("");
+        }
+    }
     markersRow.add("LG<br/>Position<br/><b>Marker</b>"); // trailing line column
     dataList.add(markersRow.toArray());
         
@@ -166,6 +191,12 @@ try {
         valuesRow.add(heading);              // leading line
         for (int j=0; j<values.length; j++) {
             valuesRow.add(values[j]);        // values in rest of columns, until
+        }
+        // buffer empty cells
+        if (bufferNum>0) {
+            for (int i=0; i<bufferNum; i++) {
+                valuesRow.add(' ');
+            }
         }
         valuesRow.add(heading);              // trailing line
         dataList.add(valuesRow.toArray());

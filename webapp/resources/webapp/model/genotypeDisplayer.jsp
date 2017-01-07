@@ -17,30 +17,52 @@
  .line { background-color:gray; color:white; font-size:8px; }
  .line a { text-decoration:none; color:white; font-weight:bold; }
  a.marker { text-decoration:none; color:white; font-weight: bold; }
+ div#genotypes_wrapper { top: -26px; }
  div#tooltip {
-     position: relative;
-     left: 160px;
-     top:  26px;
+     /* position: relative; */
+     /* left: 160px; */
+     /* top:  26px; */
+     float: right;
+     display:inline-block;
+     width: 700px;
+     padding: 2px 0;
      text-align: left;
-     width: 1000px;
-     padding: 5px 0;
-     color: #fff;
-     background-color: #555;
+     color: white;
+     background-color: gray;
      border-width: 5px;
      border-style: solid;
-     border-color: #555 transparent transparent transparent;
+     border-color: gray transparent transparent transparent;
      border-radius: 6px;
  }
 </style>
 <%
 // constants
 int markerLength = 25;
-    
+int markerAdvance = 20;
+
 // data from GenotypeDisplayer
 String mappingPopulation = (String) request.getAttribute("mappingPopulation");
 List<Integer> linkageGroups = (List<Integer>) request.getAttribute("linkageGroups");
 Map<Integer,Integer> linkageGroupCounts = (Map<Integer,Integer>) request.getAttribute("linkageGroupCounts");
+List<String> qtls = (List<String>) request.getAttribute("qtls");
 %>
+
+<table>
+    <tr>
+        <td>
+            QTL<br/>
+            <select id="qtlSelect">
+                <option value="">--QTL--</option>
+                <% for (String qtl : qtls) { %><option value="<%=qtl%>"><%=qtl%></option><% } %>
+            </select>
+        </td>
+        <td>
+            Trait text search<br/>
+            <input id="traitTerm"/><button id="traitButton">Search</button><button id="resetButton">Reset</button>
+        </td>
+    </tr>
+</table>
+
 <div id="tooltip">&nbsp;<br/>&nbsp;</div>
 
 <table id="genotypes" class="cell-border" cellspacing="0" width="100%">
@@ -55,7 +77,7 @@ Map<Integer,Integer> linkageGroupCounts = (Map<Integer,Integer>) request.getAttr
 
 <p>
     <!-- This content should be stored in MappingPopulation somewhere, since symbols may differ. -->
-    <span style="color:darkred">A = Parent A</span>, <span style="color:darkgreen">B = Parent B</span>, Lower case: genotype calls reversed based on parental alleles.
+    <span style="color:darkred">A = Parent A</span>, <span style="color:darkgreen">B = Parent B</span>. Lower case: genotype calls reversed based on parental alleles.
 </p>
 
 <script type="text/javascript">
@@ -63,11 +85,20 @@ Map<Integer,Integer> linkageGroupCounts = (Map<Integer,Integer>) request.getAttr
 // markers per page
 var markerLength = <%=markerLength%>;
 
+// advance this many markers per page jump (less so we have a little overlap)
+var markerAdvance = <%=markerAdvance%>;
+
 // initialize to first markers on load
 var markerStart = 0;
 
 // initialize to first linkage group on load
 var linkageGroup = 1;
+
+// initialize for QTL search, which doesn't happen if it's empty
+var qtl = '';
+
+// initialize for trait term search, which doesn't happen if it's empty
+var traitTerm = '';
 
 // store the old marker name so we don't do AJAX calls on vertical mouse motion within the same column
 var oldMarkerName = "";
@@ -81,14 +112,16 @@ $(document).ready(function() {
         "deferRender": true,
         "processing": true, 
         "serverSide": true,
-        "scrollX": false,
+        "scrollX": true,
         "autoWidth": false,
         "searching": false,
         "pageLength": 10,
+        "lengthMenu": [ [10, 25, 50, 100, -1], [10, 25, 50, 100, "All"] ],
         "pagingType": "simple_numbers",
         "language": {
+            "lengthMenu": "Show _MENU_ lines",
             "paginate": {
-                "previous" : "Previous lines",
+                "previous": "Previous lines",
                 "next": "Next lines"
             }
         },
@@ -124,7 +157,9 @@ $(document).ready(function() {
                 "mappingPopulation": "<%=mappingPopulation%>",
                 "markerLength": markerLength,
                 "markerStart":  function() { return markerStart; },
-                "linkageGroup": function() { return linkageGroup; }
+                "linkageGroup": function() { return linkageGroup; },
+                "qtl": function() { return qtl; },
+                "traitTerm": function() { return traitTerm; }
             }
         },
         "dom": "lfrtipB",
@@ -132,9 +167,9 @@ $(document).ready(function() {
             "buttons": [
                 <% for (Integer lg : linkageGroups) { %>
                 {
-                    "text": "<%=lg%>",
+                    "text": "LG<%=lg%>",
                     "action": function (e, dt, node, config) {
-                        if (linkageGroup!=<%=lg%>) {
+                        if (qtl=='' && traitTerm=='' && linkageGroup!=<%=lg%>) {
                             linkageGroup = <%=lg%>;
                             markerStart = 0; // reset on new linkage group
                             dt.ajax.reload();
@@ -143,21 +178,28 @@ $(document).ready(function() {
                 },
                 <% } %>
                 {
-                    "text": "Previous "+markerLength+" Markers",
+                    "text": "Prev "+markerAdvance+" Markers",
                     "action": function (e, dt, node, config) {
-                        if (markerStart>=markerLength) {
-                            markerStart -= markerLength;
+                        if (markerStart>=markerAdvance) {
+                            markerStart -= markerAdvance;
                             dt.ajax.reload();
                         }
                     }
                 },
                 {
-                    "text": "Next "+markerLength+" Markers",
+                    "text": "Next "+markerAdvance+" Markers",
                     "action": function (e, dt, node, config) {
-                        var k = linkageGroup - 1;
-                        if (markerStart<(linkageGroupCounts[k]-markerLength)) {
-                            markerStart += markerLength;
-                            dt.ajax.reload();
+                        var d = dt.row(0).data();
+                        var count = 0;
+                        for (var i=0; i<d.length; i++) {
+                            if (d[i].includes("href")) count++;
+                        }
+                        if (count==markerLength) {
+                            var k = linkageGroup - 1;
+                            if (markerStart<(linkageGroupCounts[k]-markerAdvance)) {
+                                markerStart += markerAdvance;
+                                dt.ajax.reload();
+                            }
                         }
                     }
                 }
@@ -168,7 +210,7 @@ $(document).ready(function() {
 
     $('#genotypes tbody').on('mouseenter', 'td', function() {
         var colData = table.column(this).data();
-        if (colData[0].includes('Marker')) {
+        if (colData[0].includes('Marker') || colData[0]=='') {
             oldMarkerName = "";
             $('div#tooltip').html("&nbsp;<br/>&nbsp;"); // line columns
         } else {             
@@ -199,6 +241,30 @@ $(document).ready(function() {
                       "json");
             }
         }
+    });
+
+    $('#qtlSelect').on('change', function() {
+        qtl = $(this).val();
+        traitTerm = '';
+        $('#traitTerm').val('');
+        markerStart = 0;
+        table.ajax.reload();
+    });
+
+    $('#traitButton').on('click', function() {
+        traitTerm = $('#traitTerm').val().trim();
+        qtl = '';
+        $('#qtlSelect').prop('selectedIndex', 0);
+        markerStart = 0;
+        table.ajax.reload();
+    });
+                
+    $('#resetButton').on('click', function() {
+        traitTerm = '';
+        qtl = '';
+        $('#qtlSelect').prop('selectedIndex', 0);
+        markerStart = 0;
+        table.ajax.reload();
     });
 
 });
