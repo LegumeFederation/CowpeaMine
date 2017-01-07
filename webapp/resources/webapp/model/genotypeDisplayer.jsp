@@ -10,6 +10,7 @@
  table.dataTable thead th { padding:0px; border:0; background-color: white; }
  table.dataTable tbody td { padding:2px; font-size:8px; color:white; background-color: gray; }
  table.dataTable.no-footer { border-bottom:0; margin-bottom:5px; }
+ .dt-buttons { margin-top:2px; }
  .dataTables_info { padding: 0 5px 0 0; }
  .b { font-weight: bold; }
  .ar { text-align: right; }
