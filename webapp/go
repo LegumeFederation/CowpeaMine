@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "********** compile and release webapp **********"
+ant clean default remove-webapp release-webapp
