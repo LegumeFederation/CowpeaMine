@@ -2,14 +2,17 @@
 echo "********** cowpeamine/integrate **********"
 ant clean
 # ant -v -Dsource=go,so
+#pg_restore -d cowpeamine /home/analysis/shokin/dumps/so-go.dat
 
-# ant -v -Dsource=chado-genomics,chado-genetics,chado-go,chado-featureprop,chado-genefamilies
+#ant -v -Dsource=chado-genomics,chado-genetics,chado-go,chado-featureprop,chado-genefamilies,chado-homology
 
-# psql cowpeamine -f ../dbmodel/build/model/add-update-triggers.sql
-# psql cowpeamine -f update-organisms.sql
-# psql cowpeamine -f update-identifiers.sql
-# psql cowpeamine -f ../dbmodel/build/model/remove-update-triggers.sql
+# ALL of the above chado loaders must be DONE before continuing, because identifiers are changed by SQL below
 
-# ant -v -Dsource=cowpea-genotypes,cowpea-snpmarkers,cowpea-geneticmaps,cowpea-germplasms,cowpea-snppositions
+#psql cowpeamine -f ../dbmodel/build/model/add-update-triggers.sql
+#psql cowpeamine -f update-organisms.sql
+#psql cowpeamine -f update-identifiers.sql
+#psql cowpeamine -f ../dbmodel/build/model/remove-update-triggers.sql
 
-# ant -v -Dsource=crop-ontology
+ant -v -Dsource=cowpea-genotypes,cowpea-snpmarkers,cowpea-geneticmaps,cowpea-germplasms,cowpea-snppositions
+
+#ant -v -Dsource=crop-ontology

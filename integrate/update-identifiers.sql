@@ -15,6 +15,13 @@
 -- Ca_13038_gene               |
 -- Aradu.Y681G                 |
 -- Araip.SUM3W                 |
+-- Vradi0083s00330.Vradi.ver6
+-- Lj0g3v0234849
+-- C.cajan_27174_gene
+-- lupan.Tanjil.a1.0.Lup007085
+-- tripr.MilvusB.v2.Tp57577_TGAC_v2_gene4697
+-- vigan.Gyeongwon.v3.Vang05g01450
+
 
 -- cowpea
 
@@ -47,4 +54,10 @@ UPDATE gene SET secondaryidentifier=primaryidentifier, primaryidentifier=replace
 
 -- A. ipaensis
 -- NO CHANGE
+
+-- others
+UPDATE gene SET secondaryidentifier=primaryidentifier, primaryidentifier=replace(primaryidentifier, '.Vradi.ver6', '') WHERE primaryidentifier LIKE 'Vradi%';
+UPDATE gene SET secondaryidentifier=primaryidentifier, primaryidentifier=replace(primaryidentifier, 'lupan.Tanjil.a1.0.', '') WHERE primaryidentifier LIKE 'lupan.%';
+UPDATE gene SET secondaryidentifier=primaryidentifier, primaryidentifier=replace(primaryidentifier, 'tripr.MilvusB.v2.', '') WHERE primaryidentifier LIKE 'tripr.%';
+UPDATE gene SET secondaryidentifier=primaryidentifier, primaryidentifier=replace(primaryidentifier, 'vigan.Gyeongwon.v3.', '') WHERE primaryidentifier LIKE 'vigan.%';
 

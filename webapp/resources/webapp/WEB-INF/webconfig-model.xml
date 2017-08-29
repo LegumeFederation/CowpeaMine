@@ -376,39 +376,36 @@
   <!-- report displayers -->
   <reportdisplayers>
 
-    <!-- this appears to be broken, but using it to avoid duplicating Ontology Annotations display for now -->
-    <!-- <reportdisplayer javaClass="org.intermine.bio.web.displayer.GeneOntologyDisplayer" -->
-    <!--                  jspName="model/geneOntologyDisplayer.jsp" -->
-    <!--                  replacesFields="ontologyAnnotations" -->
-    <!--                  placement="other" -->
-    <!--                  types="Gene"/> -->
+    this appears to be broken, but using it to avoid duplicating Ontology Annotations display for now
+    <reportdisplayer javaClass="org.intermine.bio.web.displayer.GeneOntologyDisplayer"
+                     jspName="model/geneOntologyDisplayer.jsp"
+                     replacesFields="ontologyAnnotations"
+                     placement="other"
+                     types="Gene"/>
     
-    <!-- <reportdisplayer javaClass="org.intermine.bio.web.displayer.GeneStructureDisplayer" -->
-    <!--                  jspName="model/geneStructureDisplayer.jsp" -->
-    <!--                  replacesFields="transcripts,exons,CDSs,introns,UTRs,fivePrimeUTR,threePrimeUTR" -->
-    <!--                  placement="Genomics" -->
-    <!--                  types="Gene,Transcript,Exon,Intron,UTR,CDS"/> -->
+    <reportdisplayer javaClass="org.intermine.bio.web.displayer.GeneStructureDisplayer"
+                     jspName="model/geneStructureDisplayer.jsp"
+                     replacesFields="transcripts,exons,CDSs,introns,UTRs,fivePrimeUTR,threePrimeUTR"
+                     placement="Genomics"
+                     types="Gene,Transcript,Exon,Intron,UTR,CDS"/>
     
-    <!-- <reportdisplayer javaClass="org.intermine.bio.web.displayer.SequenceFeatureDisplayer" -->
-    <!--                  jspName="model/sequenceFeatureDisplayer.jsp" -->
-    <!--                  replacesFields="chromosome,chromosomeLocation,sequence,length,sequenceOntologyTerm,locations,cytoLocation,supercontig,supercontigLocation" -->
-    <!--                  placement="summary" -->
-    <!--                  types="SequenceFeature"/> -->
+    <reportdisplayer javaClass="org.intermine.bio.web.displayer.SequenceFeatureDisplayer"
+                     jspName="model/sequenceFeatureDisplayer.jsp"
+                     replacesFields="chromosome,chromosomeLocation,sequence,length,sequenceOntologyTerm,locations,cytoLocation,supercontig,supercontigLocation"
+                     placement="summary"
+                     types="SequenceFeature"/>
 
-    <!-- <reportdisplayer javaClass="org.intermine.bio.web.displayer.JBrowseDisplayer" -->
-    <!--                  jspName="model/jbrowseDisplayer.jsp" -->
-    <!--                  replacesFields="" -->
-    <!--                  placement="Genomics" -->
-    <!--                  types="SequenceFeature"/> -->
+    <reportdisplayer javaClass="org.intermine.bio.web.displayer.JBrowseDisplayer"
+                     jspName="model/jbrowseDisplayer.jsp"
+                     replacesFields=""
+                     placement="Genomics"
+                     types="SequenceFeature"/>
 
-
-
-
-<!--     <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.LinkageGroupDisplayer" -->
-<!--                      jspName="model/linkageGroupDisplayer.jsp" -->
-<!--                      replacesFields="linkageGroups,geneticMarkers" -->
-<!--                      placement="summary" -->
-<!--                      types="GeneticMap"/> -->
+    <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.LinkageGroupDisplayer"
+                     jspName="model/linkageGroupDisplayer.jsp"
+                     replacesFields="linkageGroups,geneticMarkers"
+                     placement="summary"
+                     types="GeneticMap"/>
 
     <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.LinkageGroupDisplayer"
                      jspName="model/linkageGroupDisplayer.jsp"

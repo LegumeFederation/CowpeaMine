@@ -1,5 +1,9 @@
+logfile
 *~
 *.log
+cp-*
 go-*
-*/dist/
 */build/
+*/dist/
+webapp/src/
+webapp/resources/webapp/model/
