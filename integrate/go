@@ -1,4 +1,15 @@
 #!/bin/sh
 echo "********** cowpeamine/integrate **********"
 ant clean
-ant -v -Dsource=so,cowpea-genotypes,cowpea-snpmarkers,cowpea-geneticmaps,cowpea-germplasms,crop-ontology,entrez-organism
+# ant -v -Dsource=go,so
+
+# ant -v -Dsource=chado-genomics,chado-genetics,chado-go,chado-featureprop,chado-genefamilies
+
+# psql cowpeamine -f ../dbmodel/build/model/add-update-triggers.sql
+# psql cowpeamine -f update-organisms.sql
+# psql cowpeamine -f update-identifiers.sql
+# psql cowpeamine -f ../dbmodel/build/model/remove-update-triggers.sql
+
+# ant -v -Dsource=cowpea-genotypes,cowpea-snpmarkers,cowpea-geneticmaps,cowpea-germplasms,cowpea-snppositions
+
+# ant -v -Dsource=crop-ontology
