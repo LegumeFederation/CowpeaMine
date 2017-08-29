@@ -401,11 +401,11 @@
                      placement="Genomics"
                      types="SequenceFeature"/>
 
-    <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.LinkageGroupDisplayer"
-                     jspName="model/linkageGroupDisplayer.jsp"
-                     replacesFields="linkageGroups,geneticMarkers"
-                     placement="summary"
-                     types="GeneticMap"/>
+    <!-- <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.LinkageGroupDisplayer" -->
+    <!--                  jspName="model/linkageGroupDisplayer.jsp" -->
+    <!--                  replacesFields="linkageGroups,geneticMarkers" -->
+    <!--                  placement="summary" -->
+    <!--                  types="GeneticMap"/> -->
 
     <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.LinkageGroupDisplayer"
                      jspName="model/linkageGroupDisplayer.jsp"
