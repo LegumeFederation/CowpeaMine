@@ -43,15 +43,17 @@
         </c:forEach>
 
         <!-- LegFed and relevant mines -->
-        <li><a href="http://intermine.legumefederation.org/legumemine/begin.do" target="_blank">LegFed LegumeMine (various legumes)</a></li>
-        <li><a href="http://mines.legumeinfo.org/beanmine/begin.do" target="_blank">LIS BeanMine (string bean)</a></li>
-        <li><a href="http://mines.legumeinfo.org/soymine/begin.do" target="_blank">LIS Soymine (soybean)</a></li>
-	<li><a href="http://mines.legumeinfo.org/peanutmine/begin.do" target="_blank">LIS PeanutMine (several peanut species)</a></li>
+        <li><a href="https://intermine.legumefederation.org/legumemine/begin.do" target="_blank">LegFed LegumeMine (multiple legumes)</a></li>
+        <li><a href="https://mines.legumeinfo.org/beanmine/begin.do" target="_blank">LIS BeanMine (string bean)</a></li>
+        <li><a href="https://mines.legumeinfo.org/cowpeamine/begin.do" target="_blank">LIS CowpeaMine (cowpea)</a></li>
+        <li><a href="https://mines.legumeinfo.org/chickpeamine/begin.do" target="_blank">LIS ChickpeaMine (desi and kabuli varieties)</a></li>
+	<li><a href="https://mines.legumeinfo.org/peanutmine/begin.do" target="_blank">LIS PeanutMine (several peanut species)</a></li>
+        <li><a href="https://mines.legumeinfo.org/soymine/begin.do" target="_blank">LIS SoyMine (soybean)</a></li>
         <li><a href="http://medicmine.jcvi.org/medicmine/begin.do" target="_blank">JCVI MedicMine (Medicago)</a></li>
 
     </ul>
 
-    <p class="footer-copy">InterMine &copy; 2002 - 2016 Department of Genetics, University of Cambridge, Downing Street, Cambridge CB2 3EH, United Kingdom</p>
+    <p class="footer-copy">InterMine &copy; 2002 - 2017 Department of Genetics, University of Cambridge, Downing Street, Cambridge CB2 3EH, United Kingdom</p>
 
     <div style="clear:both"></div>
 </div>
