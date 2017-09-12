@@ -295,9 +295,18 @@
                         <c:set var="getFriendly" value="yes"></c:set>
                     </c:if>
                     
+                    <%-- block LIS links from all but gene reports --%>
+                    <c:set var="getLIS" value="no"></c:set>
+                    <c:if test="${fn:contains(object.class, 'GeneShadow')}">
+                        <c:set var="getLIS" value="yes"></c:set>
+                    </c:if>
+                    
                     <div id="external-links">
                         <c:if test="${getFriendly=='yes'}">
                             <tiles:insert name="otherMinesLink.tile" />
+                        </c:if>
+                        <c:if test="${getLIS=='yes'}">
+                            <tiles:insert name="lisLinkDisplayer.tile" />
                         </c:if>
                         <tiles:insert name="attributeLinks.tile" >
                             <tiles:put name="reportObject" beanName="object" />

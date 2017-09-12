@@ -66,3 +66,5 @@
 <definition name="markerGenotypes.tile" path="/model/markerGenotypes.jsp"
             controllerUrl="/initMarkerGenotypes.do" />
 
+<!-- LIS pages -->
+<definition name="lisLinkDisplayer.tile" path="/model/lisLinkDisplayer.jsp"/>

@@ -133,10 +133,10 @@
 
   <class className="org.intermine.model.bio.OntologyAnnotation">
     <fields>
-      <fieldconfig fieldExpr="subject.primaryIdentifier" label="Gene"/>
-      <fieldconfig fieldExpr="ontologyTerm.identifier" label="Identifier"/>
-      <fieldconfig fieldExpr="ontologyTerm.name" label="Name"/>
-      <fieldconfig fieldExpr="ontologyTerm.description" label="Description"/>
+      <fieldconfig fieldExpr="subject.primaryIdentifier" label="Gene or QTL"/>
+      <fieldconfig fieldExpr="ontologyTerm.identifier" label="Term ID"/>
+      <fieldconfig fieldExpr="ontologyTerm.name" label="Term Name"/>
+      <fieldconfig fieldExpr="ontologyTerm.description" label="Term Description"/>
     </fields>
   </class>
 
@@ -259,11 +259,10 @@
 
   <class className="org.intermine.model.bio.LinkageGroupRange">
     <fields>
+      <fieldconfig fieldExpr="linkageGroup.primaryIdentifier" label="Linkage Group"/>
       <fieldconfig fieldExpr="begin" label="Begin (cM)"/>
       <fieldconfig fieldExpr="end" label="End (cM)"/>
       <fieldconfig fieldExpr="length" label="Length (cM)"/>
-      <fieldconfig fieldExpr="linkageGroup.primaryIdentifier" label="Linkage Group"/>
-      <fieldconfig fieldExpr="linkageGroup.geneticMap.primaryIdentifier" label="Genetic Map"/>
     </fields>
   </class>
 
@@ -299,6 +298,10 @@
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier" label="Name"/>
       <fieldconfig fieldExpr="type" label="Type"/>
+      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" showInInlineCollection="true" showInSummary="true" />
+      <fieldconfig fieldExpr="chromosome.primaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Chromosome" />
+      <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="true" showInSummary="false" label="Start" />
+      <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="true" showInSummary="false" label="End" />
     </fields>
     <bagdisplayers>
       <displayer src="markerGenotypes.tile" showOnLeft="true" />
@@ -343,9 +346,7 @@
       </titles>
     </headerconfig>
     <fields>
-      <fieldconfig fieldExpr="primaryIdentifier" label="DB Identifier"/>
-      <fieldconfig fieldExpr="publication.pubMedId" label="PubMed"/>
-      <fieldconfig fieldExpr="publication.title" label="Pub. Title"/>
+      <fieldconfig fieldExpr="primaryIdentifier" label="Name"/>
     </fields>
   </class>
 
@@ -363,7 +364,7 @@
   <class className="org.intermine.model.bio.GenotypeValue">
     <headerconfig>
       <titles>
-        <title mainTitles="marker|line|value" numberOfMainTitlesToShow="1" />
+        <title mainTitles="marker|line|value" numberOfMainTitlesToShow="3" />
       </titles>
     </headerconfig>
   </class>
@@ -399,7 +400,7 @@
                      jspName="model/jbrowseDisplayer.jsp"
                      replacesFields=""
                      placement="Genomics"
-                     types="SequenceFeature"/>
+                     types="MRNA,Gene,Exon"/>
 
     <!-- <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.LinkageGroupDisplayer" -->
     <!--                  jspName="model/linkageGroupDisplayer.jsp" -->

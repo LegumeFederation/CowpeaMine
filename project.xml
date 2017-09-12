@@ -59,6 +59,7 @@
     </source>
 
     <!-- chado homology - based on phylotree - to grab Arabidopsis -->
+    <!-- doesn't work yet, cowpea not in phylotree -->
     <source name="chado-homology" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="chado"/>
       <property name="organisms" value="3920_IT97K-499-35"/>
@@ -70,13 +71,12 @@
       <property name="processors" value="org.intermine.bio.dataconversion.HomologyProcessor"/>
     </source>
 
-
     <!-- Germplasms from custom tab-delimited file -->
     <source name="cowpea-germplasms" type="legfed-germplasm-file" dump="true">
 	<property name="src.data.dir" location="/home/shokin/data/cowpea-germplasms"/>
     </source>
 
-    <!-- marker-linkage group-QTL relationships from tab-delimited genetic map files -->
+    <!-- marker-linkage group relationships from tab-delimited genetic map files -->
     <source name="cowpea-geneticmaps" type="legfed-geneticmap-file" dump="true">
       <property name="src.data.dir" location="/home/shokin/data/cowpea-geneticmaps"/>
     </source>
@@ -86,7 +86,7 @@
       <property name="src.data.dir" location="/home/shokin/data/cowpea-genotyping"/>
     </source>
 
-    <!-- SNP marker details -->
+    <!-- SNP marker details (sequences, alleles, etc.) -->
     <source name="cowpea-snpmarkers" type="legfed-snpmarker-file" dump="true">
 	<property name="src.data.dir" location="/home/shokin/data/cowpea-iSelect-snps"/>
     </source>
@@ -96,11 +96,12 @@
 	<property name="src.data.dir" location="/home/shokin/data/cowpea-1m-selected-snps"/>
     </source>
 
-
-    <!-- crop ontology -->
-    <source name="crop-ontology" type="crop-ontology">
-	<property name="src.data.file" location="/home/shokin/data/cowpea-cropontology/CO_340.obo"/>
+    <!-- marker-QTL relations with QTL TOTerms if available -->
+    <source name="cowpea-qtlmarkers" type="legfed-qtlmarker-file" dump="true">
+	<property name="src.data.dir" location="/home/shokin/data/cowpea-qtl-markers"/>
     </source>
+
+
 
     <!-- sequence ontology -->
     <source name="so" type="so">
@@ -110,6 +111,12 @@
     <!-- gene ontology -->
     <source name="go" type="go">
         <property name="src.data.file" location="/home/shokin/data/go-annotation/go.obo"/>
+    </source>
+
+    <!-- trait ontology -->
+    <source name="to" type="trait-ontology">
+      <property name="src.data.file" location="/home/shokin/data/plant-trait-ontology/to.obo"/>
+      <property name="ontology.prefix" value="TO"/>
     </source>
 
     <!-- BROKEN WITH Organism.variety -->
@@ -125,7 +132,8 @@
     <!-- source-specific post-processing -->
     <post-process name="do-sources" dump="true"/>
 
-    <!-- legfed genomics -->
+    <!-- legfed -->
+    <post-process name="populate-qtl-linkagegroups" dump="true"/>
     <post-process name="populate-gene-spanning-qtls" dump="true"/>
     <post-process name="create-protein-gene-references" dump="true"/>
     <post-process name="create-protein-domain-references" dump="true"/>
