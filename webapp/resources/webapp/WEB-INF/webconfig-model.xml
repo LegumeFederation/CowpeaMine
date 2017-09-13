@@ -133,7 +133,7 @@
 
   <class className="org.intermine.model.bio.OntologyAnnotation">
     <fields>
-      <fieldconfig fieldExpr="subject.primaryIdentifier" label="Gene or QTL"/>
+      <fieldconfig fieldExpr="subject.primaryIdentifier" label="Subject"/>
       <fieldconfig fieldExpr="ontologyTerm.identifier" label="Term ID"/>
       <fieldconfig fieldExpr="ontologyTerm.name" label="Term Name"/>
       <fieldconfig fieldExpr="ontologyTerm.description" label="Term Description"/>
