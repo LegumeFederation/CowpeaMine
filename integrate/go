@@ -12,7 +12,8 @@ echo "********** cowpeamine/integrate **********"
 #pg_dump -Fc cowpeamine > /home/analysis/shokin/dumps/cowpeamine.so-go-to.dat
 #pg_restore -d cowpeamine /home/analysis/shokin/dumps/cowpeamine.so-go-to.dat
 
-#ant -v -Dsource=chado-genomics,chado-genetics,chado-go,chado-featureprop,chado-genefamilies,chado-homology
+#ant -v -Dsource=chado-genomics,chado-genetics,chado-go,chado-featureprop,chado-genefamilies,
+ant -v -Dsource=chado-homology
 #pg_dump -Fc cowpeamine > /home/analysis/shokin/dumps/cowpeamine.chado.dat
 #pg_restore -d cowpeamine /home/analysis/shokin/dumps/cowpeamine.chado.dat
 

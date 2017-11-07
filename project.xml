@@ -51,7 +51,7 @@
     <source name="chado-genefamilies" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="chado"/>
       <property name="organisms" value="3920_IT97K-499-35"/>
-      <property name="homologue.organisms" value="3920_IT97K-499-35 3847_Williams82 3880_Mt4.0 3885_G19833 130453_V14167 130454_K30076 3827_CDCFrontier 3827_ICC4958 157791_VC1973A 57577_MilvusB 3914_Gyeongwon 3821_ICPL87119 3871_Tanjil 34305_MG20"/>
+      <property name="homologue.organisms" value="3920_IT97K-499-35 3847_Williams82 3880_A17 3885_G19833 130453_V14167 130454_K30076 3827_CDCFrontier 3827_ICC4958 157791_VC1973A 57577_MilvusB 3914_Gyeongwon 3821_ICPL87119 3871_Tanjil 34305_MG20"/>
       <property name="dataSetTitle" value="LIS chado data"/>
       <property name="dataSourceName" value="LIS Tripal database"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
