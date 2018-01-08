@@ -43,7 +43,7 @@
         </c:forEach>
 
         <!-- LegFed and relevant mines -->
-        <li><a href="https://intermine.legumefederation.org/legumemine/begin.do" target="_blank">LegFed LegumeMine (multiple legumes)</a></li>
+        <li><a href="https://mines.legumeinfo.org/legumemine/begin.do" target="_blank">LegFed LegumeMine (multiple legumes)</a></li>
         <li><a href="https://mines.legumeinfo.org/beanmine/begin.do" target="_blank">LIS BeanMine (string bean)</a></li>
         <li><a href="https://mines.legumeinfo.org/cowpeamine/begin.do" target="_blank">LIS CowpeaMine (cowpea)</a></li>
         <li><a href="https://mines.legumeinfo.org/chickpeamine/begin.do" target="_blank">LIS ChickpeaMine (desi and kabuli varieties)</a></li>
