@@ -1,36 +1,36 @@
 #!/bin/sh
 echo "********** cowpeamine/integrate **********"
+ant clean
 
-# STOP TOMCAT BEFORE DROPPING DB!!!
-#dropdb cowpeamine
-#createdb -O intermine cowpeamine
+#ant -v -Dsource=so,go,to,po
 
-#ant clean
+#pg_restore -d cowpeamine /home/analysis/shokin/dumps/cowpeamine.ontologies.dat
 
-#ant -v -Dsource=so
-#ant -v -Dsource=so,go,to
-#pg_dump -Fc cowpeamine > /home/analysis/shokin/dumps/cowpeamine.so-go-to.dat
-#pg_restore -d cowpeamine /home/analysis/shokin/dumps/cowpeamine.so-go-to.dat
+#ant -v -Dsource=chado-genomics
+#ant -v -Dsource=chado-genetics
+#ant -v -Dsource=chado-featureprop
+#ant -v -Dsource=chado-genefamilies
+#ant -v -Dsource=chado-homology
 
-#ant -v -Dsource=chado-genomics,chado-genetics,chado-go,chado-featureprop,chado-genefamilies,
-ant -v -Dsource=chado-homology
-#pg_dump -Fc cowpeamine > /home/analysis/shokin/dumps/cowpeamine.chado.dat
 #pg_restore -d cowpeamine /home/analysis/shokin/dumps/cowpeamine.chado.dat
 
-# NOTE: chado-homology currently does nothing because cowpea is not in the trees and Arabidopsis is not in featureproc
-# but it's worth leaving in here for when cowpea gets into phylotree
-
-# ALL of the chado loaders must be DONE before continuing, because identifiers are changed by SQL below
+#########################################################################################################
+# ALL of the chado loaders must be DONE before continuing, because identifiers are changed by SQL below #
+#########################################################################################################
 
 #psql cowpeamine -f ../dbmodel/build/model/add-update-triggers.sql
+#psql cowpeamine -f ../sql/cleanup-chado-bugs.sql
 #psql cowpeamine -f ../sql/update-organisms.sql
 #psql cowpeamine -f ../sql/update-identifiers.sql
 #psql cowpeamine -f ../dbmodel/build/model/remove-update-triggers.sql
 
-#ant -v -Dsource=cowpea-germplasms,cowpea-genotypes,cowpea-geneticmaps,cowpea-snpmarkers
+#ant -v -Dsource=cowpea-germplasms
+#ant -v -Dsource=cowpea-snpmarkers
 #ant -v -Dsource=cowpea-snppositions
-#ant -v -Dsource=cowpea-qtlmarkers
-
-#psql cowpeamine -f ../dbmodel/build/model/add-update-triggers.sql
-#psql cowpeamine -f ../sql/update-organisms.sql
-#psql cowpeamine -f ../dbmodel/build/model/remove-update-triggers.sql
+#ant -v -Dsource=cowpea-genotypes
+#ant -v -Dsource=cowpea-linkagegroups
+#ant -v -Dsource=cowpea-markers-linkagegroups
+#ant -v -Dsource=cowpea-qtls
+#ant -v -Dsource=cowpea-qtl-markers
+#ant -v -Dsource=cowpea-qtl-ontology
+ant -v -Dsource=cowpea-expression
