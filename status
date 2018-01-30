@@ -1,0 +1,9 @@
+# run git status in the appropriate dirs
+git status
+cd sql
+git status
+cd ../webapp/src
+git status
+cd ../resources/webapp/model
+git status
+cd ../../../..
