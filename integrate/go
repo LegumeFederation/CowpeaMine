@@ -4,33 +4,40 @@ ant clean
 
 #ant -v -Dsource=so,go,to,po
 
-#pg_restore -d cowpeamine /home/analysis/shokin/dumps/cowpeamine.ontologies.dat
+#pg_restore -d cowpeamine /home/shokin/dumps/cowpeamine.ontologies.dat
 
+# chado loaders
 #ant -v -Dsource=chado-genomics
 #ant -v -Dsource=chado-genetics
 #ant -v -Dsource=chado-featureprop
 #ant -v -Dsource=chado-genefamilies
 #ant -v -Dsource=chado-homology
 
-#pg_restore -d cowpeamine /home/analysis/shokin/dumps/cowpeamine.chado.dat
+#pg_restore -d cowpeamine /home/shokin/dumps/cowpeamine.chado.dat
 
-#########################################################################################################
-# ALL of the chado loaders must be DONE before continuing, because identifiers are changed by SQL below #
-#########################################################################################################
+#############################################################################################
+# ALL of the chado loaders must be DONE above, because identifiers are changed by SQL below #
+#############################################################################################
 
 #psql cowpeamine -f ../dbmodel/build/model/add-update-triggers.sql
 #psql cowpeamine -f ../sql/cleanup-chado-bugs.sql
-#psql cowpeamine -f ../sql/update-organisms.sql
+#psql cowpeamine -f ../sql/update-organism-genus-species.sql
+#psql cowpeamine -f ../sql/update-organism-comments.sql
 #psql cowpeamine -f ../sql/update-identifiers.sql
 #psql cowpeamine -f ../dbmodel/build/model/remove-update-triggers.sql
 
 #ant -v -Dsource=cowpea-germplasms
 #ant -v -Dsource=cowpea-snpmarkers
 #ant -v -Dsource=cowpea-snppositions
-#ant -v -Dsource=cowpea-genotypes
 #ant -v -Dsource=cowpea-linkagegroups
 #ant -v -Dsource=cowpea-markers-linkagegroups
+#ant -v -Dsource=cowpea-genotypes
 #ant -v -Dsource=cowpea-qtls
 #ant -v -Dsource=cowpea-qtl-markers
 #ant -v -Dsource=cowpea-qtl-ontology
 ant -v -Dsource=cowpea-expression
+
+# update the genus and species for the germplasms we added, don't touch the comments!
+psql cowpeamine -f ../dbmodel/build/model/add-update-triggers.sql
+psql cowpeamine -f ../sql/update-organism-genus-species.sql
+psql cowpeamine -f ../dbmodel/build/model/remove-update-triggers.sql
