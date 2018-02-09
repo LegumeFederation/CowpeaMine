@@ -207,7 +207,8 @@
       <fieldconfig fieldExpr="journal"/>
       <fieldconfig fieldExpr="volume"/>
       <fieldconfig fieldExpr="pages"/>
-      <fieldconfig fieldExpr="pubMedId"/>
+      <fieldconfig fieldExpr="doi" label="DOI"/>
+      <fieldconfig fieldExpr="pubMedId" label="PMID"/>
     </fields>
   </class>
 
@@ -305,13 +306,12 @@
   <class className="org.intermine.model.bio.QTL">
     <headerconfig>
       <titles>
-        <title mainTitles="primaryIdentifier" numberOfMainTitlesToShow="1" subTitles="*organism.shortName*" />
+        <title mainTitles="primaryIdentifier" numberOfMainTitlesToShow="1" subTitles="traitName" />
       </titles>
     </headerconfig>
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier" label="DB identifier"/>
-      <fieldconfig fieldExpr="experimentTraitName"/>
-      <fieldconfig fieldExpr="experimentTraitDescription"/>
+      <fieldconfig fieldExpr="traitName"/>
     </fields>
   </class>
 

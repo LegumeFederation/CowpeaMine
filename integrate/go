@@ -35,7 +35,7 @@ ant clean
 #ant -v -Dsource=cowpea-qtls
 #ant -v -Dsource=cowpea-qtl-markers
 #ant -v -Dsource=cowpea-qtl-ontology
-ant -v -Dsource=cowpea-expression
+#ant -v -Dsource=cowpea-expression
 
 # update the genus and species for the germplasms we added, don't touch the comments!
 psql cowpeamine -f ../dbmodel/build/model/add-update-triggers.sql

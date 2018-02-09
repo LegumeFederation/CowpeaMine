@@ -67,6 +67,10 @@
     <source name="cowpea-germplasms" type="legfed-germplasm-file" dump="true">
 	<property name="src.data.dir" location="/home/shokin/intermine-data/cowpea-germplasms"/>
     </source>
+    <!-- Germplasms from custom tab-delimited file -->
+    <source name="cowpea-germplasms-foo" type="legfed-germplasm-file" dump="true">
+	<property name="src.data.dir" location="/home/shokin/intermine-data/cowpea-germplasms"/>
+    </source>
 
     <!-- SNP marker details (sequences, alleles, etc.) -->
     <source name="cowpea-snpmarkers" type="legfed-snpmarker-file" dump="true">
