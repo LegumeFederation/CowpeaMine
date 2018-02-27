@@ -1,4 +1,20 @@
 #!/bin/sh
 echo "********** cowpeamine/postprocess **********"
 ant clean
-ant -v
+
+## the whole kaboodle kit
+#ant -v
+
+## populate some records
+#ant -v -Daction=populate-publications
+#ant -v -Daction=populate-linkagegroup-lengths
+
+## views and indexes, after all data is set
+#ant -v -Daction=create-location-overlap-index
+#ant -v -Daction=create-overlap-view
+#ant -v -Daction=create-attribute-indexes
+
+## do these after updating attributes
+ant -v -Daction=summarise-objectstore
+ant -v -Daction=create-autocomplete-index
+ant -v -Daction=create-search-index

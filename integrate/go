@@ -32,12 +32,12 @@ ant clean
 #ant -v -Dsource=cowpea-linkagegroups
 #ant -v -Dsource=cowpea-markers-linkagegroups
 #ant -v -Dsource=cowpea-genotypes
-#ant -v -Dsource=cowpea-qtls
+ant -v -Dsource=cowpea-qtls
 #ant -v -Dsource=cowpea-qtl-markers
 #ant -v -Dsource=cowpea-qtl-ontology
 #ant -v -Dsource=cowpea-expression
 
 # update the genus and species for the germplasms we added, don't touch the comments!
-psql cowpeamine -f ../dbmodel/build/model/add-update-triggers.sql
-psql cowpeamine -f ../sql/update-organism-genus-species.sql
-psql cowpeamine -f ../dbmodel/build/model/remove-update-triggers.sql
+#psql cowpeamine -f ../dbmodel/build/model/add-update-triggers.sql
+#psql cowpeamine -f ../sql/update-organism-genus-species.sql
+#psql cowpeamine -f ../dbmodel/build/model/remove-update-triggers.sql
