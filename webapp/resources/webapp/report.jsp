@@ -130,7 +130,7 @@
                             <tr>
                                 <c:if test="${!empty field.value}">
                                     <td class="label">${field.name}&nbsp;<im:typehelp type="${field.pathString}"/></td>
-                                    <td><strong><c:out escapeXml="${field.escapeXml}" value="${field.value}" /></strong></td>
+                                    <td><c:out escapeXml="${field.escapeXml}" value="${field.value}" /></td>
                                 </c:if>
                             </tr>
                         </c:if>

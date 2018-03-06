@@ -38,7 +38,7 @@
   <class className="org.intermine.model.bio.Comment">
     <fields>
       <fieldconfig fieldExpr="type"/>
-      <fieldconfig fieldExpr="description"/>
+      <fieldconfig fieldExpr="description" label="Description" doNotTruncate="true" />
     </fields>
   </class>
 
@@ -76,7 +76,7 @@
       <fieldconfig fieldExpr="secondaryIdentifier" label="Alternate identifier"/>
       <fieldconfig fieldExpr="chromosome.primaryIdentifier" label="Chrom."/>
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" showInInlineCollection="true" showInSummary="true" />
-      <fieldconfig fieldExpr="description"/>
+      <fieldconfig fieldExpr="description" doNotTruncate="true" label="Description" />
     </fields>
     <bagdisplayers>
       <displayer src="heatMap.tile" showOnLeft="true" />
@@ -109,7 +109,7 @@
       <fieldconfig fieldExpr="organism.variety" label="Variety"/>
       <fieldconfig fieldExpr="primaryIdentifier" label="DB identifier"/>
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" showInInlineCollection="true" showInSummary="true" />
-      <fieldconfig fieldExpr="chromosome.primaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Chrom." />
+      <fieldconfig fieldExpr="chromosome.primaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Chromosome" />
       <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="true" showInSummary="false" label="Start" />
       <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="true" showInSummary="false" label="End" />
     </fields>
@@ -143,7 +143,7 @@
       <fieldconfig fieldExpr="subject.primaryIdentifier" label="Subject"/>
       <fieldconfig fieldExpr="ontologyTerm.identifier" label="Identifier"/>
       <fieldconfig fieldExpr="ontologyTerm.name" label="Name"/>
-      <fieldconfig fieldExpr="ontologyTerm.description" label="Description"/>
+      <fieldconfig fieldExpr="ontologyTerm.description" label="Description" doNotTruncate="true" />
     </fields>
   </class>
 
@@ -156,7 +156,7 @@
     <fields>
       <fieldconfig fieldExpr="identifier" />
       <fieldconfig fieldExpr="name" />
-      <fieldconfig fieldExpr="description" doNotTruncate="false" />
+      <fieldconfig fieldExpr="description" doNotTruncate="true" label="Description" />
     </fields>
   </class>
 
@@ -276,7 +276,7 @@
     </headerconfig>
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier" label="Name"/>
-      <fieldconfig fieldExpr="description"/>
+      <fieldconfig fieldExpr="description" doNotTruncate="true" label="Description" />
     </fields>
   </class>
 
@@ -288,7 +288,7 @@
     </headerconfig>
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier" label="Name"/>
-      <fieldconfig fieldExpr="description"/>
+      <fieldconfig fieldExpr="description" doNotTruncate="true" label="Description" />
     </fields>
   </class>
 
@@ -296,10 +296,11 @@
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier" label="DB identifier"/>
       <fieldconfig fieldExpr="type" label="Type"/>
-      <fieldconfig fieldExpr="chromosome.primaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Chrom." />
-      <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="true" showInSummary="false" label="Start" />
-      <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="true" showInSummary="false" label="End" />
-      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
+      <fieldconfig fieldExpr="chromosome.primaryIdentifier" showInInlineCollection="true" showInSummary="true" label="Chromosome" />
+      <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="true" showInSummary="true" label="Start" />
+      <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="true" showInSummary="true" label="End" />
+      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" showInSummary="true" />
+      <fieldconfig fieldExpr="designSequence" doNotTruncate="true" label="Design Sequence" />
     </fields>
   </class>
 
@@ -356,7 +357,7 @@
     </headerconfig>
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier" label="Name"/>
-      <fieldconfig fieldExpr="description" label="Description"/>
+      <fieldconfig fieldExpr="description" label="Description" doNotTruncate="true" />
     </fields>
   </class>
 
@@ -379,7 +380,7 @@
     </headerconfig>
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier" label="Name"/>
-      <fieldconfig fieldExpr="description" label="Description"/>
+      <fieldconfig fieldExpr="description" label="Description" doNotTruncate="true" />
       <fieldconfig fieldExpr="matrixNotes" showInInlineCollection="false" showInSummary="false" showInResults="false" />
     </fields>
   </class>
