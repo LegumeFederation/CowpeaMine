@@ -67,10 +67,6 @@
     <source name="cowpea-germplasms" type="legfed-germplasm-file" dump="true">
 	<property name="src.data.dir" location="/home/shokin/intermine-data/cowpea-germplasms"/>
     </source>
-    <!-- Germplasms from custom tab-delimited file -->
-    <source name="cowpea-germplasms-foo" type="legfed-germplasm-file" dump="true">
-	<property name="src.data.dir" location="/home/shokin/intermine-data/cowpea-germplasms"/>
-    </source>
 
     <!-- SNP marker details (sequences, alleles, etc.) -->
     <source name="cowpea-snpmarkers" type="legfed-snpmarker-file" dump="true">
@@ -108,8 +104,13 @@
     </source>
     
     <!-- QTL - trait ontology -->
-    <source name="cowpea-qtl-ontology" type="legfed-qtl-ontology-file" dump="true">
-      <property name="src.data.dir" location="/home/shokin/intermine-data/cowpea-qtl-ontology"/>
+    <source name="cowpea-qtl-trait-ontology" type="legfed-qtl-ontology-file" dump="true">
+      <property name="src.data.dir" location="/home/shokin/intermine-data/cowpea-qtl-trait-ontology"/>
+    </source>
+
+    <!-- QTL - crop ontology -->
+    <source name="cowpea-qtl-crop-ontology" type="legfed-qtl-ontology-file" dump="true">
+      <property name="src.data.dir" location="/home/shokin/intermine-data/cowpea-qtl-crop-ontology"/>
     </source>
 
     <!-- VuGEA expression -->
@@ -124,12 +125,12 @@
 
     <!-- gene ontology -->
     <source name="go" type="go">
-        <property name="src.data.file" location="/home/shokin/intermine-data/go-annotation/go.obo"/>
+        <property name="src.data.file" location="/home/shokin/intermine-data/gene-ontology/go.obo"/>
     </source>
 
-    <!-- trait ontology -->
+    <!-- plant trait ontology -->
     <source name="to" type="trait-ontology">
-      <property name="src.data.file" location="/home/shokin/intermine-data/plant-trait-ontology/to.obo"/>
+      <property name="src.data.file" location="/home/shokin/plant-trait-ontology/plant-trait-ontology.obo"/>
       <property name="ontology.prefix" value="TO"/>
     </source>
 
@@ -137,6 +138,12 @@
     <source name="po" type="plant-ontology">
       <property name="src.data.file" location="/home/shokin/intermine-data/plant-ontology/po.obo"/>
       <property name="ontology.prefix" value="PO"/>
+    </source>
+
+    <!-- cowpea crop ontology -->
+    <source name="co" type="crop-ontology">
+      <property name="src.data.file" location="/home/shokin/intermine-data/cowpea-crop-ontology/CO_340.obo"/>
+      <property name="ontology.prefix" value="CO"/>
     </source>
 
   </sources>
