@@ -187,6 +187,7 @@
       <fieldconfig fieldExpr="name"/>
       <fieldconfig fieldExpr="variety"/>
       <fieldconfig fieldExpr="taxonId" />
+      <fieldconfig fieldExpr="comment" doNotTruncate="true" label="Description" />
     </fields>
   </class>
 
