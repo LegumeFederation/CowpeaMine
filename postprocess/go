@@ -3,11 +3,18 @@ echo "********** cowpeamine/postprocess **********"
 ant clean
 
 ## the whole kaboodle kit
-#ant -v
+ant -v
 
-## populate some records
+## LegFed stuff
+#ant -v -Daction=create-go-annotations
+#ant -v -Daction=create-protein-gene-references
+#ant -v -Daction=create-protein-domain-references
+#ant -v -Daction=create-ontology-parent-annotations
 #ant -v -Daction=populate-publications
 #ant -v -Daction=populate-linkagegroup-lengths
+#ant -v -Daction=populate-qtl-linkagegroups
+#ant -v -Daction=populate-gene-spanning-qtls
+#ant -v -Daction=populate-interpro-data
 
 ## views and indexes, after all data is set
 #ant -v -Daction=create-location-overlap-index
@@ -15,6 +22,6 @@ ant clean
 #ant -v -Daction=create-attribute-indexes
 
 ## do these after updating attributes
-ant -v -Daction=summarise-objectstore
-ant -v -Daction=create-autocomplete-index
-ant -v -Daction=create-search-index
+#ant -v -Daction=summarise-objectstore
+#ant -v -Daction=create-autocomplete-index
+#ant -v -Daction=create-search-index

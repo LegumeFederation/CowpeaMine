@@ -125,7 +125,7 @@
 
     <!-- gene ontology -->
     <source name="go" type="go">
-        <property name="src.data.file" location="/home/shokin/intermine-data/gene-ontology/go.obo"/>
+        <property name="src.data.file" location="/home/shokin/intermine-data/gene-ontology/go-basic.obo"/>
     </source>
 
     <!-- plant trait ontology -->

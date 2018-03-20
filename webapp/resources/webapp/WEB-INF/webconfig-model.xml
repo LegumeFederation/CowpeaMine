@@ -73,8 +73,10 @@
       <fieldconfig fieldExpr="organism.name" label="Organism" />
       <fieldconfig fieldExpr="organism.variety" label="Variety" />
       <fieldconfig fieldExpr="primaryIdentifier" label="DB identifier" />
-      <fieldconfig fieldExpr="secondaryIdentifier" label="Alternate identifier"/>
       <fieldconfig fieldExpr="chromosome.primaryIdentifier" label="Chrom."/>
+      <fieldconfig fieldExpr="chromosomeLocation.strand" label="Strand" />
+      <fieldconfig fieldExpr="chromosomeLocation.start" label="Start" />
+      <fieldconfig fieldExpr="chromosomeLocation.end" label="End" />
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" showInInlineCollection="true" showInSummary="true" />
       <fieldconfig fieldExpr="description" doNotTruncate="true" label="Description" />
     </fields>
@@ -99,7 +101,7 @@
       <fieldconfig fieldExpr="homologue.organism.name" label="Organism"/>
       <fieldconfig fieldExpr="homologue.organism.variety" label="Variety"/>
       <fieldconfig fieldExpr="homologue.primaryIdentifier" label="DB identifier"/>
-      <fieldconfig fieldExpr="homologue.secondaryIdentifier" label="Alternate identifier"/>
+      <fieldconfig fieldExpr="homologue.secondaryIdentifier" label="Alt identifier"/>
     </fields>
   </class>
 
@@ -187,7 +189,7 @@
       <fieldconfig fieldExpr="name"/>
       <fieldconfig fieldExpr="variety"/>
       <fieldconfig fieldExpr="taxonId" />
-      <fieldconfig fieldExpr="comment" doNotTruncate="true" label="Description" />
+      <fieldconfig fieldExpr="description" doNotTruncate="true" />
     </fields>
   </class>
 
@@ -245,7 +247,8 @@
       </titles>
     </headerconfig>
     <fields>
-      <fieldconfig fieldExpr="primaryIdentifier" label="DB identifier"/>
+      <fieldconfig fieldExpr="number" />      
+      <fieldconfig fieldExpr="primaryIdentifier" label="DB identifier" />
       <fieldconfig fieldExpr="length" label="Length (cM)" />
     </fields>
     <bagdisplayers>

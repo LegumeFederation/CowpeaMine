@@ -21,7 +21,7 @@ pg_restore -d cowpeamine /home/shokin/dumps/cowpeamine.chado.dat
 psql cowpeamine -f ../dbmodel/build/model/add-update-triggers.sql
 psql cowpeamine -f ../sql/cleanup-chado-bugs.sql
 psql cowpeamine -f ../sql/update-organism-genus-species.sql
-psql cowpeamine -f ../sql/update-organism-comments.sql
+psql cowpeamine -f ../sql/update-organism-descriptions.sql
 psql cowpeamine -f ../sql/update-identifiers.sql
 psql cowpeamine -f ../dbmodel/build/model/remove-update-triggers.sql
 
@@ -38,8 +38,7 @@ ant -v -Dsource=cowpea-qtl-trait-ontology
 ant -v -Dsource=cowpea-qtl-crop-ontology
 ant -v -Dsource=cowpea-expression
 
-## update the genus and species for the germplasms we added, don't touch the comments!
+## update the genus and species for the germplasms we added, don't touch the descriptions!
 psql cowpeamine -f ../dbmodel/build/model/add-update-triggers.sql
 psql cowpeamine -f ../sql/update-organism-genus-species.sql
 psql cowpeamine -f ../dbmodel/build/model/remove-update-triggers.sql
-
