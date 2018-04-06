@@ -31,7 +31,7 @@
             <tr>
                 <td>
                     <!-- LegFed member -->
-                    <a target="_new" href="https://legumefederation.org/" title="Legume Federation"><img src="model/images/legfed-member.png"/></a>
+                    <a target="_new" href="https://legumefederation.org/" title="Legume Federation"><img src="https://mines.legumeinfo.org/legfed-member.png"/></a>
                 </td>
                 <td>
                     <!-- powered -->
