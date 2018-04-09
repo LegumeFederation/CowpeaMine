@@ -1,7 +1,6 @@
 logfile
 *~
 *.log
-*.jar
 cp-*
 go-*
 */build/
