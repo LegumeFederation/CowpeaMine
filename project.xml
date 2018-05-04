@@ -65,57 +65,57 @@
 
     <!-- Germplasms from custom tab-delimited file -->
     <source name="cowpea-germplasms" type="legfed-germplasm-file" dump="true">
-	<property name="src.data.dir" location="/home/shokin/intermine-data/cowpea-germplasms"/>
+	<property name="src.data.dir" location="/home/shokin/legfed-intermine-data/cowpea-germplasms"/>
     </source>
 
     <!-- SNP marker details (sequences, alleles, etc.) -->
     <source name="cowpea-snpmarkers" type="legfed-snpmarker-file" dump="true">
-      <property name="src.data.dir" location="/home/shokin/intermine-data/cowpea-iSelect-snps"/>
+      <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/cowpea-iSelect-snps"/>
     </source>
     
     <!-- SNP marker genomic locations -->
     <source name="cowpea-snppositions" type="legfed-snpvcf-file" dump="true">
-      <property name="src.data.dir" location="/home/shokin/intermine-data/cowpea-1m-selected-snps"/>
+      <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/cowpea-1m-selected-snps"/>
     </source>
 
     <!-- Genotypes from custom tab-delimited file -->
     <source name="cowpea-genotypes" type="legfed-gt-file" dump="true">
-      <property name="src.data.dir" location="/home/shokin/intermine-data/cowpea-genotyping"/>
+      <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/cowpea-genotyping"/>
     </source>
 
     <!-- linkage groups -->
     <source name="cowpea-linkagegroups" type="legfed-linkagegroup-file" dump="true">
-      <property name="src.data.dir" location="/home/shokin/intermine-data/cowpea-linkagegroups"/>
+      <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/cowpea-linkagegroups"/>
     </source>
     
     <!-- marker locations in linkage groups -->
     <source name="cowpea-markers-linkagegroups" type="legfed-marker-linkagegroup-file" dump="true">
-      <property name="src.data.dir" location="/home/shokin/intermine-data/cowpea-markers-linkagegroups"/>
+      <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/cowpea-markers-linkagegroups"/>
     </source>
 
     <!-- QTLs -->
     <source name="cowpea-qtls" type="legfed-qtl-file" dump="true">
-      <property name="src.data.dir" location="/home/shokin/intermine-data/cowpea-qtl"/>
+      <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/cowpea-qtl"/>
     </source>
 
     <!-- markers associated with QTLs -->
-    <source name="cowpea-qtl-markers" type="legfed-marker-qtl-file" dump="true">
-      <property name="src.data.dir" location="/home/shokin/intermine-data/cowpea-qtl-markers"/>
+    <source name="cowpea-markers-qtls" type="legfed-marker-qtl-file" dump="true">
+      <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/cowpea-qtl-markers"/>
     </source>
     
     <!-- QTL - trait ontology -->
     <source name="cowpea-qtl-trait-ontology" type="legfed-qtl-ontology-file" dump="true">
-      <property name="src.data.dir" location="/home/shokin/intermine-data/cowpea-qtl-trait-ontology"/>
+      <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/cowpea-qtl-trait-ontology"/>
     </source>
 
     <!-- QTL - crop ontology -->
     <source name="cowpea-qtl-crop-ontology" type="legfed-qtl-ontology-file" dump="true">
-      <property name="src.data.dir" location="/home/shokin/intermine-data/cowpea-qtl-crop-ontology"/>
+      <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/cowpea-qtl-crop-ontology"/>
     </source>
 
     <!-- VuGEA expression -->
     <source name="cowpea-expression" type="legfed-expression" dump="true">
-      <property name="src.data.dir" location="/home/shokin/intermine-data/cowpea-expression"/>
+      <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/cowpea-expression"/>
     </source>
 
     <!-- sequence ontology -->
@@ -125,24 +125,24 @@
 
     <!-- gene ontology -->
     <source name="go" type="go">
-        <property name="src.data.file" location="/home/shokin/intermine-data/gene-ontology/go-basic.obo"/>
+        <property name="src.data.file" location="/home/shokin/legfed-intermine-data/gene-ontology/go-basic.obo"/>
     </source>
 
     <!-- plant trait ontology -->
-    <source name="to" type="trait-ontology">
-      <property name="src.data.file" location="/home/shokin/plant-trait-ontology/plant-trait-ontology.obo"/>
+    <source name="to" type="legfed-trait-ontology">
+      <property name="src.data.file" location="/home/shokin/plant-trait-ontology/to.obo"/>
       <property name="ontology.prefix" value="TO"/>
     </source>
 
     <!-- plant ontology -->
-    <source name="po" type="plant-ontology">
-      <property name="src.data.file" location="/home/shokin/intermine-data/plant-ontology/po.obo"/>
+    <source name="po" type="legfed-plant-ontology">
+      <property name="src.data.file" location="/home/shokin/legfed-intermine-data/plant-ontology/po.obo"/>
       <property name="ontology.prefix" value="PO"/>
     </source>
 
     <!-- cowpea crop ontology -->
-    <source name="co" type="crop-ontology">
-      <property name="src.data.file" location="/home/shokin/intermine-data/cowpea-crop-ontology/CO_340.obo"/>
+    <source name="co" type="legfed-crop-ontology">
+      <property name="src.data.file" location="/home/shokin/legfed-intermine-data/cowpea-crop-ontology/CO_340.obo"/>
       <property name="ontology.prefix" value="CO"/>
     </source>
 
