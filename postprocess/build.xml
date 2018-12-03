@@ -1,7 +1,0 @@
-<project name="cowpeamine-postprocess" default="default" basedir=".">
-
-  <description>perform post processing for cowpeamine</description>
-
-  <import file="../../imbuild/postprocess.xml"/>
-
-</project>

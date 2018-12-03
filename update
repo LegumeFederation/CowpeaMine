@@ -1,9 +1,0 @@
-# run git pull in the appropriate dirs
-git pull
-cd sql
-git pull
-cd ../webapp/src
-git pull
-cd ../resources/webapp/model
-git pull
-cd ../../../..

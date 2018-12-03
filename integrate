@@ -1,0 +1,34 @@
+## clear the logs (quietly)
+rm -f intermine.log
+
+## ontologies
+#./gradlew integrate -Psource=so
+#./gradlew integrate -Psource=go
+#./gradlew integrate -Psource=to
+#./gradlew integrate -Psource=po
+
+## LIS chado
+#./gradlew integrate -Psource=lis-genomics --stacktrace
+#./gradlew integrate -Psource=lis-proteins --stacktrace
+#./gradlew integrate -Psource=lis-genetics --stacktrace
+#./gradlew integrate -Psource=lis-featureprop --stacktrace
+#./gradlew integrate -Psource=lis-genefamilies --stacktrace
+#./gradlew integrate -Psource=lis-reactome-file --stacktrace
+
+## -----------------------------------------------------------------------------------------------------
+## ALL of the chado loaders must be DONE before continuing, because identifiers are changed by SQL below
+## -----------------------------------------------------------------------------------------------------
+
+./gradlew generateUpdateTriggers
+psql beanmine-dev -f dbmodel/build/resources/main/add-update-triggers.sql
+psql beanmine-dev -f ../legfed-intermine-sql/cleanup-chado-bugs.sql
+psql beanmine-dev -f ../legfed-intermine-sql/update-organism-genus-species.sql
+psql beanmine-dev -f ../legfed-intermine-sql/update-organism-descriptions.sql
+psql beanmine-dev -f ../legfed-intermine-sql/update-strain-names.sql
+psql beanmine-dev -f ../legfed-intermine-sql/update-strain-descriptions.sql
+psql beanmine-dev -f ../legfed-intermine-sql/update-identifiers.sql
+psql beanmine-dev -f dbmodel/build/resources/main/remove-update-triggers.sql
+
+## file sources
+./gradlew integrate -Psource=beans-qtl-ontology --stacktrace
+./gradlew integrate -Psource=beans-expression --stacktrace

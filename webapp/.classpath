@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="lib" path="lib/ncgr-opal.jar"/>
+	<classpathentry kind="lib" path="lib/cog-jglobus.jar"/>
 </classpath>
