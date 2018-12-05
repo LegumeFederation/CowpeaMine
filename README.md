@@ -1,4 +1,2 @@
-# beanmine
-An InterMine for common bean
-
-Install under the intermine root, just like flymine and the others.
+# CowpeaMine
+A mine with cowpea genetic data (adding genomic in the future)

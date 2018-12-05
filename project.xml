@@ -1,16 +1,15 @@
 <project type="bio">
   <property name="target.model" value="genomic"/>
-  <property name="source.location" location="../bio/sources/"/>
   <property name="common.os.prefix" value="common"/>
   <property name="intermine.properties.file" value="cowpeamine.properties"/>
-  <property name="default.intermine.properties.file" location="../default.intermine.integrate.properties"/>
   
   <sources>
 
     <!-- chado genomics - initiates SequenceFeatures, so run first -->
-    <source name="chado-genomics" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="chado"/>
-      <property name="organisms" value="3920_IT97K-499-35"/>
+    <source name="lis-genomics" type="legfed-chado-db" dump="true">
+      <property name="source.db.name" value="lis-chado"/>
+      <property name="organisms" value="3920"/>
+      <property name="strains" value="IT97K-499-35"/>
       <property name="dataSetTitle" value="LIS chado data"/>
       <property name="dataSourceName" value="LIS Tripal database"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
@@ -18,9 +17,10 @@
     </source>
 
     <!-- chado genetics - initiates other genetic items, so run second -->
-    <source name="chado-genetics" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="chado"/>
-      <property name="organisms" value="3920_IT97K-499-35"/>
+    <source name="lis-genetics" type="legfed-chado-db" dump="true">
+      <property name="source.db.name" value="lis-chado"/>
+      <property name="organisms" value="3920"/>
+      <property name="strains" value="IT97K-499-35"/>
       <property name="dataSetTitle" value="LIS chado data"/>
       <property name="dataSourceName" value="LIS Tripal database"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
@@ -28,9 +28,10 @@
     </source>
 
     <!-- chado featureprop attributes -->
-    <source name="chado-featureprop" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="chado"/>
-      <property name="organisms" value="3920_IT97K-499-35"/>
+    <source name="lis-featureprop" type="legfed-chado-db" dump="true">
+      <property name="source.db.name" value="lis-chado"/>
+      <property name="organisms" value="3920"/>
+      <property name="strains" value="IT97K-499-35"/>
       <property name="dataSetTitle" value="LIS chado data"/>
       <property name="dataSourceName" value="LIS Tripal database"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
@@ -38,27 +39,28 @@
     </source>
 
     <!-- chado gene families and resulting homology - based on featureprop -->
-    <source name="chado-genefamilies" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="chado"/>
-      <property name="organisms" value="3920_IT97K-499-35"/>
-      <property name="homologue.organisms" value="3920_IT97K-499-35 3847_Williams82 3880_A17 3885_G19833 130453_V14167 130454_K30076 3827_CDCFrontier 3827_ICC4958 157791_VC1973A 57577_MilvusB 3914_Gyeongwon 3821_ICPL87119 3871_Tanjil 34305_MG20"/>
+    <source name="lis-genefamilies" type="legfed-chado-db" dump="true">
+      <property name="source.db.name" value="lis-chado"/>
+      <property name="organisms" value="3920"/>
+      <property name="strains" value="IT97K-499-35"/>
+      <property name="homologue.organisms" value="3920 3847 3880 3885 130453 130454 3827 3827 157791 57577 3914 3821 3871 34305"/>
+      <property name="homologue.strains" value="IT97K-499-35 Williams82 A17 G19833 V14167 K30076 CDCFrontier ICC4958 VC1973A MilvusB Gyeongwon ICPL87119 Tanjil MG20"/>
       <property name="dataSetTitle" value="LIS chado data"/>
       <property name="dataSourceName" value="LIS Tripal database"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
       <property name="processors" value="org.intermine.bio.dataconversion.GeneFamilyProcessor"/>
     </source>
 
-    <!-- chado homology - based on phylotree - to grab Arabidopsis -->
-    <!-- doesn't work yet, cowpea not in phylotree -->
-    <source name="chado-homology" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="chado"/>
-      <property name="organisms" value="3920_IT97K-499-35"/>
-      <property name="homologue.organisms" value="3702_Col0"/>
-      <property name="phytozome.version" value="phytozome_10_2"/>
-      <property name="dataSetTitle" value="LIS chado data"/>
-      <property name="dataSourceName" value="LIS Tripal database"/>
+    <!-- chado + reactome file -->
+    <source name="lis-reactome-file" type="legfed-chado-db" dump="true">
+      <property name="source.db.name" value="lis-chado"/>
+      <property name="reactome.filename" value="/home/shokin/legfed-intermine-data/plant-reactome/gene_ids_by_pathway_and_species.tab"/>
+      <property name="organisms" value="3885"/>
+      <property name="strains" value="G19833"/>
+      <property name="dataSetTitle" value="LIS protein data + plant reactome"/>
+      <property name="dataSourceName" value="LIS chado database"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
-      <property name="processors" value="org.intermine.bio.dataconversion.HomologyProcessor"/>
+      <property name="processors" value="org.intermine.bio.dataconversion.ReactomeProcessor"/>
     </source>
 
     <!-- NON-CHADO -->
@@ -118,17 +120,19 @@
       <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/cowpea-expression"/>
     </source>
 
-    <!-- sequence ontology -->
-    <source name="so" type="so">
-      <property name="src.data.file" location="../../bio/sources/so/so.obo"/>
-    </source>
-
+    <!-- ONTOLOGIES -->
+    
     <!-- gene ontology -->
     <source name="go" type="go">
         <property name="src.data.file" location="/home/shokin/legfed-intermine-data/gene-ontology/go-basic.obo"/>
     </source>
 
-    <!-- plant trait ontology -->
+    <!-- sequence ontology -->
+    <source name="so" type="so">
+	<property name="src.data.file" location="/home/shokin/SO-Ontologies/so-simple.obo"/>
+    </source>
+
+    <!-- trait ontology -->
     <source name="to" type="legfed-trait-ontology">
       <property name="src.data.file" location="/home/shokin/plant-trait-ontology/to.obo"/>
       <property name="ontology.prefix" value="TO"/>
