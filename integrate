@@ -32,20 +32,19 @@ psql cowpeamine-dev -f dbmodel/build/resources/main/add-update-triggers.sql
 psql cowpeamine-dev -f ../legfed-intermine-sql/cleanup-chado-bugs.sql
 psql cowpeamine-dev -f ../legfed-intermine-sql/update-organism-genus-species.sql
 psql cowpeamine-dev -f ../legfed-intermine-sql/update-organism-descriptions.sql
-psql cowpeamine-dev -f ../legfed-intermine-sql/update-strain-names.sql
 psql cowpeamine-dev -f ../legfed-intermine-sql/update-strain-descriptions.sql
 psql cowpeamine-dev -f ../legfed-intermine-sql/update-identifiers.sql
 psql cowpeamine-dev -f dbmodel/build/resources/main/remove-update-triggers.sql
 
 ## file sources
-#./gradlew integrate -Psource=cowpea-germplasms
-# ./gradlew integrate -Psource=cowpea-snpmarkers
-# ./gradlew integrate -Psource=cowpea-snppositions
-# ./gradlew integrate -Psource=cowpea-genotypes
-# ./gradlew integrate -Psource=cowpea-linkagegroups
-# ./gradlew integrate -Psource=cowpea-markers-linkagegroups
-# ./gradlew integrate -Psource=cowpea-qtls
-# ./gradlew integrate -Psource=cowpea-markers-qtls
-# ./gradlew integrate -Psource=cowpea-qtl-trait-ontology
-# ./gradlew integrate -Psource=cowpea-qtl-crop-ontology
-# ./gradlew integrate -Psource=cowpea-expression
+./gradlew integrate -Psource=cowpea-germplasms --stacktrace
+./gradlew integrate -Psource=cowpea-snpmarkers --stacktrace
+./gradlew integrate -Psource=cowpea-snppositions --stacktrace
+./gradlew integrate -Psource=cowpea-linkagegroups --stacktrace
+./gradlew integrate -Psource=cowpea-markers-linkagegroups --stacktrace
+./gradlew integrate -Psource=cowpea-qtls --stacktrace
+./gradlew integrate -Psource=cowpea-markers-qtls --stacktrace
+./gradlew integrate -Psource=cowpea-qtl-trait-ontology --stacktrace
+./gradlew integrate -Psource=cowpea-qtl-crop-ontology --stacktrace
+./gradlew integrate -Psource=cowpea-expression --stacktrace
+#./gradlew integrate -Psource=cowpea-genotyping --stacktrace

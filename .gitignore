@@ -1,11 +1,6 @@
-.gradle
-logfile
 *~
 *.log
-cp-*
-go-*
-*/build/
-*/dist/
-sql/
-webapp/src/
-webapp/resources/webapp/model/
+.gradle
+build
+/webapp/src/main/java/
+/webapp/src/main/webapp/model/

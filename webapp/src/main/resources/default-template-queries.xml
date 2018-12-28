@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<userprofile>
+  <items/>
+  <bags/>
+  <queries>
+  </queries>
+  <template-queries>
+    
+  </template-queries>
+  <tags>
+    <tag name="im:hidden" objectIdentifier="BioEntity.objects" type="collection" />
+    <tag name="im:hidden" objectIdentifier="BioEntity.subjects" type="collection" />
+    <tag name="im:hidden" objectIdentifier="BioEntity.relations" type="collection" />
+    <tag name="im:hidden" objectIdentifier="Evidence.relations" type="collection" />
+    <tag name="im:preferredBagType" objectIdentifier="org.intermine.model.bio.Gene" type="class" />
+    <tag name="im:preferredBagType" objectIdentifier="org.intermine.model.bio.Protein" type="class" />
+    <tag name="im:preferredBagType" objectIdentifier="org.intermine.model.bio.QTL" type="class" />
+    <tag name="im:preferredBagType" objectIdentifier="org.intermine.model.bio.MappingPopulation" type="class" />
+    <tag name="im:summary" objectIdentifier="BioEntity.synonyms" type="collection" />
+    <tag name="im:summary" objectIdentifier="BioEntity.organism" type="reference" />
+  </tags>
+</userprofile>
