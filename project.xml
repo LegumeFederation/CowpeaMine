@@ -168,24 +168,24 @@
     <!-- source-specific post-processing -->
     <post-process name="do-sources" dump="true"/>
 
-    <!-- legfed -->
-    <post-process name="create-go-annotations" dump="true"/>
-    <post-process name="create-protein-gene-references" dump="true"/>
-    <post-process name="create-protein-domain-references" dump="true"/>
-    <post-process name="create-ontology-parent-annotations" dump="true"/>
-    <post-process name="populate-publications" dump="true"/>
-    <post-process name="populate-linkagegroup-lengths" dump="true"/>
-    <post-process name="populate-qtl-linkagegroups" dump="true"/>
-    <post-process name="populate-gene-spanning-qtls" dump="true"/>
-    <post-process name="populate-interpro-data" dump="true"/>
-
     <!-- add features -->
-    <post-process name="create-intron-features"/>
+    <post-process name="legfed-create-gene-flanking-regions"/>
+    <post-process name="legfed-create-supercontig-flanking-regions"/>
+    <post-process name="legfed-create-intron-features"/>
     <post-process name="create-intergenic-region-features"/>
-    <post-process name="create-gene-flanking-features"/> 
-   
-    <!-- create various references and collections -->
-    <post-process name="populate-located-features"/>
+
+    <!-- legfed references and collections -->
+    <post-process name="legfed-create-go-annotations"/>
+    <post-process name="legfed-create-ontology-parent-annotations"/>
+    <post-process name="legfed-create-exon-gene-references"/>
+    <post-process name="legfed-create-protein-gene-references"/>
+    <post-process name="legfed-create-qtl-linkagegroup-references"/>
+    <post-process name="legfed-populate-gene-spanning-qtls"/>
+    <post-process name="legfed-populate-interpro-data"/>
+    <post-process name="legfed-populate-linkagegroup-lengths"/>
+    <post-process name="legfed-populate-publications"/>
+    
+    <!-- core references and collections -->
     <post-process name="populate-child-features"/>
     <post-process name="create-references" />
     <post-process name="create-chromosome-locations-and-lengths"/>

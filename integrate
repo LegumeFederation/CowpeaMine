@@ -8,43 +8,45 @@ echo "##########################################################################
 echo "###################################### integrate #################################################"
 echo "##################################################################################################"
 
-## ontologies
-./gradlew integrate -Psource=so --stacktrace
-./gradlew integrate -Psource=go --stacktrace
-./gradlew integrate -Psource=to --stacktrace
-./gradlew integrate -Psource=po --stacktrace
-./gradlew integrate -Psource=co --stacktrace
+# ## generally restore this from a dump first
+# ./gradlew integrate -Psource=cowpea-genotyping --stacktrace
 
-## LIS chado
-./gradlew integrate -Psource=lis-genomics --stacktrace
-./gradlew integrate -Psource=lis-proteins --stacktrace
-./gradlew integrate -Psource=lis-genetics --stacktrace
-./gradlew integrate -Psource=lis-featureprop --stacktrace
-./gradlew integrate -Psource=lis-genefamilies --stacktrace
-./gradlew integrate -Psource=lis-reactome-file --stacktrace
+# ## ontologies
+# ./gradlew integrate -Psource=so --stacktrace
+# ./gradlew integrate -Psource=go --stacktrace
+# ./gradlew integrate -Psource=to --stacktrace
+# ./gradlew integrate -Psource=po --stacktrace
+# ./gradlew integrate -Psource=co --stacktrace
 
-## -----------------------------------------------------------------------------------------------------
-## ALL of the chado loaders must be DONE before continuing, because identifiers are changed by SQL below
-## -----------------------------------------------------------------------------------------------------
+# ## LIS chado
+# ./gradlew integrate -Psource=lis-genomics --stacktrace
+# ./gradlew integrate -Psource=lis-proteins --stacktrace
+# ./gradlew integrate -Psource=lis-genetics --stacktrace
+# ./gradlew integrate -Psource=lis-featureprop --stacktrace
+# ./gradlew integrate -Psource=lis-genefamilies --stacktrace
+# ./gradlew integrate -Psource=lis-reactome-file --stacktrace
 
-./gradlew generateUpdateTriggers
-psql cowpeamine-dev -f dbmodel/build/resources/main/add-update-triggers.sql
-psql cowpeamine-dev -f ../legfed-intermine-sql/cleanup-chado-bugs.sql
-psql cowpeamine-dev -f ../legfed-intermine-sql/update-organism-genus-species.sql
-psql cowpeamine-dev -f ../legfed-intermine-sql/update-organism-descriptions.sql
-psql cowpeamine-dev -f ../legfed-intermine-sql/update-strain-descriptions.sql
-psql cowpeamine-dev -f ../legfed-intermine-sql/update-identifiers.sql
-psql cowpeamine-dev -f dbmodel/build/resources/main/remove-update-triggers.sql
+# ##---------------------------------------------------------------------------------------------------------
+# ## ALL of the chado loaders must be DONE before continuing, because identifiers are changed by SQL below --
+# ##---------------------------------------------------------------------------------------------------------
 
-## file sources
-./gradlew integrate -Psource=cowpea-germplasms --stacktrace
-./gradlew integrate -Psource=cowpea-snpmarkers --stacktrace
-./gradlew integrate -Psource=cowpea-snppositions --stacktrace
-./gradlew integrate -Psource=cowpea-linkagegroups --stacktrace
-./gradlew integrate -Psource=cowpea-markers-linkagegroups --stacktrace
-./gradlew integrate -Psource=cowpea-qtls --stacktrace
+# ./gradlew generateUpdateTriggers
+# psql cowpeamine-dev -f dbmodel/build/resources/main/add-update-triggers.sql
+# psql cowpeamine-dev -f ../legfed-intermine-sql/cleanup-chado-bugs.sql
+# psql cowpeamine-dev -f ../legfed-intermine-sql/update-identifiers.sql
+# psql cowpeamine-dev -f ../legfed-intermine-sql/update-organism-genus-species.sql
+# psql cowpeamine-dev -f ../legfed-intermine-sql/update-organism-descriptions.sql
+# psql cowpeamine-dev -f ../legfed-intermine-sql/update-strain-descriptions.sql
+# psql cowpeamine-dev -f dbmodel/build/resources/main/remove-update-triggers.sql
+
+# ## file sources
+# ./gradlew integrate -Psource=cowpea-expression --stacktrace
+# ./gradlew integrate -Psource=cowpea-germplasms --stacktrace
+# ./gradlew integrate -Psource=cowpea-snpmarkers --stacktrace
+# ./gradlew integrate -Psource=cowpea-snppositions --stacktrace
+# ./gradlew integrate -Psource=cowpea-linkagegroups --stacktrace
+# ./gradlew integrate -Psource=cowpea-markers-linkagegroups --stacktrace
+# ./gradlew integrate -Psource=cowpea-qtls --stacktrace
 ./gradlew integrate -Psource=cowpea-markers-qtls --stacktrace
 ./gradlew integrate -Psource=cowpea-qtl-trait-ontology --stacktrace
 ./gradlew integrate -Psource=cowpea-qtl-crop-ontology --stacktrace
-./gradlew integrate -Psource=cowpea-expression --stacktrace
-#./gradlew integrate -Psource=cowpea-genotyping --stacktrace

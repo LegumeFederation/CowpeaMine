@@ -643,7 +643,7 @@ html, body {
 
 #low #api, #low #rss {
     background: url("../themes/purple/homepage/bochs-bottom-grad.png") repeat-x bottom;
-    height: 182px;
+    height: 95px;
 }
 
 #low h4 {
@@ -660,7 +660,7 @@ html, body {
 }
 
 #low #api {
-    width: 300px;
+    width: 500px;
     padding: 14px;
     float: left;
 }

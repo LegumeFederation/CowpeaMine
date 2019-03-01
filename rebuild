@@ -1,0 +1,4 @@
+#!/bin/sh
+./gradlew cargoUndeployRemote
+./gradlew clean
+./gradlew buildDB

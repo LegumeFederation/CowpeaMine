@@ -14,13 +14,11 @@
 
 <im:headResources section="all"/>
 
-<!-- jquery.dataTables plugin -->
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-
-<!-- buttons.dataTables plugin -->
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css" />
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
+<!-- jquery.dataTables plugin and buttons extension; having trouble with CDN so installed locally -->
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css" />
+<link rel="stylesheet" type="text/css" href="css/buttons.dataTables.min.css" />
+<script type="text/javascript" charset="utf8" src="js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" charset="utf8" src="js/dataTables.buttons.min.js"></script>
 
 <!-- canvasXpress -->
 <link rel="stylesheet" type="text/css" href="css/canvasXpress.css" />
@@ -30,7 +28,7 @@
 /* In Safari, loading a css that doesnt exist causes weirdness */
 String pageName = (String) request.getAttribute("pageName");
 if(new java.io.File(application.getRealPath("/css")+"/"+pageName+".css").exists()) {
-        request.setAttribute("pageCSS","true");
+    request.setAttribute("pageCSS","true");
 }
 if(new java.io.File(application.getRealPath("/js")+"/"+pageName+".js").exists()) {
     request.setAttribute("pageJS","true");
@@ -40,39 +38,39 @@ if(new java.io.File(application.getRealPath("/js")+"/"+pageName+".js").exists())
 <!-- page: ${pageName} -->
 
 <c:if test="${pageName != 'begin'}">
-  <c:if test="${pageName == 'results' || pageName == 'bagDetails' || pageName == 'report'}">
-    <im:headResources section="results"/>
-  </c:if>
+    <c:if test="${pageName == 'results' || pageName == 'bagDetails' || pageName == 'report'}">
+        <im:headResources section="results"/>
+    </c:if>
 
-  <c:if test="${pageName == 'results' || pageName == 'query' || pageName == 'templates' || pageName == 'bagDetails' || pageName == 'bag' || pageName == 'mymine'}">
-    <im:headResources section="query"/>  
-  </c:if>
-  
-  <c:if test="${pageName == 'bagDetails'}">
-      <im:headResources section="bagDetails"/>
-  </c:if>
+    <c:if test="${pageName == 'results' || pageName == 'query' || pageName == 'templates' || pageName == 'bagDetails' || pageName == 'bag' || pageName == 'mymine'}">
+        <im:headResources section="query"/>  
+    </c:if>
+    
+    <c:if test="${pageName == 'bagDetails'}">
+        <im:headResources section="bagDetails"/>
+    </c:if>
 
-  <c:if test="${pageName == 'query' || pageName == 'exportOptions'}">
-    <im:headResources section="query|export"/>
-  </c:if>
+    <c:if test="${pageName == 'query' || pageName == 'exportOptions'}">
+        <im:headResources section="query|export"/>
+    </c:if>
 
-  <script type="text/javascript">
-   // comment this out since it seems to break Datatables
-   // jQuery.noConflict();
-  </script>
+    <script type="text/javascript">
+     // comment this out since it seems to break Datatables
+     // jQuery.noConflict();
+    </script>
 
-  <%-- this (crap, utter crap) has to live after jQuery.  do not move --%>
-  <c:if test="${pageName != 'report' && pageName != 'mymine' && pageName != 'bagDetails' && pageName != 'results' && pageName != 'bagUploadConfirm'}">
-   <script type="text/javascript" src="<html:rewrite page='/js/prototype.js'/>"></script>
-  </c:if>
+    <%-- this (crap, utter crap) has to live after jQuery.  do not move --%>
+    <c:if test="${pageName != 'report' && pageName != 'mymine' && pageName != 'bagDetails' && pageName != 'results' && pageName != 'bagUploadConfirm'}">
+        <script type="text/javascript" src="<html:rewrite page='/js/prototype.js'/>"></script>
+    </c:if>
 </c:if>
 
-  <!--[if lt IE 7.]>
+<!--[if lt IE 7.]>
     <script defer type="text/javascript" src="pngfix.js"></script>
-  <![endif]-->
+<![endif]-->
 
 <c:if test="${pageJS == 'true'}">
-  <script type="text/javascript" src="<html:rewrite page='/js/${pageName}.js'/>"/></script>
+    <script type="text/javascript" src="<html:rewrite page='/js/${pageName}.js'/>"/></script>
 </c:if>
 
 <meta content="${WEB_PROPERTIES['meta.keywords']}" name="keywords"/>
@@ -81,18 +79,18 @@ if(new java.io.File(application.getRealPath("/js")+"/"+pageName+".js").exists())
 
 <!-- print stylesheet -->
 <c:if test="${pageName == 'bagDetails' || pageName == 'results'}">
-  <link rel="stylesheet" href="<html:rewrite page='/css/print.css'/>" type="text/css" media="print" />
+    <link rel="stylesheet" href="<html:rewrite page='/css/print.css'/>" type="text/css" media="print" />
 </c:if>
 
 <title>
-  <c:choose>
-    <c:when test="${empty pageName}">
-      <c:out value="${WEB_PROPERTIES['project.title']}" escapeXml="false"/>
-    </c:when>
-    <c:otherwise>
-      <c:out value="${WEB_PROPERTIES['project.title']}: ${htmlPageTitle}" escapeXml="false"/>
-    </c:otherwise>
-  </c:choose>
+    <c:choose>
+        <c:when test="${empty pageName}">
+            <c:out value="${WEB_PROPERTIES['project.title']}" escapeXml="false"/>
+        </c:when>
+        <c:otherwise>
+            <c:out value="${WEB_PROPERTIES['project.title']}: ${htmlPageTitle}" escapeXml="false"/>
+        </c:otherwise>
+    </c:choose>
 </title>
 
 
@@ -100,7 +98,7 @@ if(new java.io.File(application.getRealPath("/js")+"/"+pageName+".js").exists())
 <link rel="stylesheet" type="text/css" href="<html:rewrite page='/css/webapp.css'/>"/>
 
 <c:if test="${pageCSS == 'true'}">
-  <link rel="stylesheet" type="text/css" href="<html:rewrite page='/css/${pageName}.css'/>"/>
+    <link rel="stylesheet" type="text/css" href="<html:rewrite page='/css/${pageName}.css'/>"/>
 </c:if>
 
 <c:set var="theme" value="${WEB_PROPERTIES['theme']}"/>

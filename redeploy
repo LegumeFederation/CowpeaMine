@@ -1,3 +1,5 @@
 #!/bin/sh
-./gradlew war
-./gradlew cargoRedeployRemote
+
+## quietly remove log
+rm -rf intermine.log
+./gradlew cargoRedeployRemote --stacktrace

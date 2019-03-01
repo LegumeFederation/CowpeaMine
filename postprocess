@@ -8,9 +8,6 @@ echo "##########################################################################
 echo "##################################### postprocess ################################################"
 echo "##################################################################################################"
 
-## we don't have source-specific postprocessors
-./gradlew postprocess -Pprocess=do-sources 
-
 ## legfed
 ./gradlew postprocess -Pprocess=legfed-create-gene-flanking-regions
 ./gradlew postprocess -Pprocess=legfed-create-go-annotations
@@ -18,12 +15,11 @@ echo "##########################################################################
 ./gradlew postprocess -Pprocess=legfed-create-ontology-parent-annotations
 ./gradlew postprocess -Pprocess=legfed-create-exon-gene-references
 ./gradlew postprocess -Pprocess=legfed-create-protein-gene-references
+./gradlew postprocess -Pprocess=legfed-create-qtl-linkagegroup-references
 ./gradlew postprocess -Pprocess=legfed-create-supercontig-flanking-regions
-
 ./gradlew postprocess -Pprocess=legfed-populate-gene-spanning-qtls
 ./gradlew postprocess -Pprocess=legfed-populate-interpro-data
 ./gradlew postprocess -Pprocess=legfed-populate-linkagegroup-lengths
-
 ./gradlew postprocess -Pprocess=legfed-populate-publications
 
 ## more features
@@ -42,7 +38,7 @@ echo "##########################################################################
 ## these must be run after any data is changed
 ./gradlew postprocess -Pprocess=create-attribute-indexes
 ./gradlew postprocess -Pprocess=summarise-objectstore
+
+## and these require Solr
 ./gradlew postprocess -Pprocess=create-autocomplete-index
 ./gradlew postprocess -Pprocess=create-search-index
-
-
