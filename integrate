@@ -3,13 +3,13 @@
 ## clear the logs (quietly)
 rm -f intermine.log
 
+# ## generally restore this from a dump first
+# ./gradlew integrate -Psource=cowpea-genotyping --stacktrace
+
 ## echo a big marker so we can see when this run started in the scroll
 echo "##################################################################################################"
 echo "###################################### integrate #################################################"
 echo "##################################################################################################"
-
-# ## generally restore this from a dump first
-# ./gradlew integrate -Psource=cowpea-genotyping --stacktrace
 
 # ## ontologies
 # ./gradlew integrate -Psource=so --stacktrace
@@ -47,6 +47,6 @@ echo "##########################################################################
 # ./gradlew integrate -Psource=cowpea-linkagegroups --stacktrace
 # ./gradlew integrate -Psource=cowpea-markers-linkagegroups --stacktrace
 # ./gradlew integrate -Psource=cowpea-qtls --stacktrace
-./gradlew integrate -Psource=cowpea-markers-qtls --stacktrace
-./gradlew integrate -Psource=cowpea-qtl-trait-ontology --stacktrace
-./gradlew integrate -Psource=cowpea-qtl-crop-ontology --stacktrace
+# ./gradlew integrate -Psource=cowpea-markers-qtls --stacktrace
+# ./gradlew integrate -Psource=cowpea-qtl-trait-ontology --stacktrace
+# ./gradlew integrate -Psource=cowpea-qtl-crop-ontology --stacktrace
