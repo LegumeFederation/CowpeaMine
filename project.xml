@@ -19,8 +19,8 @@
     <!-- chado proteins -->
     <source name="lis-proteins" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="lis-chado"/>
-      <property name="organisms" value="3885"/>
-      <property name="strains" value="G19833"/>
+      <property name="organisms" value="3920"/>
+      <property name="strains" value="IT97K-499-35"/>
       <property name="dataSetTitle" value="LIS chado protein data"/>
       <property name="dataSourceName" value="LIS chado database"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
@@ -66,8 +66,8 @@
     <source name="lis-reactome-file" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="lis-chado"/>
       <property name="reactome.filename" value="/home/shokin/legfed-intermine-data/plant-reactome/gene_ids_by_pathway_and_species.tab"/>
-      <property name="organisms" value="3885"/>
-      <property name="strains" value="G19833"/>
+      <property name="organisms" value="3920"/>
+      <property name="strains" value="IT97K-499-35"/>
       <property name="dataSetTitle" value="LIS protein data + plant reactome"/>
       <property name="dataSourceName" value="LIS chado database"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>

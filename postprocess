@@ -14,7 +14,7 @@ echo "##########################################################################
 ./gradlew postprocess -Pprocess=legfed-create-intron-features
 ./gradlew postprocess -Pprocess=legfed-create-ontology-parent-annotations
 ./gradlew postprocess -Pprocess=legfed-create-exon-gene-references
-./gradlew postprocess -Pprocess=legfed-create-protein-gene-references
+# ./gradlew postprocess -Pprocess=legfed-create-protein-gene-references
 ./gradlew postprocess -Pprocess=legfed-create-qtl-linkagegroup-references
 ./gradlew postprocess -Pprocess=legfed-create-supercontig-flanking-regions
 ./gradlew postprocess -Pprocess=legfed-populate-gene-spanning-qtls

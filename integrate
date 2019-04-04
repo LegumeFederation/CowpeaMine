@@ -30,6 +30,7 @@ echo "##########################################################################
 # ## ALL of the chado loaders must be DONE before continuing, because identifiers are changed by SQL below --
 # ##---------------------------------------------------------------------------------------------------------
 
+# ## SQL updates
 # ./gradlew generateUpdateTriggers
 # psql cowpeamine-dev -f dbmodel/build/resources/main/add-update-triggers.sql
 # psql cowpeamine-dev -f ../legfed-intermine-sql/cleanup-chado-bugs.sql
