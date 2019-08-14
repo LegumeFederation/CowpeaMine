@@ -51,6 +51,9 @@ subprojects {
     // https://mvnrepository.com/artifact/org.postgresql/postgresql
     compile group: 'org.postgresql', name: 'postgresql', version: '42.2.2'
 
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/fluent-hc
+    compile group: 'org.apache.httpcomponents', name: 'fluent-hc', version: '4.5.8'
+
     // https://mvnrepository.com/artifact/org.intermine/bluegenes
     // compile group: 'org.intermine', name: 'bluegenes', version: '0.9.9'
 
