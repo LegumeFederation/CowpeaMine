@@ -2,11 +2,11 @@
 
 <!-- used by the fasta... buttons on object details pages -->
 <action path="/sequenceExporter"
-  type="org.intermine.bio.web.struts.SequenceExportAction" />
+  type="org.ncgr.intermine.bio.web.struts.SequenceExportAction" />
 
 <!-- used by the blast... buttons on object details pages -->
 <action path="/sequenceBlaster"
-  type="org.intermine.bio.web.struts.SequenceBlastAction" />
+  type="org.ncgr.intermine.bio.web.struts.SequenceBlastAction" />
 
 <action path="/initSequenceExportOptions"
         type="org.intermine.bio.web.struts.SequenceExportOptionsController"/>
