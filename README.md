@@ -1,2 +1,2 @@
 # CowpeaMine
-A mine with cowpea genetic data (adding genomic in the future)
+A mine with cowpea genomic data loaded from the LIS datastore

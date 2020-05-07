@@ -1,44 +1,41 @@
 #!/bin/sh
-
-## clear the logs (quietly)
-rm -f intermine.log
+rm -f *.log
 
 ## echo a big marker so we can see when this run started in the scroll
+echo ""
+echo "##################################################################################################"
 echo "##################################################################################################"
 echo "##################################### postprocess ################################################"
 echo "##################################################################################################"
+echo "##################################################################################################"
+echo ""
 
-## legfed
-./gradlew postprocess -Pprocess=legfed-create-gene-flanking-regions
-./gradlew postprocess -Pprocess=legfed-create-go-annotations
-./gradlew postprocess -Pprocess=legfed-create-intron-features
-./gradlew postprocess -Pprocess=legfed-create-ontology-parent-annotations
-./gradlew postprocess -Pprocess=legfed-create-exon-gene-references
-# ./gradlew postprocess -Pprocess=legfed-create-protein-gene-references
-./gradlew postprocess -Pprocess=legfed-create-qtl-linkagegroup-references
-./gradlew postprocess -Pprocess=legfed-create-supercontig-flanking-regions
-./gradlew postprocess -Pprocess=legfed-populate-gene-spanning-qtls
-./gradlew postprocess -Pprocess=legfed-populate-interpro-data
-./gradlew postprocess -Pprocess=legfed-populate-linkagegroup-lengths
-./gradlew postprocess -Pprocess=legfed-populate-publications
+# ## IM CORE
+# ./gradlew postprocess -Pprocess=do-sources
+# ./gradlew postprocess -Pprocess=create-utr-references
+# ./gradlew postprocess -Pprocess=create-references
+# ./gradlew postprocess -Pprocess=make-spanning-locations
+# ./gradlew postprocess -Pprocess=create-chromosome-locations-and-lengths
+# ./gradlew postprocess -Pprocess=create-intergenic-region-features
+# ./gradlew postprocess -Pprocess=transfer-sequences
+# ./gradlew postprocess -Pprocess=populate-child-features
+# ./gradlew postprocess -Pprocess=create-gene-flanking-features
 
-## more features
-./gradlew postprocess -Pprocess=create-intergenic-region-features
+# ## LIS
+# ./gradlew postprocess -Pprocess=lis-create-cds-gene-references
+# ./gradlew postprocess -Pprocess=lis-create-cds-protein-references
+# ./gradlew postprocess -Pprocess=lis-create-cds-transcript-references
+# ./gradlew postprocess -Pprocess=lis-create-gene-protein-collections
+# ./gradlew postprocess -Pprocess=lis-create-transcript-gene-references
+# ./gradlew postprocess -Pprocess=lis-create-transcript-protein-references
+# ./gradlew postprocess -Pprocess=lis-populate-publications
 
-## create various references and collections
-./gradlew postprocess -Pprocess=populate-child-features
-./gradlew postprocess -Pprocess=create-references
-./gradlew postprocess -Pprocess=create-chromosome-locations-and-lengths
-./gradlew postprocess -Pprocess=transfer-sequences
+# ## VIEWS AND INDEXES
+# ./gradlew postprocess -Pprocess=create-location-overlap-index
+# ./gradlew postprocess -Pprocess=create-overlap-view
+# ./gradlew postprocess -Pprocess=create-attribute-indexes
 
-## views and indexes, after all data is set
-./gradlew postprocess -Pprocess=create-location-overlap-index
-./gradlew postprocess -Pprocess=create-overlap-view
-
-## these must be run after any data is changed
-./gradlew postprocess -Pprocess=create-attribute-indexes
-./gradlew postprocess -Pprocess=summarise-objectstore
-
-## and these require Solr
-./gradlew postprocess -Pprocess=create-autocomplete-index
-./gradlew postprocess -Pprocess=create-search-index
+# ## DO THESE AFTER UPDATES
+# ./gradlew postprocess -Pprocess=summarise-objectstore
+# ./gradlew postprocess -Pprocess=create-autocomplete-index
+# ./gradlew postprocess -Pprocess=create-search-index
