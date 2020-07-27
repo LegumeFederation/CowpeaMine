@@ -1741,3 +1741,25 @@ div.bottom-footer ul.footer-links li { display:block; float:left; margin:0; }
 div.bottom-footer ul.footer-links li:not(:last-child) { margin-right:5px; }
 div.bottom-footer ul.footer-links li:not(:last-child):after { content:'|'; color:#E2E1E6; display:block; float:right; margin-left:5px; }
 div.bottom-footer ul.footer-links li a { text-decoration:none; text-transform:capitalize; }
+
+/* Dynamic dataCategories.jsp */
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.grid-item {
+    border: 1px solid gray;
+    padding: 5px;
+    text-align: left;
+}
+.grid-item-link {
+    border: 1px solid gray;
+    width: 60px;
+    padding: 5px;
+    text-align:center;
+}
+.dataSource {
+    font-size: 125%;
+    padding-top: 5px;
+    font-weight: bold;
+}
