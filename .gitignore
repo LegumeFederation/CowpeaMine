@@ -2,5 +2,6 @@
 *.log
 .gradle
 build
-/webapp/src/main/java/
-/webapp/src/main/webapp/model/
+webapp/src/main/java/
+webapp/src/main/webapp/model/
+libs

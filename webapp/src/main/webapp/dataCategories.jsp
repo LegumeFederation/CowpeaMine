@@ -68,11 +68,11 @@ for (Integer sourceId : sourceIdsNames.keySet()) {
 	List<String> setNames = sourcesSetNames.get(sourceId);
     %>
   <div class="dataSource"><%=sourceName%></div>
-  <div class="grid-container">
+  <div class="dataSet-row">
     <% for (String setName : setNames) { %>
-    <div class="grid-item"><%=setDescriptions.get(setName)%></div>
-    <div class="grid-item"><%=setName%></div>
-    <div class="grid-item-link">
+    <div class="dataSet-description"><%=setDescriptions.get(setName)%></div>
+    <div class="dataSet-name"><%=setName%></div>
+    <div class="dataSet-link">
       <% if (setUrls.get(setName)!=null) { %>
       <a target="_blank" href="<%=setUrls.get(setName)%>">LINK</a>
       <% } %>
