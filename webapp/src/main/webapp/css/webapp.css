@@ -362,7 +362,7 @@ ul#submenulist li span {
 
 .contactButton {
     clear: both;
-    padding: 4px;
+    padding: 10px;
     background-color: white;
     text-align: center;
     font-size: 13px;
@@ -1091,17 +1091,6 @@ div.heading.results #tool_bar_div ul#button_bar li {
 }
 
 /* footer */
-#funding-footer p {
-    color: #4D5154;
-    font-family: "Lucida Grande", Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-#funding-footer img {
-    padding-left: 6px;
-    vertical-align: middle;
-}
 
 /* template input h2 */
 h2.templateTitle img {
@@ -1693,9 +1682,6 @@ div.bagDetails-page div.widget { width:460px; height:auto; max-height:none !impo
   box-sizing: border-box;
   padding: 0.5em;
 }
-.funding-footer p {
-  margin: 0.5em;
-}
 #promo-footer .powered-footer, #promo-footer .android-footer {
   width: 20%
 }
@@ -1732,20 +1718,6 @@ background:rgba(255,255,255,0.9)}
 
 .android p {
 width:90%;}
-
-.funding-footer .cite { text-align:justify; }
-
-
-div.bottom-footer { margin:0 auto; width:940px; margin-top:20px; }
-div.bottom-footer a.cambridge-logo { float:right; }
-
-div.bottom-footer ul.footer-links,
-div.bottom-footer p.footer-copy { list-style-type:none; display:block; float:left; width:450px; font-size:11px; margin:0;
-        margin-bottom:10px; }
-div.bottom-footer ul.footer-links li { display:block; float:left; margin:0; }
-div.bottom-footer ul.footer-links li:not(:last-child) { margin-right:5px; }
-div.bottom-footer ul.footer-links li:not(:last-child):after { content:'|'; color:#E2E1E6; display:block; float:right; margin-left:5px; }
-div.bottom-footer ul.footer-links li a { text-decoration:none; text-transform:capitalize; }
 
 /* Dynamic dataCategories.jsp */
 .dataSource {

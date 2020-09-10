@@ -2,7 +2,7 @@
 
 <!-- used by the fasta... buttons on object details pages -->
 <action path="/sequenceExporter"
-  type="org.ncgr.intermine.bio.web.struts.SequenceExportAction" />
+  type="org.intermine.bio.web.struts.SequenceExportAction" />
 
 <!-- used by the blast... buttons on object details pages -->
 <action path="/sequenceBlaster"

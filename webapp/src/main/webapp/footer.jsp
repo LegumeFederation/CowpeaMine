@@ -7,77 +7,61 @@
 
 <div class="body" align="center" style="clear:both">
 
-    <!-- contact form removed, can't send email -->
-
-    <!-- funding -->
-    <div id="funding-footer">
-        <fmt:message key="funding" />
-        <table>
-            <tr>
-                <td><a target="_new" href="https://usda.gov/" title="USDA"><img style="border:0" src="model/images/USDA-92x67.png"/></a></td>
-                <td>
-                    The <a  target="_new" href="https://legumeinfo.org/">Legume Information System (LIS)</a> is a research project of the <br/>
-                    <a target="_new" href="https://www.ars.usda.gov/midwest-area/ames/cicgru/" title="USDA-ARS">USDA-ARS:Corn Insects and Crop Genetics Research</a>
-                    in Ames, IA.
-                </td>
-                <td><a target="_new" href="https://nsf.gov/" title="NSF"><img style="border:0" src="model/images/nsf1.png"/></a></td>
-                <td>
-                    Mine development is also supported by the <a  target="_new" href="https://legumefederation.org/">Legume Federation</a>, <br/>
-                    an <a target="_new" href="https://nsf.gov/">NSF</a> project to federate legume resources around the world.
-                </td>
-            </tr>
-        </table>
-        <table>
-            <tr>
-                <td>
-                    <!-- LegFed member -->
-                    <a target="_new" href="https://legumefederation.org/" title="Legume Federation"><img src="https://mines.legumeinfo.org/legfed-member.png"/></a>
-                </td>
-                <td>
-                    <!-- powered -->
-                    Powered by <a target="new" href="http://intermine.org/" title="InterMine"><img src="images/icons/intermine-footer-logo.png" alt="InterMine logo" /></a>
-                </td>
-            </tr>
-        </table>
+  <!-- contact -->
+  <c:if test="${pageName != 'contact'}">
+    <div id="contactFormDivButton">
+      <im:vspacer height="11" />
+      <div class="contactButton">
+        <a href="#" onclick="showContactForm();return false">
+          <b><fmt:message key="feedback.title"/></b>
+        </a>
+      </div>
     </div>
-
-</div>
-
-<!-- removed cam logo -->
-<div class="body bottom-footer">
-
-    <ul class="footer-links">
-
-        <!-- contact us form commented out - can't send email -->
-        <!-- <li><a href="#" onclick="showContactForm();return false;">Contact Us</a></li> -->
-
-        <c:set value="${WEB_PROPERTIES['header.links']}" var="headerLinks"/>
-        <!-- web properties -->
-        <c:forEach var="entry" items="${headerLinks}" varStatus="status">
-            <c:set value="header.links.${entry}" var="linkProp"/>
-            <c:choose>
-                <c:when test="${!empty WEB_PROPERTIES[linkProp]}">
-                    <li><a href="${WEB_PROPERTIES[linkProp]}">${entry}</a></li>
-                </c:when>
-                <c:otherwise>
-                    <li><a href="${WEB_PROPERTIES['project.sitePrefix']}/${entry}.shtml">${entry}</a></li>
-                </c:otherwise>
-            </c:choose>
-        </c:forEach>
-
-        <!-- LIS/LegFed mines -->
-        <li><a href="http://mines.legumeinfo.org/beanmine/begin.do" target="_blank">LIS BeanMine (common bean)</a></li>
-        <li><a href="http://mines.legumeinfo.org/chickpeamine/begin.do" target="_blank">LIS ChickpeaMine (desi and kabuli varieties)</a></li>
-        <li><a href="http://mines.legumeinfo.org/cowpeamine/begin.do" target="_blank">LIS CowpeaMine</a></li>
-        <li><a href="http://mines.legumeinfo.org/legumemine/begin.do" target="_blank">LIS LegumeMine (various legumes)</a></li>
-        <li><a href="http://mines.legumeinfo.org/peanutmine/begin.do" target="_blank">LIS PeanutMine (arachis, duranensis, hypogaea)</a></li>
-        <li><a href="http://mines.legumeinfo.org/soymine/begin.do" target="_blank">LIS SoyMine (soybean)</a></li>
-        <li><a href="http://medicmine.jcvi.org/medicmine/begin.do" target="_blank">JCVI MedicMine (Medicago)</a></li>
-        
-    </ul>
-
-    <p class="footer-copy">InterMine &copy; 2002 - 2017 Department of Genetics, University of Cambridge, Downing Street, Cambridge CB2 3EH, United Kingdom</p>
-
+    <div id="contactFormDiv" style="display:none;">
+      <im:vspacer height="11" />
+      <tiles:get name="contactForm" />
+    </div>
+  </c:if>
+  
+  <!-- logos -->
+  <div style="padding:0px;">
+    <div style="float:left; width:33%; margin:auto; height:71px; padding-top:4px;">
+      <!-- USDA-ARS -->
+      <a target="_new" href="https://usda.gov/" title="USDA"><img src="model/images/USDA-92x67.png" alt="USDA"/></a>
+    </div>
+    <div style="float:left; width:33%; margin:auto; height:73px; padding-top:2px;">
+      <!-- LegFed member -->
+      <a target="_new" href="https://legumefederation.org/" title="Legume Federation"><img src="https://mines.legumeinfo.org/legfed-member.png" alt="Legume Federation"/></a>
+    </div>
+    <div style="float:right; width:33%; margin:auto; height:50px; padding-top:25px;">
+      <!-- powered by InterMine-->
+      <a target="new" href="http://intermine.org/" title="InterMine"><img src="images/icons/intermine-footer-logo.png" alt="InterMine logo" /></a>
+    </div>
     <div style="clear:both"></div>
+  </div>
+
+  <div>
+    The <a target="_new" href="https://legumeinfo.org/">Legume Information System (LIS)</a> is a research project of the
+    <a target="_new" href="https://www.ars.usda.gov/midwest-area/ames/cicgru/" title="USDA-ARS">USDA-ARS:Corn Insects and Crop Genetics Research</a>
+    in Ames, IA.
+  </div>
+
+  <!-- LIS/LegFed mines -->
+  <div style="align:center; padding:5px;">
+    <a href="/beanmine/begin.do" target="_blank">BeanMine</a> |
+    <a href="/chickpeamine/begin.do" target="_blank">ChickpeaMine</a> |
+    <a href="/cowpeamine/begin.do" target="_blank">CowpeaMine</a> |
+    <a href="/lupinmine/begin.do" target="_blank">LupinMine</a> |    
+    <a href="/peanutmine/begin.do" target="_blank">PeanutMine</a> |
+    <a href="/soymine/begin.do" target="_blank">SoyMine</a> |
+    <a href="/medicmine/begin.do" target="_blank">MedicMine</a> |
+    <a href="/legumemine/begin.do" target="_blank">LegumeMine</a>
+  </div>
+    
+  <!-- copyright -->
+  <div>
+    InterMine &copy; 2002 - 2020 Department of Genetics, University of Cambridge, Downing Street, Cambridge CB2 3EH, United Kingdom
+  </div>
+
 </div>
 <!-- /footer.jsp -->
