@@ -5,7 +5,7 @@ rm -f *.log
 echo ""
 echo "##################################################################################################"
 echo "##################################################################################################"
-echo "##################################### postprocess ################################################"
+echo "##################################### COWPEAMINE POSTPROCESS #####################################"
 echo "##################################################################################################"
 echo "##################################################################################################"
 echo ""
@@ -28,8 +28,8 @@ echo ""
 # ./gradlew postprocess -Pprocess=lis-create-gene-protein-collections
 # ./gradlew postprocess -Pprocess=lis-create-transcript-gene-references
 # ./gradlew postprocess -Pprocess=lis-create-transcript-protein-references
-# ./gradlew postprocess -Pprocess=lis-create-qtl-gene-collections
 # ./gradlew postprocess -Pprocess=lis-populate-publications
+# ./gradlew postprocess -Pprocess=lis-populate-protein-pathway-collections
 
 # ## VIEWS AND INDEXES
 # ./gradlew postprocess -Pprocess=create-location-overlap-index
@@ -40,3 +40,4 @@ echo ""
 ./gradlew postprocess -Pprocess=summarise-objectstore
 ./gradlew postprocess -Pprocess=create-autocomplete-index
 ./gradlew postprocess -Pprocess=create-search-index
+
