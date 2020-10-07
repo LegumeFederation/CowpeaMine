@@ -1,5 +1,3 @@
 #!/bin/sh
-
-## quietly remove log
-rm -rf intermine.log
+./gradlew clean
 ./gradlew cargoRedeployRemote --stacktrace
