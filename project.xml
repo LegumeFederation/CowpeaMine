@@ -62,7 +62,7 @@
     <!-- mixed.gwas.02X4/ -->
     <!-- ├── vigun.mixed.gwas.02X4.31367839.gwas.tsv -->
     <!-- └── vigun.mixed.gwas.02X4.31367839.phen.tsv -->
-    <source name="vigun.mixed.gwas" type="lis-gwas" dump="true">
+    <source name="vigun.mixed-gwas" type="lis-gwas" dump="true">
       <property name="dataSetUrl" value="https://legumeinfo.org/data/public/Vigna_unguiculata/mixed.gwas.02X4/"/>
       <property name="dataSetDescription" value="Vigna unguiculata GWAS for seed size and weight from Lo, et al. 2019"/>
       <property name="src.data.dir" location="/data/LIS/Vigna_unguiculata/mixed.gwas.02X4"/>
@@ -133,7 +133,7 @@
       <property name="lis-fasta.includes" value="vigun.IT97K-499-35.gnm1.ann1.zb5D.protein_primaryTranscript.faa"/>
       <property name="src.data.dir" location="/data/LIS/Vigna_unguiculata/IT97K-499-35.gnm1.ann1.zb5D"/>
     </source>
-    <source name="vigun.IT97K-499-35.gnm1.ann1-transcript-fasta" type="lis-fasta" dump="true">
+    <source name="vigun.IT97K-499-35.gnm1.ann1-mrna-fasta" type="lis-fasta" dump="true">
       <property name="lis-fasta.dataSetDescription" value="Protein models for the vigun.IT97K-499-35.gnm1 genome"/>
       <property name="lis-fasta.dataSetVersion" value="gnm1.ann1"/>
       <property name="lis-fasta.dataSetUrl" value="https://legumeinfo.org/data/public/Vigna_unguiculata/IT97K-499-35.gnm1.ann1.zb5D/"/>

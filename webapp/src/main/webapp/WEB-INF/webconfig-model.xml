@@ -7,46 +7,55 @@
     </fields>
   </class>
 
+  <class className="org.intermine.model.bio.Annotatable">
+    <fieldconfig fieldExpr="primaryIdentifier" label="LIS identifier"/>
+  </class>
+
   <class className="org.intermine.model.bio.BioEntity">
     <headerconfig>
       <titles>
-        <title mainTitles="secondaryIdentifier|symbol|primaryIdentifier" numberOfMainTitlesToShow="1" subTitles="*organism.shortName*" />
-      </titles>
+        <title mainTitles="secondaryIdentifier|primaryIdentifier" numberOfMainTitlesToShow="1" subTitles="*organism.shortName*|strain.identifier" />
+       </titles>
     </headerconfig>
     <fields>
-      <fieldconfig fieldExpr="secondaryIdentifier" label="Name"/>
       <fieldconfig fieldExpr="primaryIdentifier" label="LIS identifier"/>
+      <fieldconfig fieldExpr="secondaryIdentifier" label="ALT identifier"/>
+      <fieldconfig fieldExpr="name" label="Name"/>
+      <fieldconfig fieldExpr="organism.name" label="Organism" />
+      <fieldconfig fieldExpr="strain.identifier" label="Strain" />
     </fields>
   </class>
 
   <class className="org.intermine.model.bio.SequenceFeature">
     <fields>
-      <fieldconfig fieldExpr="secondaryIdentifier" label="Name"/>
       <fieldconfig fieldExpr="primaryIdentifier" label="LIS identifier"/>
-      <fieldconfig fieldExpr="organism.name" label="Organism"/>
-      <fieldconfig fieldExpr="strain.identifier" label="Strain"/>
-      <fieldconfig fieldExpr="chromosome.secondaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Chr" />
-      <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="true" showInSummary="false" label="Start" />
-      <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="true" showInSummary="false" label="End" />
+      <fieldconfig fieldExpr="secondaryIdentifier" label="ALT identifier"/>
+      <fieldconfig fieldExpr="name" label="Name"/>
+      <fieldconfig fieldExpr="organism.name" label="Organism" />
+      <fieldconfig fieldExpr="strain.identifier" label="Strain" />
+      <fieldconfig fieldExpr="assemblyVersion" label="Assembly" />
+      <fieldconfig fieldExpr="annotationVersion" label="Annotation" />
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" showInInlineCollection="true" showInSummary="true" />
     </fields>
   </class>
 
   <class className="org.intermine.model.bio.Chromosome">
     <fields>
-      <fieldconfig fieldExpr="secondaryIdentifier" label="Name"/>
       <fieldconfig fieldExpr="primaryIdentifier" label="LIS identifier"/>
+      <fieldconfig fieldExpr="secondaryIdentifier" label="ALT identifier"/>
       <fieldconfig fieldExpr="organism.name" label="Organism"/>
       <fieldconfig fieldExpr="strain.identifier" label="Strain"/>
+      <fieldconfig fieldExpr="assemblyVersion" label="Assembly"/>
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
     </fields>
   </class>
   <class className="org.intermine.model.bio.Supercontig">
     <fields>
-      <fieldconfig fieldExpr="secondaryIdentifier" label="Name"/>
       <fieldconfig fieldExpr="primaryIdentifier" label="LIS identifier"/>
+      <fieldconfig fieldExpr="secondaryIdentifier" label="ALT identifier"/>
       <fieldconfig fieldExpr="organism.name" label="Organism"/>
       <fieldconfig fieldExpr="strain.identifier" label="Strain"/>
+      <fieldconfig fieldExpr="assemblyVersion" label="Assembly"/>
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
     </fields>
   </class>
@@ -68,6 +77,7 @@
       <fieldconfig fieldExpr="name"/>
       <fieldconfig fieldExpr="url" doNotTruncate="true"/>
       <fieldconfig fieldExpr="description"/>
+      <fieldconfig fieldExpr="licence"/>
       <fieldconfig fieldExpr="dataSource.name" label="DataSource"/>
     </fields>
   </class>
@@ -96,72 +106,54 @@
     </fields>
   </class>
 
-  <!-- have to have a Gene entry for the list analysis heat map -->
+  <!-- has bagdisplayer and widgets -->
   <class className="org.intermine.model.bio.Gene">
     <fields>
-      <fieldconfig fieldExpr="secondaryIdentifier" label="Name"/>
-      <fieldconfig fieldExpr="primaryIdentifier" label="LIS identifier" />
+      <fieldconfig fieldExpr="primaryIdentifier" label="LIS identifier"/>
+      <fieldconfig fieldExpr="secondaryIdentifier" label="ALT identifier"/>
+      <fieldconfig fieldExpr="name" label="Name"/>
       <fieldconfig fieldExpr="organism.name" label="Organism" />
       <fieldconfig fieldExpr="strain.identifier" label="Strain" />
-      <fieldconfig fieldExpr="chromosome.secondaryIdentifier" label="Chr"/>
-      <fieldconfig fieldExpr="chromosomeLocation.strand" label="Strand" />
-      <fieldconfig fieldExpr="chromosomeLocation.start" label="Start" />
-      <fieldconfig fieldExpr="chromosomeLocation.end" label="End" />
+      <fieldconfig fieldExpr="assemblyVersion" label="Assembly" />
+      <fieldconfig fieldExpr="annotationVersion" label="Annotation" />
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" showInInlineCollection="true" showInSummary="true" />
-      <fieldconfig fieldExpr="description" doNotTruncate="true" label="Description" />
+      <fieldconfig fieldExpr="description" label="Description" doNotTruncate="true" />
+      <fieldconfig fieldExpr="geneFamilyScore" label="Gene family score"/>
+      <fieldconfig fieldExpr="geneFamily.description" label="Gene family"/>
     </fields>
     <bagdisplayers>
       <displayer src="heatMap.tile" showOnLeft="true" />
     </bagdisplayers>
   </class>
 
+  <!-- extends SequenceFeature; needed for bagdisplayer -->
   <class className="org.intermine.model.bio.GeneFlankingRegion">
     <fields>
-      <fieldconfig fieldExpr="organism.name" label="Organism"/>
-      <fieldconfig fieldExpr="strain.identifier" label="Strain"/>
       <fieldconfig fieldExpr="primaryIdentifier" label="LIS identifier"/>
-      <fieldconfig fieldExpr="gene.secondaryIdentifier" label="Gene"/>
+      <fieldconfig fieldExpr="organism.name" label="Organism" />
+      <fieldconfig fieldExpr="strain.identifier" label="Strain" />
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" showInInlineCollection="true" showInSummary="true" />
-      <fieldconfig fieldExpr="chromosome.secondaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Chr" />
-      <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="true" showInSummary="false" label="Start" />
-      <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="true" showInSummary="false" label="End" />
+      <fieldconfig fieldExpr="direction" label="Direction" />
+      <fieldconfig fieldExpr="distance" label="Distance" />
     </fields>
     <bagdisplayers>
       <displayer src="motifSearch.tile" showOnLeft="true"/>
     </bagdisplayers>
   </class>
 
-  <class className="org.intermine.model.bio.IntergenicRegion">
-    <fields>
-      <fieldconfig fieldExpr="organism.name" label="Organism"/>
-      <fieldconfig fieldExpr="strain.identifier" label="Strain"/>
-      <fieldconfig fieldExpr="primaryIdentifier" label="LIS identifier"/>
-      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" showInInlineCollection="true" showInSummary="true" />
-      <fieldconfig fieldExpr="chromosome.secondaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Chr" />
-      <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="true" showInSummary="false" label="Start" />
-      <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="true" showInSummary="false" label="End" />
-    </fields>
-  </class>
-
+  <!-- extends BioEntity -->
   <class className="org.intermine.model.bio.Protein">
     <fields>
-      <fieldconfig fieldExpr="secondaryIdentifier" label="Name"/>
-      <fieldconfig fieldExpr="geneFamily.description" label="Gene family"/>
       <fieldconfig fieldExpr="primaryIdentifier" label="LIS identifier"/>
+      <fieldconfig fieldExpr="secondaryIdentifier" label="ALT identifier"/>
+      <fieldconfig fieldExpr="name" label="Name"/>
+      <fieldconfig fieldExpr="organism.name" label="Organism" />
+      <fieldconfig fieldExpr="strain.identifier" label="Strain" />
       <fieldconfig fieldExpr="description" label="Description"/>
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
-    </fields>
-  </class>
-
-  <class className="org.intermine.model.bio.ProteinDomain">
-    <headerconfig>
-      <titles>
-        <title mainTitles="primaryIdentifier|name" subTitles="ontology.name" />
-      </titles>
-    </headerconfig>
-    <fields>
-      <fieldconfig fieldExpr="primaryIdentifier" label="identifier"/>
-      <fieldconfig fieldExpr="name" label="Name"/>
+      <fieldconfig fieldExpr="assemblyVersion" label="Assembly" />
+      <fieldconfig fieldExpr="annotationVersion" label="Annotation" />
+      <fieldconfig fieldExpr="geneFamily.description" label="Gene family"/>
     </fields>
   </class>
 
@@ -174,8 +166,8 @@
   <class className="org.intermine.model.bio.OntologyAnnotation">
     <fields>
       <fieldconfig fieldExpr="subject.primaryIdentifier" label="Subject"/>
-      <fieldconfig fieldExpr="ontologyTerm.identifier" label="Identifier"/>
-      <fieldconfig fieldExpr="ontologyTerm.name" label="Name"/>
+      <fieldconfig fieldExpr="ontologyTerm.name" label="Term"/>
+      <fieldconfig fieldExpr="ontologyTerm.identifier" label="Term Identifier"/>
       <fieldconfig fieldExpr="ontologyTerm.description" label="Description"/>
     </fields>
   </class>
@@ -204,13 +196,9 @@
   </class>
 
   <class className="org.intermine.model.bio.OntologyTermSynonym">
-    <headerconfig>
-      <titles>
-        <title mainTitles="name"/>
-      </titles>
-    </headerconfig>
     <fields>
       <fieldconfig fieldExpr="name"/>
+      <fieldconfig fieldExpr="type"/>
     </fields>
   </class>
 
@@ -221,7 +209,8 @@
       </titles>
     </headerconfig>
     <fields>
-      <fieldconfig fieldExpr="name"/>
+      <fieldconfig fieldExpr="name" />
+      <fieldconfig fieldExpr="abbreviation" />
       <fieldconfig fieldExpr="taxonId" />
       <fieldconfig fieldExpr="description" doNotTruncate="true" />
     </fields>
@@ -278,42 +267,6 @@
     </fields>
   </class>
 
-  <class className="org.intermine.model.bio.Transcript">
-    <fields>
-      <fieldconfig fieldExpr="organism.name" label="Organism"/>
-      <fieldconfig fieldExpr="secondaryIdentifier" label="Name"/>
-      <fieldconfig fieldExpr="primaryIdentifier" label="LIS identifier"/>
-      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
-      <fieldconfig fieldExpr="chromosome.secondaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Chr" />
-    </fields>
-  </class>
-
-  <class className="org.intermine.model.bio.GeneticMarker">
-    <headerconfig>
-      <titles>
-        <title mainTitles="secondaryIdentifier" numberOfMainTitlesToShow="1" />
-      </titles>
-    </headerconfig>
-    <fields>
-      <fieldconfig fieldExpr="secondaryIdentifier" label="Identifier"/>
-      <fieldconfig fieldExpr="primaryIdentifier" label="LIS Identifier"/>
-      <fieldconfig fieldExpr="symbol" label="Symbol"/>
-      <fieldconfig fieldExpr="type" label="Type"/>
-      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
-      <fieldconfig fieldExpr="chromosome.secondaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Chr" />
-      <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="true" showInSummary="false" label="Start" />
-      <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="true" showInSummary="false" label="End" />
-    </fields>
-  </class>
-
-  <class className="org.intermine.model.bio.QTLMarker">
-    <fields>
-      <fieldconfig fieldExpr="QTL.identifier" label="QTL"/>
-      <fieldconfig fieldExpr="marker.secondaryIdentifier" label="Marker"/>
-      <fieldconfig fieldExpr="distinction"/>
-    </fields>
-  </class>
-
   <class className="org.intermine.model.bio.GeneFamily">
     <headerconfig>
       <titles>
@@ -321,94 +274,8 @@
       </titles>
     </headerconfig>
     <fields>
-      <fieldconfig fieldExpr="identifier" label="LIS identifier"/>
       <fieldconfig fieldExpr="description" label="Description"/>
-    </fields>
-  </class>
-
-  <class className="org.intermine.model.bio.QTLExperiment">
-    <headerconfig>
-      <titles>
-        <title mainTitles="name" numberOfMainTitlesToShow="1" />
-      </titles>
-    </headerconfig>
-    <fields>
-      <fieldconfig fieldExpr="name" label="Name"/>
-      <fieldconfig fieldExpr="primaryIdentifier" label="Identifier"/>
-    </fields>
-  </class>
-
-  <class className="org.intermine.model.bio.QTL">
-    <headerconfig>
-      <titles>
-        <title mainTitles="identifier" numberOfMainTitlesToShow="1" />
-      </titles>
-    </headerconfig>
-    <fields>
-      <fieldconfig fieldExpr="identifier" label="Identifier"/>
-      <fieldconfig fieldExpr="phenotype.primaryIdentifier" label="Phenotype"/>
-      <fieldconfig fieldExpr="geneticMap.primaryIdentifier" label="Genetic Map"/>
-      <fieldconfig fieldExpr="experiment.primaryIdentifier" label="Experiment"/>
-      <fieldconfig fieldExpr="linkageGroup.identifier" label="Linkage Group"/>
-      <fieldconfig fieldExpr="start" label="Start"/>
-      <fieldconfig fieldExpr="end" label="End"/>
-    </fields>
-  </class>
-
-
-  <class className="org.intermine.model.bio.LinkageGroup">
-    <headerconfig>
-      <titles>
-        <title mainTitles="identifier" numberOfMainTitlesToShow="1" />
-      </titles>
-    </headerconfig>
-    <fields>
       <fieldconfig fieldExpr="identifier" label="LIS identifier"/>
-      <fieldconfig fieldExpr="length" label="Length (cM)" />
-      <fieldconfig fieldExpr="geneticMap.primaryIdentifier" label="Genetic Map"/>
-    </fields>
-    <bagdisplayers>
-      <displayer src="linkageGroupDiagram.tile" showOnLeft="true"/>
-    </bagdisplayers>
-  </class>
-
-  <!-- <class className="org.intermine.model.bio.LinkageGroupPosition"> -->
-  <!--   <fields> -->
-  <!--     <fieldconfig fieldExpr="position" label="Position (cM)"/> -->
-  <!--     <fieldconfig fieldExpr="linkageGroup.primaryIdentifier" label="Linkage Group"/> -->
-  <!--   </fields> -->
-  <!-- </class> -->
-
-  <!-- <class className="org.intermine.model.bio.LinkageGroupRange"> -->
-  <!--   <fields> -->
-  <!--     <fieldconfig fieldExpr="begin" label="Begin (cM)"/> -->
-  <!--     <fieldconfig fieldExpr="end" label="End (cM)"/> -->
-  <!--     <fieldconfig fieldExpr="length" label="Length (cM)"/> -->
-  <!--     <fieldconfig fieldExpr="linkageGroup.primaryIdentifier" label="Linkage Group"/> -->
-  <!--   </fields> -->
-  <!-- </class> -->
-
-  <!-- <class className="org.intermine.model.bio.MappingPopulation"> -->
-  <!--   <headerconfig> -->
-  <!--     <titles> -->
-  <!--       <title mainTitles="primaryIdentifier" numberOfMainTitlesToShow="1" /> -->
-  <!--     </titles> -->
-  <!--   </headerconfig> -->
-  <!--   <fields> -->
-  <!--     <fieldconfig fieldExpr="primaryIdentifier" label="Name"/> -->
-  <!--     <fieldconfig fieldExpr="description" label="Description" doNotTruncate="true"/> -->
-  <!--   </fields> -->
-  <!-- </class> -->
-
-  <class className="org.intermine.model.bio.GeneticMap">
-    <headerconfig>
-      <titles>
-        <title mainTitles="primaryIdentifier" numberOfMainTitlesToShow="1" />
-      </titles>
-    </headerconfig>
-    <fields>
-      <fieldconfig fieldExpr="primaryIdentifier" label="Name"/>
-      <fieldconfig fieldExpr="description"/>
     </fields>
   </class>
 
@@ -424,7 +291,57 @@
     </fields>
   </class>
 
-    <class className="org.intermine.model.bio.ExpressionSource">
+  <!-- ============================================================================================== -->
+
+  <class className="org.intermine.model.bio.LinkageGroup">
+    <headerconfig>
+      <titles>
+        <title mainTitles="identifier" numberOfMainTitlesToShow="1" />
+      </titles>
+    </headerconfig>
+    <fields>
+      <fieldconfig fieldExpr="identifier" label="Identifier"/>
+      <fieldconfig fieldExpr="length" label="Length (cM)" />
+    </fields>
+    <bagdisplayers>
+      <displayer src="linkageGroupDiagram.tile" showOnLeft="true"/>
+    </bagdisplayers>
+  </class>
+
+  <class className="org.intermine.model.bio.LinkageGroupPosition">
+    <fields>
+      <fieldconfig fieldExpr="position" label="Position (cM)"/>
+      <fieldconfig fieldExpr="linkageGroup.identifier" label="Linkage Group"/>
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.GeneticMap">
+    <headerconfig>
+      <titles>
+        <title mainTitles="primaryIdentifier" numberOfMainTitlesToShow="1" />
+      </titles>
+    </headerconfig>
+    <fields>
+      <fieldconfig fieldExpr="primaryIdentifier" label="LIS identifier" />
+      <fieldconfig fieldExpr="description" label="Description" />
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.QTL">
+    <headerconfig>
+      <titles>
+        <title mainTitles="identifier" numberOfMainTitlesToShow="1" subTitles="*organism.name*" />
+      </titles>
+    </headerconfig>
+    <fields>
+      <fieldconfig fieldExpr="identifier" label="Identifier"/>
+      <fieldconfig fieldExpr="phenotype.primaryIdentifier" label="Phenotype"/>
+      <fieldconfig fieldExpr="linkageGroup.identifier" label="Linkage Group"/>
+      <fieldconfig fieldExpr="geneticMap.primaryIdentifier" label="Genetic Map"/>
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.ExpressionSource">
     <headerconfig>
       <titles>
         <title mainTitles="identifier" numberofMainTitlesToShow="1" />
@@ -433,8 +350,8 @@
     <fields>
       <fieldconfig fieldExpr="identifier" label="Name"/>
       <fieldconfig fieldExpr="geoSeries" label="NCBI GEO Accession"/>
-      <fieldconfig fieldExpr="bioProject.accession" label="NCBI BioProject Accession"/>
-      <fieldconfig fieldExpr="sra" label="NCBI SRA Accession"/>
+      <fieldconfig fieldExpr="bioProject.accession" label="NCBI BioProject"/>
+      <fieldconfig fieldExpr="sra" label="NCBI SRA"/>
     </fields>
   </class>
 
@@ -445,17 +362,18 @@
       </titles>
     </headerconfig>
     <fields>
-      <fieldconfig fieldExpr="primaryIdentifier" label="Identifier"/>
+      <fieldconfig fieldExpr="primaryIdentifier" label="LIS Identifier"/>
       <fieldconfig fieldExpr="name" label="Name"/>
       <fieldconfig fieldExpr="description" label="Description"/>
+      <fieldconfig fieldExpr="bioSample" label="NCBI BioSample"/>
     </fields>
   </class>
 
   <class className="org.intermine.model.bio.ExpressionValue">
     <fields>
       <fieldconfig fieldExpr="expressionSample.source.identifier" label="Source"/>
-      <fieldconfig fieldExpr="expressionSample.primaryIdentifier" label="Sample"/>
-      <fieldconfig fieldExpr="expressionSample.description" label="Description"/>
+      <fieldconfig fieldExpr="expressionSample.primaryIdentifier" label="Sample ID"/>
+      <fieldconfig fieldExpr="expressionSample.description" label="Sample Description"/>
       <fieldconfig fieldExpr="value" label="Value"/>
       <fieldconfig fieldExpr="unit" label="Unit"/>
     </fields>
@@ -468,9 +386,10 @@
       </titles>
     </headerconfig>
     <fields>
-      <fieldconfig fieldExpr="primaryIdentifier" label="Identifier"/>
-      <fieldconfig fieldExpr="platformName"/>
-      <fieldconfig fieldExpr="platformDetails"/>
+      <fieldconfig fieldExpr="primaryIdentifier" label="LIS Identifier"/>
+      <fieldconfig fieldExpr="name" label="Name"/>
+      <fieldconfig fieldExpr="platformName" label="Genotyping Platform"/>
+      <fieldconfig fieldExpr="platformDetails" label="Genotyping details"/>
     </fields>
   </class>
 
@@ -489,51 +408,6 @@
     </fields>
   </class>
 
-  <!-- <class className="org.intermine.model.bio.SyntenyBlock"> -->
-  <!--   <headerconfig> -->
-  <!--     <titles> -->
-  <!--       <title mainTitles="primaryIdentifier" numberofMainTitlesToShow="1" /> -->
-  <!--     </titles> -->
-  <!--   </headerconfig> -->
-  <!--   <fields> -->
-  <!--     <fieldconfig fieldExpr="primaryIdentifier" label="DB Identifier"/> -->
-  <!--     <fieldconfig fieldExpr="medianKs" label="median Ks"/> -->
-  <!--   </fields> -->
-  <!-- </class> -->
-
-  <!-- <class className="org.intermine.model.bio.SyntenicRegion"> -->
-  <!--   <fields> -->
-  <!--     <fieldconfig fieldExpr="organism.name" label="Organism"/> -->
-  <!--     <fieldconfig fieldExpr="primaryIdentifier" label="LIS identifier"/> -->
-  <!--     <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" showInInlineCollection="true" showInSummary="true" /> -->
-  <!--     <fieldconfig fieldExpr="chromosome.secondaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Chr" /> -->
-  <!--     <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="true" showInSummary="false" label="Start" /> -->
-  <!--     <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="true" showInSummary="false" label="End" /> -->
-  <!--   </fields> -->
-  <!-- </class> -->
-
-
-  <!-- <class className="org.intermine.model.bio.GenotypingStudy"> -->
-  <!--   <headerconfig> -->
-  <!--     <titles> -->
-  <!--       <title mainTitles="primaryIdentifier" numberOfMainTitlesToShow="1" /> -->
-  <!--     </titles> -->
-  <!--   </headerconfig> -->
-  <!--   <fields> -->
-  <!--     <fieldconfig fieldExpr="primaryIdentifier" label="DB Identifier" /> -->
-  <!--     <fieldconfig fieldExpr="description" doNotTruncate="true" /> -->
-  <!--     <fieldconfig fieldExpr="matrixNotes" doNotTruncate="true" /> -->
-  <!--   </fields> -->
-  <!-- </class> -->
-
-  <!-- <class className="org.intermine.model.bio.GenotypeValue"> -->
-  <!--   <headerconfig> -->
-  <!--     <titles> -->
-  <!--       <title mainTitles="marker|line|value" numberOfMainTitlesToShow="3" /> -->
-  <!--     </titles> -->
-  <!--   </headerconfig> -->
-  <!-- </class> -->
-
   <class className="org.intermine.model.bio.Phenotype">
     <headerconfig>
       <titles>
@@ -541,24 +415,11 @@
       </titles>
     </headerconfig>
     <fields>
-      <fieldconfig fieldExpr="primaryIdentifier" label="Phenotype"/>
+      <fieldconfig fieldExpr="primaryIdentifier" label="LIS Identifier"/>
     </fields>
   </class>
 
-  <!-- <class className="org.intermine.model.bio.PhenotypeValue"> -->
-  <!--   <headerconfig> -->
-  <!--     <titles> -->
-  <!--       <title mainTitles="phenotype.primaryIdentifier|line|value" numberOfMainTitlesToShow="3" /> -->
-  <!--     </titles> -->
-  <!--   </headerconfig> -->
-  <!--   <fields> -->
-  <!--     <fieldconfig fieldExpr="phenotype.primaryIdentifier" label="Phenotype"/> -->
-  <!--     <fieldconfig fieldExpr="line.primaryIdentifier" label="Line"/>  -->
-  <!--     <fieldconfig fieldExpr="numericValue"/> -->
-  <!--     <fieldconfig fieldExpr="textValue"/> -->
-  <!--     <fieldconfig fieldExpr="booleanValue"/> -->
-  <!--   </fields> -->
-  <!-- </class> -->
+  <!-- ============================================================================================== -->
 
   <!-- exporters -->
   <tableExportConfig id="sequence" className="org.intermine.bio.web.export.SequenceHttpExporter"/>
@@ -568,17 +429,17 @@
   <!-- report displayers -->
   <reportdisplayers>
 
-    <!-- this appears to be broken, but using it to avoid duplicating Ontology Annotations display for now -->
-    <!-- <reportdisplayer javaClass="org.intermine.bio.web.displayer.GeneOntologyDisplayer" -->
-    <!--                  jspName="model/geneOntologyDisplayer.jsp" -->
-    <!--                  replacesFields="ontologyAnnotations" -->
-    <!--                  placement="other" -->
-    <!--                  types="Gene"/> -->
+    <!-- custom NCGR version -->
+    <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.GeneOntologyDisplayer"
+                     jspName="model/geneOntologyDisplayer.jsp"
+                     replacesFields="ontologyAnnotations"
+                     placement="summary"
+                     types="Gene"/>
     
     <reportdisplayer javaClass="org.intermine.bio.web.displayer.GeneStructureDisplayer"
                      jspName="model/geneStructureDisplayer.jsp"
-                     replacesFields="genes,transcripts,exons,CDSs,introns,UTRs,fivePrimeUTR,threePrimeUTR"
-                     placement="Genomics"
+                     replacesFields="transcripts,exons,CDSs,introns,UTRs,fivePrimeUTR,threePrimeUTR"
+                     placement="summary"
                      types="Gene,Transcript,Exon,Intron,UTR,CDS"/>
     
     <reportdisplayer javaClass="org.intermine.bio.web.displayer.SequenceFeatureDisplayer"
@@ -593,17 +454,19 @@
                      placement="summary"
                      types="SequenceFeature"/>
 
-    <!-- <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.LinkageGroupDisplayer" -->
-    <!--                  jspName="model/linkageGroupDisplayer.jsp" -->
-    <!--                  replacesFields="QTLs,markers" -->
-    <!--                  placement="summary" -->
-    <!--                  types="LinkageGroup"/> -->
+    <!-- ============================================================================================== -->
 
-    <!-- <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.LinkageGroupDisplayer" -->
-    <!--                  jspName="model/linkageGroupDisplayer.jsp" -->
-    <!--                  replacesFields="linkageGroups" -->
-    <!--                  placement="summary" -->
-    <!--                  types="QTL"/> -->
+    <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.LinkageGroupDisplayer"
+                     jspName="model/linkageGroupDisplayer.jsp"
+                     replacesFields="QTLs,markers"
+                     placement="summary"
+                     types="LinkageGroup"/>
+
+    <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.LinkageGroupDisplayer"
+                     jspName="model/linkageGroupDisplayer.jsp"
+                     replacesFields="linkageGroups"
+                     placement="summary"
+                     types="QTL"/>
 
     <!-- <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.LinkageGroupDisplayer" -->
     <!--                  jspName="model/linkageGroupDiagram.jsp" -->
@@ -626,8 +489,8 @@
 
     <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.GeneBarchartDisplayer"
                      jspName="model/geneBarchartDisplayer.jsp"
-                     replacesFields="expressionValues"
-                     placement="Expression"
+                     replacesFields=""
+                     placement="summary"
                      types="Gene"/>
 
     <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.GWASDisplayer"
@@ -646,30 +509,32 @@
                     graphType="ColumnChart"
                     rangeLabel="Count"
                     domainLabel="Chromosome"
-                    filterLabel="Organism"
-                    filters="organism.name=[list]"
+                    filterLabel="Strain"
+                    filters="strain.identifier=[list]"
                     startClass="SequenceFeature"
                     typeClass="SequenceFeature"
                     categoryPath="chromosome.primaryIdentifier"
                     seriesLabels="Actual,Expected"
                     seriesPath="ActualExpectedCriteria"
-                    constraints="organism.name=[Organism]"
+                    constraints="strain.identifier=[Strain]"
                     views="primaryIdentifier, secondaryIdentifier, name, organism.name, chromosome.secondaryIdentifier, chromosomeLocation.start, chromosomeLocation.end, chromosomeLocation.strand" />
 
     <enrichmentwidgetdisplayer id="go_enrichment_for_gene"
                                title="Gene Ontology Enrichment"
                                description="GO terms enriched for items in this list."
                                label="GO Term"
+                               filterLabel="Namespace"
+                               filters="biological_process,cellular_component,molecular_function"
                                startClass="Gene"
                                typeClass="Gene"
                                startClassDisplay="primaryIdentifier"
                                enrich="ontologyAnnotations.ontologyTerm.name"
                                enrichIdentifier="ontologyAnnotations.ontologyTerm.identifier"
                                constraints="ontologyAnnotations.ontologyTerm.ontology.name=GO,
+                                            ontologyAnnotations.ontologyTerm.namespace=[Namespace],
                                             organism.name=[list]"
-                               views="secondaryIdentifier,symbol,primaryIdentifier,organism.name,
-                                      ontologyAnnotations.ontologyTerm.identifier, ontologyAnnotations.ontologyTerm.name,
-                                      ontologyAnnotations.ontologyTerm.parents.identifier, ontologyAnnotations.ontologyTerm.parents.name"
+                               views="secondaryIdentifier,primaryIdentifier,organism.name,
+                                      ontologyAnnotations.ontologyTerm.identifier, ontologyAnnotations.ontologyTerm.name"
                                externalLink="http://amigo.geneontology.org/amigo/term/" />
 
     <enrichmentwidgetdisplayer id="genefamily_enrichment"

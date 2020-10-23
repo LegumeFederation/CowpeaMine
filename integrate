@@ -24,123 +24,110 @@ echo ""
 ## LIS gene families
 ./gradlew integrate -Psource=lis.fam1-genefamily --stacktrace
 
-###########
-## vigun ##
-###########
-
+## about
 ./gradlew integrate -Psource=vigun-about --stacktrace
-./gradlew integrate -Psource=vigun.mixed-qtl --stacktrace
-./gradlew integrate -Psource=vigun.mixed.gwas --stacktrace
-./gradlew integrate -Psource=vigun.mixed-geneticmap --stacktrace
+./gradlew integrate -Psource=vigra-about --stacktrace
+./gradlew integrate -Psource=vigan-about --stacktrace
 
-## vigun.IT97K-499-35.gnm1
+## chromosome-fasta
 ./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1-chromosome-fasta --stacktrace
-./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.mrk-gff --stacktrace
-
-## vigun.IT97K-499-35.gnm1.ann1
-./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann1-cds-fasta --stacktrace
-./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann1-protein-fasta --stacktrace
-./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann1-transcript-fasta --stacktrace
-./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann1-gff --stacktrace
-./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.syn1-synteny --stacktrace
-./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann1-expression --stacktrace
-
-## vigun.IT97K-499-35.gnm1.ann2
-./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann2-cds-fasta --stacktrace
-./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann2-protein-fasta --stacktrace
-./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann2-gff --stacktrace
-./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann2-gfa --stacktrace
-./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann2-pathway --stacktrace
-
-## vigun.CB5-2
 ./gradlew integrate -Psource=vigun.CB5-2.gnm1-chromosome-fasta --stacktrace
-./gradlew integrate -Psource=vigun.CB5-2.gnm1.ann1-gff --stacktrace
-./gradlew integrate -Psource=vigun.CB5-2.gnm1.ann1-cds-fasta --stacktrace
-./gradlew integrate -Psource=vigun.CB5-2.gnm1.ann1-protein-fasta --stacktrace
-./gradlew integrate -Psource=vigun.CB5-2.gnm1.ann1-gfa --stacktrace
-./gradlew integrate -Psource=vigun.CB5-2.gnm1.ann1-pathway --stacktrace
-
-## vigun.Sanzi
 ./gradlew integrate -Psource=vigun.Sanzi.gnm1-chromosome-fasta --stacktrace
-./gradlew integrate -Psource=vigun.Sanzi.gnm1.ann1-gff --stacktrace
-./gradlew integrate -Psource=vigun.Sanzi.gnm1.ann1-cds-fasta --stacktrace
-./gradlew integrate -Psource=vigun.Sanzi.gnm1.ann1-protein-fasta --stacktrace
-./gradlew integrate -Psource=vigun.Sanzi.gnm1.ann1-gfa --stacktrace
-./gradlew integrate -Psource=vigun.Sanzi.gnm1.ann1-pathway --stacktrace
-
-## vigun.Suvita2
 ./gradlew integrate -Psource=vigun.Suvita2.gnm1-chromosome-fasta --stacktrace
-./gradlew integrate -Psource=vigun.Suvita2.gnm1.ann1-gff --stacktrace
-./gradlew integrate -Psource=vigun.Suvita2.gnm1.ann1-cds-fasta --stacktrace
-./gradlew integrate -Psource=vigun.Suvita2.gnm1.ann1-protein-fasta --stacktrace
-./gradlew integrate -Psource=vigun.Suvita2.gnm1.ann1-gfa --stacktrace
-./gradlew integrate -Psource=vigun.Suvita2.gnm1.ann1-pathway --stacktrace
-
-## vigun.TZ30
 ./gradlew integrate -Psource=vigun.TZ30.gnm1-chromosome-fasta --stacktrace
-./gradlew integrate -Psource=vigun.TZ30.gnm1.ann2-gff --stacktrace
-./gradlew integrate -Psource=vigun.TZ30.gnm1.ann2-cds-fasta --stacktrace
-./gradlew integrate -Psource=vigun.TZ30.gnm1.ann2-protein-fasta --stacktrace
-./gradlew integrate -Psource=vigun.TZ30.gnm1.ann2-gfa --stacktrace
-./gradlew integrate -Psource=vigun.TZ30.gnm1.ann2-pathway --stacktrace
-
-## vigun.UCR779
 ./gradlew integrate -Psource=vigun.UCR779.gnm1-chromosome-fasta --stacktrace
-./gradlew integrate -Psource=vigun.UCR779.gnm1.ann1-cds-fasta --stacktrace
-./gradlew integrate -Psource=vigun.UCR779.gnm1.ann1-protein-fasta --stacktrace
-./gradlew integrate -Psource=vigun.UCR779.gnm1.ann1-gff --stacktrace
-./gradlew integrate -Psource=vigun.UCR779.gnm1.ann1-gfa --stacktrace
-./gradlew integrate -Psource=vigun.UCR779.gnm1.ann1-pathway --stacktrace
-
-## vigun.Xiabao_II
 ./gradlew integrate -Psource=vigun.Xiabao_II.gnm1-chromosome-fasta --stacktrace
-./gradlew integrate -Psource=vigun.Xiabao_II.gnm1.ann1-protein-fasta --stacktrace
-./gradlew integrate -Psource=vigun.Xiabao_II.gnm1.ann1-gff --stacktrace
-./gradlew integrate -Psource=vigun.Xiabao_II.gnm1.ann1-gfa --stacktrace
-./gradlew integrate -Psource=vigun.Xiabao_II.gnm1.ann1-pathway --stacktrace
-
-## vigun.ZN016
 ./gradlew integrate -Psource=vigun.ZN016.gnm1-chromosome-fasta --stacktrace
-./gradlew integrate -Psource=vigun.ZN016.gnm1.ann2-cds-fasta --stacktrace
-./gradlew integrate -Psource=vigun.ZN016.gnm1.ann2-protein-fasta --stacktrace
-./gradlew integrate -Psource=vigun.ZN016.gnm1.ann2-gff --stacktrace
-./gradlew integrate -Psource=vigun.ZN016.gnm1.ann2-gfa --stacktrace
-./gradlew integrate -Psource=vigun.ZN016.gnm1.ann2-pathway --stacktrace
-
-###########
-## vigra ##
-###########
-
-./gradlew integrate -Psource=vigra-about
-
-## vigra.VC1973A
 ./gradlew integrate -Psource=vigra.VC1973A.gnm6-chromosome-fasta --stacktrace
-./gradlew integrate -Psource=vigra.VC1973A.gnm6.ann1-cds-fasta --stacktrace
-./gradlew integrate -Psource=vigra.VC1973A.gnm6.ann1-protein-fasta --stacktrace
-./gradlew integrate -Psource=vigra.VC1973A.gnm6.ann1-gff --stacktrace
-./gradlew integrate -Psource=vigra.VC1973A.gnm6.ann1-gfa --stacktrace
-./gradlew integrate -Psource=vigra.VC1973A.gnm6.ann1-pathway --stacktrace
-
-###########
-## vigan ##
-###########
-
-./gradlew integrate -Psource=vigan-about
-
-## vigan.Gyeongwon
 ./gradlew integrate -Psource=vigan.Gyeongwon.gnm3-chromosome-fasta --stacktrace
+./gradlew integrate -Psource=vigan.Shumari.gnm1-chromosome-fasta --stacktrace
+
+## cds-fasta
+./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann1-cds-fasta --stacktrace
+./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann2-cds-fasta --stacktrace
+./gradlew integrate -Psource=vigun.CB5-2.gnm1.ann1-cds-fasta --stacktrace
+./gradlew integrate -Psource=vigun.Sanzi.gnm1.ann1-cds-fasta --stacktrace
+./gradlew integrate -Psource=vigun.Suvita2.gnm1.ann1-cds-fasta --stacktrace
+./gradlew integrate -Psource=vigun.TZ30.gnm1.ann2-cds-fasta --stacktrace
+./gradlew integrate -Psource=vigun.UCR779.gnm1.ann1-cds-fasta --stacktrace
+./gradlew integrate -Psource=vigun.ZN016.gnm1.ann2-cds-fasta --stacktrace
+./gradlew integrate -Psource=vigra.VC1973A.gnm6.ann1-cds-fasta --stacktrace
 ./gradlew integrate -Psource=vigan.Gyeongwon.gnm3.ann1-cds-fasta --stacktrace
+./gradlew integrate -Psource=vigan.Shumari.gnm1.ann1-cds-fasta --stacktrace
+
+## protein_fasta
+./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann1-protein-fasta --stacktrace
+./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann2-protein-fasta --stacktrace
+./gradlew integrate -Psource=vigun.CB5-2.gnm1.ann1-protein-fasta --stacktrace
+./gradlew integrate -Psource=vigun.Sanzi.gnm1.ann1-protein-fasta --stacktrace
+./gradlew integrate -Psource=vigun.Suvita2.gnm1.ann1-protein-fasta --stacktrace
+./gradlew integrate -Psource=vigun.TZ30.gnm1.ann2-protein-fasta --stacktrace
+./gradlew integrate -Psource=vigun.UCR779.gnm1.ann1-protein-fasta --stacktrace
+./gradlew integrate -Psource=vigun.Xiabao_II.gnm1.ann1-protein-fasta --stacktrace
+./gradlew integrate -Psource=vigun.ZN016.gnm1.ann2-protein-fasta --stacktrace
+./gradlew integrate -Psource=vigra.VC1973A.gnm6.ann1-protein-fasta --stacktrace
 ./gradlew integrate -Psource=vigan.Gyeongwon.gnm3.ann1-protein-fasta --stacktrace
+./gradlew integrate -Psource=vigan.Shumari.gnm1.ann1-protein-fasta --stacktrace
+
+## mrna-fasta
+./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann1-mrna-fasta --stacktrace
+./gradlew integrate -Psource=vigan.Shumari.gnm1.ann1-mrna-fasta --stacktrace
+
+## gff
+./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann1-gff --stacktrace
+./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann2-gff --stacktrace
+./gradlew integrate -Psource=vigun.CB5-2.gnm1.ann1-gff --stacktrace
+./gradlew integrate -Psource=vigun.Sanzi.gnm1.ann1-gff --stacktrace
+./gradlew integrate -Psource=vigun.Suvita2.gnm1.ann1-gff --stacktrace
+./gradlew integrate -Psource=vigun.TZ30.gnm1.ann2-gff --stacktrace
+./gradlew integrate -Psource=vigun.UCR779.gnm1.ann1-gff --stacktrace
+./gradlew integrate -Psource=vigun.Xiabao_II.gnm1.ann1-gff --stacktrace
+./gradlew integrate -Psource=vigun.ZN016.gnm1.ann2-gff --stacktrace
+./gradlew integrate -Psource=vigra.VC1973A.gnm6.ann1-gff --stacktrace
 ./gradlew integrate -Psource=vigan.Gyeongwon.gnm3.ann1-gff --stacktrace
+./gradlew integrate -Psource=vigan.Shumari.gnm1.ann1-gff --stacktrace
+
+## gfa
+./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann2-gfa --stacktrace
+./gradlew integrate -Psource=vigun.CB5-2.gnm1.ann1-gfa --stacktrace
+./gradlew integrate -Psource=vigun.Sanzi.gnm1.ann1-gfa --stacktrace
+./gradlew integrate -Psource=vigun.Suvita2.gnm1.ann1-gfa --stacktrace
+./gradlew integrate -Psource=vigun.TZ30.gnm1.ann2-gfa --stacktrace
+./gradlew integrate -Psource=vigun.UCR779.gnm1.ann1-gfa --stacktrace
+./gradlew integrate -Psource=vigun.Xiabao_II.gnm1.ann1-gfa --stacktrace
+./gradlew integrate -Psource=vigun.ZN016.gnm1.ann2-gfa --stacktrace
+./gradlew integrate -Psource=vigra.VC1973A.gnm6.ann1-gfa --stacktrace
 ./gradlew integrate -Psource=vigan.Gyeongwon.gnm3.ann1-gfa --stacktrace
+./gradlew integrate -Psource=vigan.Shumari.gnm1.ann1-gfa --stacktrace
+
+## pathway
+./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann2-pathway --stacktrace
+./gradlew integrate -Psource=vigun.CB5-2.gnm1.ann1-pathway --stacktrace
+./gradlew integrate -Psource=vigun.Sanzi.gnm1.ann1-pathway --stacktrace
+./gradlew integrate -Psource=vigun.Suvita2.gnm1.ann1-pathway --stacktrace
+./gradlew integrate -Psource=vigun.TZ30.gnm1.ann2-pathway --stacktrace
+./gradlew integrate -Psource=vigun.UCR779.gnm1.ann1-pathway --stacktrace
+./gradlew integrate -Psource=vigun.Xiabao_II.gnm1.ann1-pathway --stacktrace
+./gradlew integrate -Psource=vigun.ZN016.gnm1.ann2-pathway --stacktrace
+./gradlew integrate -Psource=vigra.VC1973A.gnm6.ann1-pathway --stacktrace
 ./gradlew integrate -Psource=vigan.Gyeongwon.gnm3.ann1-pathway --stacktrace
+./gradlew integrate -Psource=vigan.Shumari.gnm1.ann1-pathway --stacktrace
+
+## synteny
+./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.syn1-synteny --stacktrace
 ./gradlew integrate -Psource=vigan.Gyeongwon.gnm3.syn1-synteny --stacktrace
 
-## vigan.Shumari
-./gradlew integrate -Psource=vigan.Shumari.gnm1-chromosome-fasta --stacktrace
-./gradlew integrate -Psource=vigan.Shumari.gnm1.ann1-cds-fasta --stacktrace
-./gradlew integrate -Psource=vigan.Shumari.gnm1.ann1-protein-fasta --stacktrace
-./gradlew integrate -Psource=vigan.Shumari.gnm1.ann1-mrna-fasta --stacktrace
-./gradlew integrate -Psource=vigan.Shumari.gnm1.ann1-gff --stacktrace
-./gradlew integrate -Psource=vigan.Shumari.gnm1.ann1-gfa --stacktrace
-./gradlew integrate -Psource=vigan.Shumari.gnm1.ann1-pathway --stacktrace
+## expression
+./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann1-expression --stacktrace
+
+## mrk-gff
+./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.mrk-gff --stacktrace
+
+## mixed-qtl
+./gradlew integrate -Psource=vigun.mixed-qtl --stacktrace
+
+## mixed-gwas
+./gradlew integrate -Psource=vigun.mixed-gwas --stacktrace
+
+## mixed-geneticmap
+./gradlew integrate -Psource=vigun.mixed-geneticmap --stacktrace
