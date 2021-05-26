@@ -1,4 +1,4 @@
-/*
+\/*
  CSS MUST FOLLOW THE PATTERN:
  style {
  list of positioning attributes;
@@ -1731,20 +1731,23 @@ width:90%;}
 
 .dataSet-row {
     display: grid;
-    grid-template-columns: 70% 25% 5%;
+    grid-template-columns: 20% 75% 5%;
 }
 
 .dataSet-description {
     padding: 3px;
     text-align: left;
+    border-bottom: 1px solid gray;
 }
 
 .dataSet-name {
     padding: 3px;
     text-align: left;
+    border-bottom: 1px solid gray;
 }
 
 .dataSet-link {
     padding: 3px;
     text-align:center;
+    border-bottom: 1px solid gray;
 }

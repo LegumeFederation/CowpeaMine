@@ -14,15 +14,17 @@
 
 <im:headResources section="all"/>
 
-<!-- jquery.dataTables plugin and buttons extension; having trouble with CDN so installed locally -->
-<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css" />
-<link rel="stylesheet" type="text/css" href="css/buttons.dataTables.min.css" />
-<script type="text/javascript" charset="utf8" src="js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" charset="utf8" src="js/dataTables.buttons.min.js"></script>
+<!-- jquery.dataTables plugin -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 
-<!-- canvasXpress -->
-<link rel="stylesheet" href="css/canvasXpress-old.css" type="text/css" />
-<script type="text/javascript" src="js/canvasXpress-old.min.js"></script>
+<!-- buttons.dataTables plugin -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css" />
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
+
+<!-- canvasXpress from CDN! -->
+<link type="text/css" rel="stylesheet" href="https://www.canvasxpress.org/dist/canvasXpress.css"/>
+<script type="text/javascript" src="https://www.canvasxpress.org/dist/canvasXpress.min.js"></script>
 
 <%
 /* In Safari, loading a css that doesnt exist causes weirdness */

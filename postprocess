@@ -22,14 +22,9 @@ echo ""
 # ./gradlew postprocess -Pprocess=create-gene-flanking-features
 
 ## LIS
-# ./gradlew postprocess -Pprocess=lis-populate-cds-gene-references
-# ./gradlew postprocess -Pprocess=lis-populate-cds-protein-references
-# ./gradlew postprocess -Pprocess=lis-populate-cds-transcript-references
 # ./gradlew postprocess -Pprocess=lis-populate-gene-protein-collections
 # ./gradlew postprocess -Pprocess=lis-populate-qtl-gene-collections
 # ./gradlew postprocess -Pprocess=lis-populate-publications
-# ./gradlew postprocess -Pprocess=lis-populate-transcript-gene-references
-# ./gradlew postprocess -Pprocess=lis-populate-transcript-protein-references
 # ./gradlew postprocess -Pprocess=lis-populate-protein-pathway-collections
 
 ## VIEWS AND INDEXES

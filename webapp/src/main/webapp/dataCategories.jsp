@@ -44,7 +44,6 @@ for (Integer sourceId : sourceIdsNames.keySet()) {
     setsQuery.addView("DataSet.description"); // 1
     setsQuery.addView("DataSet.url");         // 2
     setsQuery.addConstraint(Constraints.eq("DataSet.dataSource.id", String.valueOf(sourceId)));
-    setsQuery.addOrderBy("DataSet.description", OrderDirection.ASC);
     setsQuery.addOrderBy("DataSet.name", OrderDirection.ASC);
     ExportResultsIterator setsResult = executor.execute(setsQuery);
     while (setsResult.hasNext()) {
@@ -70,8 +69,8 @@ for (Integer sourceId : sourceIdsNames.keySet()) {
   <div class="dataSource"><%=sourceName%></div>
   <div class="dataSet-row">
     <% for (String setName : setNames) { %>
-    <div class="dataSet-description"><%=setDescriptions.get(setName)%></div>
     <div class="dataSet-name"><%=setName%></div>
+    <div class="dataSet-description"><%=setDescriptions.get(setName)%></div>
     <div class="dataSet-link">
       <% if (setUrls.get(setName)!=null) { %>
       <a target="_blank" href="<%=setUrls.get(setName)%>">LINK</a>

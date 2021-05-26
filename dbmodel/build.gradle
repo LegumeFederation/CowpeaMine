@@ -29,8 +29,8 @@ dbModelConfig {
     defaultInterminePropertiesFile = "default.intermine.production.properties"
     userProfileObjectStoreName = "os.userprofile-production"
     userProfileModelName = "userprofile"
-    soTermListFilePath = "dbmodel/resources/so_terms"
-    soAdditionFilePath = "dbmodel/build/so_additions.xml"
+    soTermListFilePath = "$rootDir/dbmodel/resources/so_terms"
+    soAdditionFilePath = "$rootDir/dbmodel/build/so_additions.xml"
 }
 
 mineDBModelConfig {

@@ -1,0 +1,16 @@
+#!/bin/sh
+
+MINENAME=cowpeamine
+
+## add triggers
+./gradlew generateUpdateTriggers
+psql -f dbmodel/build/resources/main/add-update-triggers.sql ${MINENAME}-dev
+
+## do updates
+cd ~/java/ncgr/intermine
+./cdsreferenceupdater $MINENAME
+./transcriptreferenceupdater $MINENAME
+
+## remove triggers
+cd ~/$MINENAME
+psql -f dbmodel/build/resources/main/remove-update-triggers.sql ${MINENAME}-dev
