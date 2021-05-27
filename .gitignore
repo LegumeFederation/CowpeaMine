@@ -4,4 +4,10 @@
 build
 webapp/src/main/java/
 webapp/src/main/webapp/model/
+webapp/src/main/webapp/.gitignore
+webapp/src/main/webapp/README.md
+webapp/src/main/webapp/css/
+webapp/src/main/webapp/images/
+webapp/src/main/webapp/js/
+webapp/src/main/webapp/themes/
 libs
