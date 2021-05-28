@@ -2,6 +2,13 @@
 *.log
 .gradle
 build
+libs
+webapp/src/main/webapp/begin.jsp
+webapp/src/main/webapp/dataCategories.jsp
+webapp/src/main/webapp/footer.jsp
+webapp/src/main/webapp/htmlHead.jsp
+webapp/src/main/webapp/log4j.properties
+webapp/src/main/webapp/report.jsp
 webapp/src/main/java/
 webapp/src/main/webapp/model/
 webapp/src/main/webapp/.gitignore
@@ -10,4 +17,3 @@ webapp/src/main/webapp/css/
 webapp/src/main/webapp/images/
 webapp/src/main/webapp/js/
 webapp/src/main/webapp/themes/
-libs
