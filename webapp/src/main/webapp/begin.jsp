@@ -16,9 +16,7 @@
             <img class="title" src="themes/purple/homepage/search-ico-right.png" title="search"/>
             <div class="inner">
                 <h3><c:out value="${WEB_PROPERTIES['begin.searchBox.title']}" /></h3>
-                <span class="ugly-hack">&nbsp;</span>
                 <p><c:out value="${WEB_PROPERTIES['begin.searchBox.description']}" escapeXml="false" /></p>
-
                 <form action="<c:url value="/keywordSearchResults.do" />" name="search" method="get">
                     <div class="input"><input id="actionsInput" name="searchTerm" class="input" type="text" value="${WEB_PROPERTIES['begin.searchBox.example']}"></div>
                     <div class="bottom">
