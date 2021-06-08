@@ -32,12 +32,11 @@ echo ""
 
 ## vigun.IT97K-499-35.gnm1
 ./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.QnBW --stacktrace
-./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann1.zb5D.cds.fna --stacktrace
-./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann1.zb5D.protein.faa --stacktrace
-./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann1.zb5D.transcript.fna --stacktrace
-./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann1.zb5D.gene_models_main.gff3 --stacktrace
-./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann1.zb5D.legfed_v1_0.M65K.gfa.tsv --stacktrace
-./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann1.zb5D.legfed_v1_0.M65K.pathway.tsv --stacktrace
+./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann2.FD7K.cds.fna --stacktrace
+./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann2.FD7K.protein.faa --stacktrace
+./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann2.FD7K.gene_models_main.gff3 --stacktrace
+./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann2.FD7K.legfed_v1_0.M65K.gfa.tsv --stacktrace
+./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann2.FD7K.legfed_v1_0.M65K.pathway.tsv --stacktrace
 ./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann1.syn.W3NY --stacktrace
 ./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.mrk.Cowpea1MSelectedSNPs --stacktrace
 ./gradlew integrate -Psource=vigun.IT97K-499-35.gnm1.ann1.expr.BWH5 --stacktrace

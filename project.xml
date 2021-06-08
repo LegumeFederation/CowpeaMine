@@ -1,7 +1,7 @@
 <project type="bio">
   <property name="target.model" value="genomic"/>
   <property name="common.os.prefix" value="common"/>
-  <property name="intermine.properties.file" value="dsmine.properties"/>
+  <property name="intermine.properties.file" value="cowpeamine.properties"/>
   <property name="default.intermine.properties.file" location="../default.intermine.integrate.properties"/>
   <sources>
 
@@ -49,26 +49,26 @@
       <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/genomes/IT97K-499-35.gnm1.QnBW"/>
     </source>
 
-    <!-- IT97K-499-35.gnm1.ann1.zb5D -->
-    <!-- ├── vigun.IT97K-499-35.gnm1.ann1.zb5D.gene_models_main.gff3 -->
-    <source name="vigun.IT97K-499-35.gnm1.ann1.zb5D.gene_models_main.gff3" type="lis-gff" dump="true">
+    <!-- IT97K-499-35.gnm1.ann2.FD7K/ -->
+    <!-- ├── vigun.IT97K-499-35.gnm1.ann2.FD7K.gene_models_main.gff3 -->
+    <source name="vigun.IT97K-499-35.gnm1.ann2.FD7K.gene_models_main.gff3" type="lis-gff" dump="true">
       <property name="gff3.dataSourceName" value="LIS Datastore"/>
       <property name="gff3.dataSourceUrl" value="https://legumeinfo.org/data/v2/"/>
       <property name="gff3.dataSourceDescription" value="A collaborative, community resource to facilitate crop improvement by integrating genetic, genomic, and trait data across legume species."/>
-      <property name="gff3.dataSetTitle" value="vigun.IT97K-499-35.gnm1.ann1.zb5D"/>
+      <property name="gff3.dataSetTitle" value="vigun.IT97K-499-35.gnm1.ann2.FD7K"/>
       <property name="gff3.dataSetDescription" value="vigun.IT97K-499-35.gnm1.ann1 genome annotation"/>
-      <property name="gff3.dataSetUrl" value="https://legumeinfo.org/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann1.zb5D/"/>
+      <property name="gff3.dataSetUrl" value="https://legumeinfo.org/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann2.FD7K/"/>
       <property name="gff3.dataSetVersion" value="gnm1.ann1"/>
       <property name="gff3.licence" value="ODC Public Domain Dedication and Licence (PDDL)"/>
       <property name="gff3.taxonId" value="3917"/>
       <property name="gff3.strainIdentifier" value="IT97K-499-35"/>
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann1.zb5D"/>
+      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann2.FD7K"/>
     </source>
-    <!-- ├── vigun.IT97K-499-35.gnm1.ann1.zb5D.cds.fna -->
-    <source name="vigun.IT97K-499-35.gnm1.ann1.zb5D.cds.fna" type="lis-fasta" dump="true">
-      <property name="lis-fasta.dataSetTitle" value="vigun.IT97K-499-35.gnm1.ann1.zb5D"/>
+    <!-- ├── vigun.IT97K-499-35.gnm1.ann2.FD7K.cds_primaryTranscript.fna -->
+    <source name="vigun.IT97K-499-35.gnm1.ann2.FD7K.cds.fna" type="lis-fasta" dump="true">
+      <property name="lis-fasta.dataSetTitle" value="vigun.IT97K-499-35.gnm1.ann2.FD7K"/>
       <property name="lis-fasta.dataSetDescription" value="vigun.IT97K-499-35.gnm1.ann1 genome annotation"/>
-      <property name="lis-fasta.dataSetUrl" value="https://legumeinfo.org/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann1.zb5D/"/>
+      <property name="lis-fasta.dataSetUrl" value="https://legumeinfo.org/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann2.FD7K/"/>
       <property name="lis-fasta.dataSetVersion" value="gnm1.ann1"/>
       <property name="lis-fasta.taxonId" value="3917"/>
       <property name="lis-fasta.strainIdentifier" value="IT97K-499-35"/>
@@ -77,14 +77,14 @@
       <property name="lis-fasta.classAttribute" value="primaryIdentifier"/>
       <property name="lis-fasta.licence" value="ODC Public Domain Dedication and Licence (PDDL)"/>
       <property name="lis-fasta.geneAttribute" value="locus"/>
-      <property name="lis-fasta.includes" value="README.IT97K-499-35.gnm1.ann1.zb5D.yml, vigun.IT97K-499-35.gnm1.ann1.zb5D.cds.fna"/>
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann1.zb5D"/>
+      <property name="lis-fasta.includes" value="README.IT97K-499-35.gnm1.ann2.FD7K.yml, vigun.IT97K-499-35.gnm1.ann2.FD7K.cds_primaryTranscript.fna"/>
+      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann2.FD7K"/>
     </source>
-    <!-- ├── vigun.IT97K-499-35.gnm1.ann1.zb5D.protein.faa -->
-    <source name="vigun.IT97K-499-35.gnm1.ann1.zb5D.protein.faa" type="lis-fasta" dump="true">
-      <property name="lis-fasta.dataSetTitle" value="vigun.IT97K-499-35.gnm1.ann1.zb5D"/>
+    <!-- └── vigun.IT97K-499-35.gnm1.ann2.FD7K.protein_primaryTranscript.faa -->
+    <source name="vigun.IT97K-499-35.gnm1.ann2.FD7K.protein.faa" type="lis-fasta" dump="true">
+      <property name="lis-fasta.dataSetTitle" value="vigun.IT97K-499-35.gnm1.ann2.FD7K"/>
       <property name="lis-fasta.dataSetDescription" value="vigun.IT97K-499-35.gnm1.ann1 genome annotation"/>
-      <property name="lis-fasta.dataSetUrl" value="https://legumeinfo.org/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann1.zb5D/"/>
+      <property name="lis-fasta.dataSetUrl" value="https://legumeinfo.org/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann2.FD7K/"/>
       <property name="lis-fasta.dataSetVersion" value="gnm1.ann1"/>
       <property name="lis-fasta.taxonId" value="3917"/>
       <property name="lis-fasta.strainIdentifier" value="IT97K-499-35"/>
@@ -93,40 +93,39 @@
       <property name="lis-fasta.classAttribute" value="primaryIdentifier"/>
       <property name="lis-fasta.licence" value="ODC Public Domain Dedication and Licence (PDDL)"/>
       <property name="lis-fasta.geneAttribute" value="locus"/>
-      <property name="lis-fasta.includes" value="README.IT97K-499-35.gnm1.ann1.zb5D.yml, vigun.IT97K-499-35.gnm1.ann1.zb5D.protein.faa"/>
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann1.zb5D"/>
+      <property name="lis-fasta.includes" value="README.IT97K-499-35.gnm1.ann2.FD7K.yml, vigun.IT97K-499-35.gnm1.ann2.FD7K.protein_primaryTranscript.faa"/>
+      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann2.FD7K"/>
     </source>
-    <!-- ├── vigun.IT97K-499-35.gnm1.ann1.zb5D.transcript.fna -->
-    <source name="vigun.IT97K-499-35.gnm1.ann1.zb5D.transcript.fna" type="lis-fasta" dump="true">
-      <property name="lis-fasta.dataSetTitle" value="vigun.IT97K-499-35.gnm1.ann1.zb5D"/>
-      <property name="lis-fasta.dataSetDescription" value="vigun.IT97K-499-35.gnm1.ann1 genome annotation"/>
-      <property name="lis-fasta.dataSetUrl" value="https://legumeinfo.org/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann1.zb5D/"/>
-      <property name="lis-fasta.dataSetVersion" value="gnm1.ann1"/>
-      <property name="lis-fasta.taxonId" value="3917"/>
-      <property name="lis-fasta.strainIdentifier" value="IT97K-499-35"/>
-      <property name="lis-fasta.sequenceType" value="dna"/>
-      <property name="lis-fasta.className" value="org.intermine.model.bio.MRNA"/>
-      <property name="lis-fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="lis-fasta.licence" value="ODC Public Domain Dedication and Licence (PDDL)"/>
-      <property name="lis-fasta.geneAttribute" value="locus"/>
-      <property name="lis-fasta.includes" value="README.IT97K-499-35.gnm1.ann1.zb5D.yml, vigun.IT97K-499-35.gnm1.ann1.zb5D.transcript.fna"/>
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann1.zb5D"/>
-    </source>
-    <!-- ├── vigun.IT97K-499-35.gnm1.ann1.zb5D.legfed_v1_0.M65K.gfa.tsv -->
-    <source name="vigun.IT97K-499-35.gnm1.ann1.zb5D.legfed_v1_0.M65K.gfa.tsv" type="lis-gfa" dump="true"> 
-      <property name="dataSetName" value="vigun.IT97K-499-35.gnm1.ann1.zb5D"/>
+    <!-- <source name="vigun.IT97K-499-35.gnm1.ann2.FD7K.transcript.fna" type="lis-fasta" dump="true"> -->
+    <!--   <property name="lis-fasta.dataSetTitle" value="vigun.IT97K-499-35.gnm1.ann2.FD7K"/> -->
+    <!--   <property name="lis-fasta.dataSetDescription" value="vigun.IT97K-499-35.gnm1.ann1 genome annotation"/> -->
+    <!--   <property name="lis-fasta.dataSetUrl" value="https://legumeinfo.org/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann2.FD7K/"/> -->
+    <!--   <property name="lis-fasta.dataSetVersion" value="gnm1.ann1"/> -->
+    <!--   <property name="lis-fasta.taxonId" value="3917"/> -->
+    <!--   <property name="lis-fasta.strainIdentifier" value="IT97K-499-35"/> -->
+    <!--   <property name="lis-fasta.sequenceType" value="dna"/> -->
+    <!--   <property name="lis-fasta.className" value="org.intermine.model.bio.MRNA"/> -->
+    <!--   <property name="lis-fasta.classAttribute" value="primaryIdentifier"/> -->
+    <!--   <property name="lis-fasta.licence" value="ODC Public Domain Dedication and Licence (PDDL)"/> -->
+    <!--   <property name="lis-fasta.geneAttribute" value="locus"/> -->
+    <!--   <property name="lis-fasta.includes" value="README.IT97K-499-35.gnm1.ann2.FD7K.yml, vigun.IT97K-499-35.gnm1.ann2.FD7K.transcript.fna"/> -->
+    <!--   <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann2.FD7K"/> -->
+    <!-- </source> -->
+    <!-- ├── vigun.IT97K-499-35.gnm1.ann2.FD7K.legfed_v1_0.M65K.gfa.tsv -->
+    <source name="vigun.IT97K-499-35.gnm1.ann2.FD7K.legfed_v1_0.M65K.gfa.tsv" type="lis-gfa" dump="true"> 
+      <property name="dataSetName" value="vigun.IT97K-499-35.gnm1.ann2.FD7K"/>
       <property name="dataSetDescription" value="vigun.IT97K-499-35.gnm1.ann1 genome annotation"/>
       <property name="dataSetVersion" value="gnm1.ann1"/>
-      <property name="dataSetUrl" value="https://legumeinfo.org/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann1.zb5D/"/>
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann1.zb5D"/>
+      <property name="dataSetUrl" value="https://legumeinfo.org/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann2.FD7K/"/>
+      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann2.FD7K"/>
     </source>
-    <!-- ├── vigun.IT97K-499-35.gnm1.ann1.zb5D.legfed_v1_0.M65K.pathway.tsv -->
-    <source name="vigun.IT97K-499-35.gnm1.ann1.zb5D.legfed_v1_0.M65K.pathway.tsv" type="lis-pathway" dump="true"> 
-      <property name="dataSetName" value="vigun.IT97K-499-35.gnm1.ann1.zb5D"/>
+    <!-- ├── vigun.IT97K-499-35.gnm1.ann2.FD7K.legfed_v1_0.M65K.pathway.tsv -->
+    <source name="vigun.IT97K-499-35.gnm1.ann2.FD7K.legfed_v1_0.M65K.pathway.tsv" type="lis-pathway" dump="true"> 
+      <property name="dataSetName" value="vigun.IT97K-499-35.gnm1.ann2.FD7K"/>
       <property name="dataSetDescription" value="vigun.IT97K-499-35.gnm1.ann1 genome annotation"/>
-      <property name="dataSetUrl" value="https://legumeinfo.org/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann1.zb5D/"/>
+      <property name="dataSetUrl" value="https://legumeinfo.org/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann2.FD7K/"/>
       <property name="dataSetVersion" value="gnm1.ann1"/>
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann1.zb5D"/>
+      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann2.FD7K"/>
     </source>
 
     <!-- IT97K-499-35.gnm1.ann1.syn.W3NY -->
@@ -1108,7 +1107,7 @@
       <property name="lis-fasta.classAttribute" value="primaryIdentifier"/>
       <property name="lis-fasta.licence" value="ODC Public Domain Dedication and Licence (PDDL)"/>
       <property name="lis-fasta.geneAttribute" value="locus"/>
-      <property name="lis-fasta.includes" value="README.Gyeongwon.gnm3.ann1.3Nz5.yml, vigan.Gyeongwon.gnm3.ann1.3Nz5.protein_primaryTranscript.faa"/>
+      <property name="lis-fasta.includes" value="README.Gyeongwon.gnm3.ann1.3Nz5.yml, vigan.Gyeongwon.gnm3.ann1.3Nz5.protein.faa"/>
       <property name="src.data.dir" location="/data/v2/Vigna/angularis/annotations/Gyeongwon.gnm3.ann1.3Nz5"/>
     </source>
     <!-- ├── vigan.Gyeongwon.gnm3.ann1.3Nz5.gene_models_main.gff3 -->
