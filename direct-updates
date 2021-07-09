@@ -1,16 +1,24 @@
 #!/bin/sh
 
 MINENAME=cowpeamine
+DBNAME=cowpeamine-dev
 
 ## add triggers
 ./gradlew generateUpdateTriggers
-psql -f dbmodel/build/resources/main/add-update-triggers.sql ${MINENAME}-dev
+psql $DBNAME -f dbmodel/build/resources/main/add-update-triggers.sql
 
 ## do updates
+echo "########## cdsreferenceupdater ${MINENAME}"
 cd ~/java/ncgr/intermine
 ./cdsreferenceupdater $MINENAME
+
+echo "########## transcriptreferenceupdater $MINENAME"
+cd ~/java/ncgr/intermine
 ./transcriptreferenceupdater $MINENAME
 
-## remove triggers
+echo "########## update genefamily.size $DBNAME ##########"
 cd ~/$MINENAME
-psql -f dbmodel/build/resources/main/remove-update-triggers.sql ${MINENAME}-dev
+psql $DBNAME -c "UPDATE genefamily SET intermine_size = (SELECT count(*) FROM gene WHERE gene.genefamilyid=genefamily.id)"
+
+## remove triggers
+psql $DBNAME -f dbmodel/build/resources/main/remove-update-triggers.sql
