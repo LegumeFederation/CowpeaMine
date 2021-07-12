@@ -1165,7 +1165,7 @@
       <property name="gff3.dataSourceDescription" value="A collaborative, community resource to facilitate crop improvement by integrating genetic, genomic, and trait data across legume species."/>
       <property name="gff3.dataSetTitle" value="Gyeongwon.gnm3.ann1.3Nz5"/>
       <property name="gff3.dataSetDescription" value="Gyeongwon.gnm3.ann1 genome annotation"/>
-      <property name="gff3.dataSetUrl" value="https://legumeinfo.org/data/v2/Vigna/angularis/annotations/Gyeongwon.gnm3.ann1.3Nz5"/>
+      <property name="gff3.dataSetUrl" value="https://legumeinfo.org/data/v2/Vigna/angularis/annotations/Gyeongwon.gnm3.ann1.3Nz5/"/>
       <property name="gff3.dataSetVersion" value="gnm3.ann1"/>
       <property name="gff3.licence" value="ODC Public Domain Dedication and Licence (PDDL)"/>
       <property name="gff3.taxonId" value="3914"/>
@@ -1277,6 +1277,7 @@
       <property name="gff3.dataSourceDescription" value="A collaborative, community resource to facilitate crop improvement by integrating genetic, genomic, and trait data across legume species."/>
       <property name="gff3.dataSetTitle" value="Shumari.gnm1.ann1.8BRS"/>
       <property name="gff3.dataSetDescription" value="Shumari.gnm1.ann1 genome annotation"/>
+      <property name="gff3.dataSetUrl" value="https://legumeinfo.org/data/v2/Vigna/angularis/annotations/Shumari.gnm1.ann1.8BRS/"/>
       <property name="gff3.dataSetVersion" value="gnm1.ann1"/>
       <property name="gff3.licence" value="ODC Public Domain Dedication and Licence (PDDL)"/>
       <property name="gff3.taxonId" value="3914"/>
@@ -1302,6 +1303,7 @@
 
     <!-- LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/ -->
     <source name="legume.genefam.fam1.M65K" type="lis-genefamily" dump="true">
+      <property name="dataSetName" value="legume.genefam.fam1.M65K"/>
       <property name="dataSetUrl" value="https://legumeinfo.org/data/v2/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/"/>
       <property name="dataSetDescription" value="LIS gene families"/>
       <property name="desired.organisms" value="aradu araip arahy arath cajca cicar cucsa glyma glyso lotja lupan medtr phalu phavu prupe solly tripr vigan vigra vigun vitvi"/>
@@ -1310,6 +1312,7 @@
 
     <!-- LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/legume.genefam.fam1.M65K.trees_ML_rooted/ -->
     <source name="legume.genefam.fam1.M65K.trees_ML_rooted" type="lis-phylotree" dump="true">
+      <property name="dataSetName" value="legume.genefam.fam1.M65K"/>
       <property name="dataSetUrl" value="https://legumeinfo.org/data/v2/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/legume.genefam.fam1.M65K.trees_ML_rooted/"/>
       <property name="dataSetDescription" value="LIS gene family phylogenetic trees"/>
       <property name="src.data.dir" location="/data/v2/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/legume.genefam.fam1.M65K.trees_ML_rooted"/>
