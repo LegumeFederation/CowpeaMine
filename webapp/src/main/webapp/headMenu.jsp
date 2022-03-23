@@ -25,7 +25,7 @@
         <c:set value="header.links.${entry}" var="linkProp"/>
         <c:choose>
           <c:when test="${!empty WEB_PROPERTIES[linkProp]}">
-                  <a href="${WEB_PROPERTIES[linkProp]}">${entry}</a>
+            <a href="${WEB_PROPERTIES[linkProp]}">${entry}</a>
           </c:when>
           <c:otherwise>
             <a href="${WEB_PROPERTIES['project.sitePrefix']}/${entry}.shtml">${entry}</a>
@@ -35,13 +35,22 @@
     </div>
   </c:if>
   <div id="header">
+    <!-- LIS site nav -->
+    <div style="float:left;">
+      <a href="https://legumeinfo.org/"><img src="http://dev.lis.ncgr.org:50030/assets/img/lis-logo-small.png" alt="LIS - Legume Information System"/></a>
+    </div>
+    <div style="float:left;margin-left:5px;margin-right:10px;padding-top:5px;font-family:ProximaNova,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;">
+      <div style="font-size:20px; color:white;">LIS - Legume Information System</div>
+      <div style="font-size:12px; color:white;">Information about legume traits for crop improvement</div>
+    </div>
+    <!-- /LIS site nav -->
     <a href="${WEB_PROPERTIES['project.sitePrefix']}" alt="Home" rel="NOFOLLOW"><img id="logo" src="model/images/cowpea.png" alt="Logo" /></a>
     <h1><html:link href="${WEB_PROPERTIES['project.sitePrefix']}/"><c:out value="${WEB_PROPERTIES['project.title']}" escapeXml="false"/></html:link></h1>
     <p id="version"><fmt:message key="header.version"/> <c:out value="${WEB_PROPERTIES['project.releaseVersion']}" escapeXml="false"/></p>
     <p><c:out value="${WEB_PROPERTIES['project.subTitle']}" escapeXml="false"/></p>
   </div>
 
-    <!-- Tab Menu -->
+  <!-- Tab Menu -->
   <fmt:message key="${pageName}.tab" var="tab" />
   <div id="menucontainer">
     <ul id="nav">
@@ -51,7 +60,7 @@
         </a>
       </li>
       <li id="templates"  <c:if test="${tab == 'templates'}">class="activelink"</c:if>>
-         <a href="/${WEB_PROPERTIES['webapp.path']}/templates.do">
+        <a href="/${WEB_PROPERTIES['webapp.path']}/templates.do">
           <fmt:message key="menu.templates"/>
         </a>
       </li>
@@ -66,11 +75,11 @@
         </a>
       </li>
       <c:if test="${WEB_PROPERTIES['genomicRegionSearch.display'] == 'true'}">
-          <li id="genomicRegionSearch" <c:if test="${tab == 'genomicRegionSearch'}">class="activelink"</c:if>>
-            <a href="/${WEB_PROPERTIES['webapp.path']}/genomicRegionSearch.do">
-              <fmt:message key="menu.genomicRegionSearch"/>
-            </a>
-          </li>
+        <li id="genomicRegionSearch" <c:if test="${tab == 'genomicRegionSearch'}">class="activelink"</c:if>>
+          <a href="/${WEB_PROPERTIES['webapp.path']}/genomicRegionSearch.do">
+            <fmt:message key="menu.genomicRegionSearch"/>
+          </a>
+        </li>
       </c:if>
       <li id="category" <c:if test="${tab == 'dataCategories'}">class="activelink"</c:if>>
         <a href="/${WEB_PROPERTIES['webapp.path']}/dataCategories.do">
@@ -89,42 +98,42 @@
       </li>
     </ul>
     <ul id="loginbar">
-        <!-- start of LegFed adds -->
-        <li><a href="http://mines.legumeinfo.org/" alt="LIS Mines">Other LIS Mines</a></li>
-        <li><a href="http://legumeinfo.org/" target="_blank" alt="LIS - Legume Information System">LIS Home</a></li>
-        <!-- end of LegFed adds -->
-	<!-- cant send email from public server yet
-        <li><a href="#" onclick="showContactForm();return false;"><fmt:message key="feedback.link"/></a></li>
-	-->
-        <c:if test="${PROFILE.loggedIn}">
-            <li>
-                <!-- display (optionally trimmed) username -->
-                <c:choose>
-                    <c:when test="${! empty PROVIDER}">
-                        <c:choose>
-                            <c:when test="${empty USERNAME || USERNAME == 'nullnull'}">
-                                <c:set var="displayUserName" value="logged in with OpenID"/>
-                            </c:when>
-                            <c:otherwise>
-                                <c:set var="displayUserName" value="${USERNAME}"/>
-                            </c:otherwise>
-                        </c:choose>
-                    </c:when>
-                    <c:otherwise>
-                        <c:set var="displayUserName" value="${PROFILE.name}"/>
-                    </c:otherwise>
-                </c:choose>
-                <c:choose>
-                    <c:when test="${fn:length(displayUserName) > 25}">
-                        <c:out value="${fn:substring(displayUserName,0,25)}"/>&hellip;
-                    </c:when>
-                    <c:otherwise>
-                        <c:out value="${displayUserName}"/>
-                    </c:otherwise>
-                </c:choose>
-            </li>
-        </c:if>
-        <li class="last"><im:login/></li>
+      <!-- start of LegFed adds -->
+      <li><a href="http://mines.legumeinfo.org/" alt="LIS Mines">Other LIS Mines</a></li>
+      <li><a href="http://legumeinfo.org/" target="_blank" alt="LIS - Legume Information System">LIS Home</a></li>
+      <!-- end of LegFed adds -->
+      <!-- cant send email from public server yet
+           <li><a href="#" onclick="showContactForm();return false;"><fmt:message key="feedback.link"/></a></li>
+	   -->
+           <c:if test="${PROFILE.loggedIn}">
+             <li>
+               <!-- display (optionally trimmed) username -->
+               <c:choose>
+                 <c:when test="${! empty PROVIDER}">
+                   <c:choose>
+                     <c:when test="${empty USERNAME || USERNAME == 'nullnull'}">
+                       <c:set var="displayUserName" value="logged in with OpenID"/>
+                     </c:when>
+                     <c:otherwise>
+                       <c:set var="displayUserName" value="${USERNAME}"/>
+                     </c:otherwise>
+                   </c:choose>
+                 </c:when>
+                 <c:otherwise>
+                   <c:set var="displayUserName" value="${PROFILE.name}"/>
+                 </c:otherwise>
+               </c:choose>
+               <c:choose>
+                 <c:when test="${fn:length(displayUserName) > 25}">
+                   <c:out value="${fn:substring(displayUserName,0,25)}"/>&hellip;
+                 </c:when>
+                 <c:otherwise>
+                   <c:out value="${displayUserName}"/>
+                 </c:otherwise>
+               </c:choose>
+             </li>
+           </c:if>
+      <li class="last"><im:login/></li>
     </ul>
   </div>
 
@@ -133,13 +142,13 @@
 
   <!-- Submenu section -->
   <c:set var="itemList" value="bag:lists.upload.tab.title:upload:0 bag:lists.view.tab.title:view:0 api:api.perl.tab.title:perl:0 api:api.python.tab.title:python:0 api:api.ruby.tab.title:ruby:0 api:api.java.tab.title:java:0 mymine:mymine.bags.tab.title:lists:0 mymine:mymine.history.tab.title:history:0 mymine:mymine.savedqueries.tab.title:saved:1 mymine:mymine.savedtemplates.tab.title:templates:1" />
-   <c:if test="${PROFILE.superuser}">
-       <c:set var="itemList" value="${itemList} mymine:mymine.tracks.tab.title:tracks:1 mymine:mymine.users.tab.title:users:1 mymine:mymine.labels.tab.title:labels:0"></c:set>
-   </c:if>
-   <c:if test="${PROFILE.local}">
-       <c:set var="itemList" value="${itemList} mymine:mymine.password.tab.title:password:1"/>
-   </c:if>
-    <c:set var="itemList" value="${itemList} mymine:mymine.account.tab.title:account:1"/>
+  <c:if test="${PROFILE.superuser}">
+    <c:set var="itemList" value="${itemList} mymine:mymine.tracks.tab.title:tracks:1 mymine:mymine.users.tab.title:users:1 mymine:mymine.labels.tab.title:labels:0"></c:set>
+  </c:if>
+  <c:if test="${PROFILE.local}">
+    <c:set var="itemList" value="${itemList} mymine:mymine.password.tab.title:password:1"/>
+  </c:if>
+  <c:set var="itemList" value="${itemList} mymine:mymine.account.tab.title:account:1"/>
   <fmt:message key="${pageName}.tab" var="tab" />
   <c:choose>
     <c:when test="${tab == 'mymine'}">
@@ -160,70 +169,70 @@
           <tiles:put name="menuItem" value="true"/>
         </tiles:insert>
       </div>
-        <ul id="submenulist">
+      <ul id="submenulist">
         <c:set var="count" value="0"/>
         <c:set var="subtabName" value="subtab${pageName}" scope="request" />
         <c:forTokens items="${itemList}" delims=" " var="item" varStatus="counter">
           <c:set var="tabArray" value="${fn:split(item, ':')}" />
           <c:if test="${tabArray[0] == tab}">
-          <c:choose>
-            <c:when test="${((empty subtabs[subtabName] && count == 0)||(subtabs[subtabName] == tabArray[2])) && (tab == pageName)}">
-              <%-- open li element --%>
-        <li id="subactive_${tab}"
-                <c:choose>
-                  <c:when test="${count == 0}">class="first ${fn:replace(tabArray[1], ".", "")}"</c:when>
-                  <c:otherwise>class="${fn:replace(tabArray[1], ".", "")}"</c:otherwise>
-                </c:choose>
-              > <%-- Close li element --%>
-                <div><span><fmt:message key="${tabArray[1]}" /></span></div>
-              </li>
-            </c:when>
-            <c:when test="${(tabArray[3] == '1') && (loggedin == false)}">
-              <%-- open li --%>
-              <li
-                <c:choose>
-                  <c:when test="${count == 0}">class="first ${fn:replace(tabArray[1], ".", "")}"</c:when>
-                  <c:otherwise>class="${fn:replace(tabArray[1], ".", "")}"</c:otherwise>
-                </c:choose>
-        >
-        <%-- close li --%>
-        <div>
-                <span onclick="alert('You need to log in'); return false;">
-                  <fmt:message key="${tabArray[1]}"/>
-                </span>
-                </div>
-              </li>
-            </c:when>
-            <c:otherwise>
-              <%-- open li --%>
-              <li
-                <c:choose>
-                  <c:when test="${count == 0}">class="first ${fn:replace(tabArray[1], ".", "")}"</c:when>
-                  <c:otherwise>class="${fn:replace(tabArray[1], ".", "")}"</c:otherwise>
-                </c:choose>
-        >
-        <%-- close li --%>
-                <div>
-                <a href="/${WEB_PROPERTIES['webapp.path']}/${tab}.do?subtab=${tabArray[2]}">
-                  <fmt:message key="${tabArray[1]}"/>
-                </a>
-                </div>
-              </li>
-            </c:otherwise>
-          </c:choose>
-          <c:set var="count" value="${count+1}"/>
+            <c:choose>
+              <c:when test="${((empty subtabs[subtabName] && count == 0)||(subtabs[subtabName] == tabArray[2])) && (tab == pageName)}">
+                <%-- open li element --%>
+                <li id="subactive_${tab}"
+                    <c:choose>
+                      <c:when test="${count == 0}">class="first ${fn:replace(tabArray[1], ".", "")}"</c:when>
+                      <c:otherwise>class="${fn:replace(tabArray[1], ".", "")}"</c:otherwise>
+                    </c:choose>
+                    > <%-- Close li element --%>
+                  <div><span><fmt:message key="${tabArray[1]}" /></span></div>
+                </li>
+              </c:when>
+              <c:when test="${(tabArray[3] == '1') && (loggedin == false)}">
+                <%-- open li --%>
+                <li
+                  <c:choose>
+                    <c:when test="${count == 0}">class="first ${fn:replace(tabArray[1], ".", "")}"</c:when>
+                    <c:otherwise>class="${fn:replace(tabArray[1], ".", "")}"</c:otherwise>
+                  </c:choose>
+                  >
+                  <%-- close li --%>
+                  <div>
+                    <span onclick="alert('You need to log in'); return false;">
+                      <fmt:message key="${tabArray[1]}"/>
+                    </span>
+                  </div>
+                </li>
+              </c:when>
+              <c:otherwise>
+                <%-- open li --%>
+                <li
+                  <c:choose>
+                    <c:when test="${count == 0}">class="first ${fn:replace(tabArray[1], ".", "")}"</c:when>
+                    <c:otherwise>class="${fn:replace(tabArray[1], ".", "")}"</c:otherwise>
+                  </c:choose>
+                  >
+                  <%-- close li --%>
+                  <div>
+                    <a href="/${WEB_PROPERTIES['webapp.path']}/${tab}.do?subtab=${tabArray[2]}">
+                      <fmt:message key="${tabArray[1]}"/>
+                    </a>
+                  </div>
+                </li>
+              </c:otherwise>
+            </c:choose>
+            <c:set var="count" value="${count+1}"/>
           </c:if>
         </c:forTokens>
         <!--
-        <c:if test="${pageName == 'begin'}">
-          <li>
-          <div>
-            <a href="${WEB_PROPERTIES['project.sitePrefix']}/what.shtml">What is ${WEB_PROPERTIES['project.title']}?</a>
-          </div>
-          </li>
-        </c:if>
-         -->
-        </ul>
+            <c:if test="${pageName == 'begin'}">
+              <li>
+                <div>
+                  <a href="${WEB_PROPERTIES['project.sitePrefix']}/what.shtml">What is ${WEB_PROPERTIES['project.title']}?</a>
+                </div>
+              </li>
+            </c:if>
+            -->
+      </ul>
     </div>
   </div>
 
