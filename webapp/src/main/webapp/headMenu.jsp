@@ -37,7 +37,7 @@
   <div id="header">
     <!-- LIS site nav -->
     <div style="float:left;">
-      <a href="https://legumeinfo.org/"><img src="http://dev.lis.ncgr.org:50030/assets/img/lis-logo-small.png" alt="LIS - Legume Information System"/></a>
+      <a href="https://legumeinfo.org/"><img src="https://legumeinfo.org/assets/img/lis-logo-small.png" alt="LIS - Legume Information System"/></a>
     </div>
     <div style="float:left;margin-left:5px;margin-right:10px;padding-top:5px;font-family:ProximaNova,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;">
       <div style="font-size:20px; color:white;">LIS - Legume Information System</div>
