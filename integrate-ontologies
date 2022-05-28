@@ -1,0 +1,18 @@
+#!/bin/sh
+NC='\033[0m'
+LP='\033[1;35m'
+
+echo -e "#################################################################"
+echo -e "########################## ${LP}ONTOLOGIES${NC} ###########################"
+echo -e "#################################################################"
+
+./gradlew integrate --stacktrace -Psource=go
+./gradlew integrate --stacktrace -Psource=so
+./gradlew integrate --stacktrace -Psource=interpro
+./gradlew integrate --stacktrace -Psource=interpro-go
+./gradlew integrate --stacktrace -Psource=plant-ontology
+./gradlew integrate --stacktrace -Psource=plant-trait-ontology
+./gradlew integrate --stacktrace -Psource=legume.genefam.fam1.M65K
+./gradlew integrate --stacktrace -Psource=legume.genefam.fam1.M65K.trees_ML_rooted
+
+./gradlew integrate --stacktrace -Psource=cowpea-crop-ontology

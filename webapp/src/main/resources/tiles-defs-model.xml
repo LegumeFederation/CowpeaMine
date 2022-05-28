@@ -68,3 +68,7 @@
 
 <!-- LIS pages -->
 <definition name="lisLinkDisplayer.tile" path="/model/lisLinkDisplayer.jsp"/>
+
+<!-- Annotation -->
+<definition name="annotation.tile" path="/model/annotation.jsp"
+            controllerUrl="/initAnnotation.do"/>

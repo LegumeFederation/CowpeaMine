@@ -1,38 +1,36 @@
 #!/bin/sh
-rm -f *.log
+NC='\033[0m'
+LP='\033[1;35m'
 
-## echo a big marker so we can see when this run started in the scroll
-echo ""
-echo "#######################################################################################"
-echo "#######################################################################################"
-echo "################################### POSTPROCESS #######################################"
-echo "#######################################################################################"
-echo "#######################################################################################"
-echo ""
+echo -e "#################################################################"
+echo -e "########################### ${LP}POSTPROCESS${NC} #########################"
+echo -e "#################################################################"
 
 ## IM CORE
-# ./gradlew postprocess -Pprocess=do-sources
-# ./gradlew postprocess -Pprocess=create-utr-references
-# ./gradlew postprocess -Pprocess=create-references
-# ./gradlew postprocess -Pprocess=make-spanning-locations
-# ./gradlew postprocess -Pprocess=create-chromosome-locations-and-lengths
-# ./gradlew postprocess -Pprocess=create-intergenic-region-features
-# ./gradlew postprocess -Pprocess=transfer-sequences
-# ./gradlew postprocess -Pprocess=populate-child-features
-# ./gradlew postprocess -Pprocess=create-gene-flanking-features
+# ./gradlew postprocess --stacktrace -Pprocess=do-sources
+# ./gradlew postprocess --stacktrace -Pprocess=create-utr-references
+# ./gradlew postprocess --stacktrace -Pprocess=create-references
+# ./gradlew postprocess --stacktrace -Pprocess=make-spanning-locations
+# ./gradlew postprocess --stacktrace -Pprocess=create-chromosome-locations-and-lengths
+# ./gradlew postprocess --stacktrace -Pprocess=create-intergenic-region-features
+# ./gradlew postprocess --stacktrace -Pprocess=transfer-sequences
+# ./gradlew postprocess --stacktrace -Pprocess=populate-child-features
+# ./gradlew postprocess --stacktrace -Pprocess=create-gene-flanking-features
 
 ## LIS
-# ./gradlew postprocess -Pprocess=lis-populate-gene-protein-collections
-# ./gradlew postprocess -Pprocess=lis-populate-qtl-gene-collections
-# ./gradlew postprocess -Pprocess=lis-populate-publications
-# ./gradlew postprocess -Pprocess=lis-populate-protein-pathway-collections
+# ./gradlew postprocess --stacktrace -Pprocess=lis-populate-publications
+# ./gradlew postprocess --stacktrace -Pprocess=lis-populate-genotypingrecord-markers
+# ./gradlew postprocess --stacktrace -Pprocess=lis-populate-gwasresult-markers
+# ./gradlew postprocess --stacktrace -Pprocess=lis-populate-marker-linkagegrouppositions
+# ./gradlew postprocess --stacktrace -Pprocess=lis-populate-qtl-markers
+# ./gradlew postprocess --stacktrace -Pprocess=lis-populate-qtl-genes
 
 ## VIEWS AND INDEXES
-# ./gradlew postprocess -Pprocess=create-location-overlap-index
-# ./gradlew postprocess -Pprocess=create-overlap-view
-# ./gradlew postprocess -Pprocess=create-attribute-indexes
+# ./gradlew postprocess --stacktrace -Pprocess=create-location-overlap-index
+# ./gradlew postprocess --stacktrace -Pprocess=create-overlap-view
+# ./gradlew postprocess --stacktrace -Pprocess=create-attribute-indexes
 
 ## DO THESE AFTER UPDATES
-./gradlew postprocess -Pprocess=summarise-objectstore
-./gradlew postprocess -Pprocess=create-autocomplete-index
-./gradlew postprocess -Pprocess=create-search-index
+./gradlew postprocess --stacktrace -Pprocess=summarise-objectstore
+./gradlew postprocess --stacktrace -Pprocess=create-autocomplete-index
+./gradlew postprocess --stacktrace -Pprocess=create-search-index

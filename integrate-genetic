@@ -1,0 +1,24 @@
+#!/bin/sh
+NC='\033[0m'
+LP='\033[1;35m'
+
+echo -e "#################################################################"
+echo -e "############################ ${LP}GENETIC${NC} ############################"
+echo -e "#################################################################"
+
+## vigra
+./gradlew integrate --stacktrace -Psource=IA_panel.gwas.Sandhu_Singh_2020
+
+## vigun
+./gradlew integrate --stacktrace -Psource=CB27_x_IT97K-556-6.gen.Huynh_Ehlers_2015
+./gradlew integrate --stacktrace -Psource=IT99K-573-1-1_x_TVNu-1158.gen.Lo_Munoz-Amatriain_2018
+./gradlew integrate --stacktrace -Psource=MAGIC-2017.gen.Huynh_Ehlers_2018
+./gradlew integrate --stacktrace -Psource=Sanzi_x_Vita7.gen.Pottorff_Ehlers_2012
+./gradlew integrate --stacktrace -Psource=ZN016_x_Zhijiang282.gen.Xu_Wu_2017
+./gradlew integrate --stacktrace -Psource=iSelect-consensus-2016.gen.Munoz-Amatriain_Mirebrahim_2017
+./gradlew integrate --stacktrace -Psource=mixed.gen.Burridge_Schneider_2017
+./gradlew integrate --stacktrace -Psource=mixed.gen.Herniter_Munoz-Amatriain_2018
+./gradlew integrate --stacktrace -Psource=mixed.gen.Huynh_Matthews_2016
+
+./gradlew integrate --stacktrace -Psource=mixed.gwas.Lo_Munoz-Amatriain_2019
+

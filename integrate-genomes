@@ -1,0 +1,24 @@
+#!/bin/sh
+NC='\033[0m'
+LP='\033[1;35m'
+
+echo -e "#################################################################"
+echo -e "############################ ${LP}GENOMES${NC} ############################"
+echo -e "#################################################################"
+
+## vigan
+./gradlew integrate --stacktrace -Psource=Gyeongwon.gnm3.JyYC
+./gradlew integrate --stacktrace -Psource=Shumari.gnm1.V0CS
+
+## vigra
+./gradlew integrate --stacktrace -Psource=VC1973A.gnm6.3nL8
+
+## vigun
+./gradlew integrate --stacktrace -Psource=CB5-2.gnm1.WDTB
+#./gradlew integrate --stacktrace -Psource=IT97K-499-35.gnm1.QnBW
+./gradlew integrate --stacktrace -Psource=Sanzi.gnm1.YNCM
+./gradlew integrate --stacktrace -Psource=Suvita2.gnm1.5QLL
+./gradlew integrate --stacktrace -Psource=TZ30.gnm1.TX9W
+./gradlew integrate --stacktrace -Psource=UCR779.gnm1.M7KZ
+./gradlew integrate --stacktrace -Psource=Xiabao_II.gnm1.WDBP
+./gradlew integrate --stacktrace -Psource=ZN016.gnm1.997F

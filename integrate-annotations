@@ -1,0 +1,26 @@
+#!/bin/sh
+NC='\033[0m'
+LP='\033[1;35m'
+
+echo -e "#################################################################"
+echo -e "########################### ${LP}ANNOTATION${NC} ##########################"
+echo -e "#################################################################"
+
+## vigan
+./gradlew integrate --stacktrace -Psource=Gyeongwon.gnm3.ann1.3Nz5
+./gradlew integrate --stacktrace -Psource=Shumari.gnm1.ann1.8BRS
+
+## vigra
+./gradlew integrate --stacktrace -Psource=VC1973A.gnm6.ann1.M1Qs
+
+## vigun
+./gradlew integrate --stacktrace -Psource=CB5-2.gnm1.ann1.0GKC
+./gradlew integrate --stacktrace -Psource=IT97K-499-35.gnm1.ann1.zb5D
+./gradlew integrate --stacktrace -Psource=IT97K-499-35.gnm1.ann2.FD7K
+./gradlew integrate --stacktrace -Psource=Sanzi.gnm1.ann1.HFH8
+./gradlew integrate --stacktrace -Psource=Suvita2.gnm1.ann1.1PF6
+./gradlew integrate --stacktrace -Psource=TZ30.gnm1.ann2.59NL
+./gradlew integrate --stacktrace -Psource=UCR779.gnm1.ann1.VF6G
+./gradlew integrate --stacktrace -Psource=Xiabao_II.gnm1.ann1.4JFL
+./gradlew integrate --stacktrace -Psource=ZN016.gnm1.ann2.C7YV
+

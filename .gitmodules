@@ -1,0 +1,9 @@
+[submodule "libs"]
+	path = libs
+	url = https://github.com/legumeinfo/mine-libs
+[submodule "webapp/src/main/java"]
+	path = webapp/src/main/java
+	url = https://github.com/legumeinfo/mine-java
+[submodule "webapp/src/main/webapp"]
+	path = webapp/src/main/webapp
+	url = https://github.com/legumeinfo/mine-webapp

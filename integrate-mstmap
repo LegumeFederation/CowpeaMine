@@ -1,0 +1,15 @@
+#!/bin/sh
+NC='\033[0m'
+LP='\033[1;35m'
+
+echo -e "#################################################################"
+echo -e "############################# ${LP}MSTMAP${NC} ############################"
+echo -e "#################################################################"
+
+## vigun
+#./gradlew integrate --stacktrace -Psource=CB27_x_IT82E-18.mst.Pottorff_Li_2014a
+./gradlew integrate --stacktrace -Psource=CB46_x_IT93K-503-1.mst.Pottorff_Li_2014a
+./gradlew integrate --stacktrace -Psource=IT84S-2246-4_x_TVu-14676.mst.Pottorff_Roberts_2014a
+./gradlew integrate --stacktrace -Psource=MAGIC-2017.mst.Huynh_Ehlers_2018
+./gradlew integrate --stacktrace -Psource=Sanzi_x_Vita7.mst.Pottorff_Ehlers_2012
+./gradlew integrate --stacktrace -Psource=ZN016_x_Zhijiang282.mst.Xu_Wu_2017
