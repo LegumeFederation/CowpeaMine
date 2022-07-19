@@ -1,0 +1,24 @@
+#!/bin/sh
+
+rm -f validate-genetic.md
+touch validate-genetic.md
+
+## vigra
+validate-genetic-collection /data/v2/Vigna/radiata/genetic/IA_panel.gwas.Sandhu_Singh_2020 >> validate-genetic.md
+
+## vigun
+validate-genetic-collection /data/v2/Vigna/unguiculata/genetic/CB27_x_IT82E-18.mst.Pottorff_Li_2014 >> validate-genetic.md
+validate-genetic-collection /data/v2/Vigna/unguiculata/genetic/CB27_x_IT97K-556-6.gen.Huynh_Ehlers_2015 >> validate-genetic.md
+validate-genetic-collection /data/v2/Vigna/unguiculata/genetic/CB46_x_IT93K-503-1.mst.Pottorff_Li_2014 >> validate-genetic.md
+validate-genetic-collection /data/v2/Vigna/unguiculata/genetic/iSelect-consensus-2016.gen.Muñoz-Amatriaín_Mirebrahim_2017 >> validate-genetic.md
+validate-genetic-collection /data/v2/Vigna/unguiculata/genetic/IT84S-2246-4_x_TVu-14676.mst.Pottorff_Roberts_2014 >> validate-genetic.md
+validate-genetic-collection /data/v2/Vigna/unguiculata/genetic/IT99K-573-1-1_x_TVNu-1158.gen.Lo_Muñoz-Amatriaín_2018 >> validate-genetic.md
+validate-genetic-collection /data/v2/Vigna/unguiculata/genetic/MAGIC-2017.gen.Huynh_Ehlers_2018 >> validate-genetic.md
+validate-genetic-collection /data/v2/Vigna/unguiculata/genetic/mixed.gen.Burridge_Schneider_2017 >> validate-genetic.md
+validate-genetic-collection /data/v2/Vigna/unguiculata/genetic/mixed.gen.Herniter_Muñoz-Amatriaín_2018 >> validate-genetic.md
+validate-genetic-collection /data/v2/Vigna/unguiculata/genetic/mixed.gen.Huynh_Matthews_2016 >> validate-genetic.md
+validate-genetic-collection /data/v2/Vigna/unguiculata/genetic/mixed.gwas.Lo_Muñoz-Amatriaín_2019 >> validate-genetic.md
+validate-genetic-collection /data/v2/Vigna/unguiculata/genetic/Sanzi_x_Vita7.gen.Pottorff_Ehlers_2012 >> validate-genetic.md
+validate-genetic-collection /data/v2/Vigna/unguiculata/genetic/ZN016_x_Zhijiang282.gen.Xu_Wu_2017 >> validate-genetic.md
+
+

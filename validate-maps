@@ -1,0 +1,7 @@
+#!/bin/sh
+
+rm -f validate-maps.md
+touch validate-maps.md
+
+validate-map-collection /data/v2/Vigna/unguiculata/maps/iSelect-consensus-2016.map.Muñoz-Amatriaín_Mirebrahim_2017 >> validate-maps.md
+validate-map-collection /data/v2/Vigna/unguiculata/maps/MAGIC-2017.map.Huynh_Ehlers_2018 >> validate-maps.md

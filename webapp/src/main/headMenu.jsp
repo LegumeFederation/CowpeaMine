@@ -36,10 +36,10 @@
   </c:if>
   <div id="header">
     <!-- LIS site nav -->
-    <div style="float:left;">
+    <div style="float:left; margin:5px;">
       <a href="https://legumeinfo.org/"><img src="https://legumeinfo.org/assets/img/lis-logo-small.png" alt="LIS - Legume Information System"/></a>
     </div>
-    <div style="float:left;margin-left:5px;margin-right:10px;padding-top:5px;font-family:ProximaNova,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;">
+    <div style="float:left; margin:5px 10px 0 0; font-family:ProximaNova,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;">
       <div style="font-size:20px; color:white;">LIS - Legume Information System</div>
       <div style="font-size:12px; color:white;">Information about legume traits for crop improvement</div>
     </div>

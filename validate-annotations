@@ -1,0 +1,23 @@
+#!/bin/sh
+
+rm -f validate-annotations.md
+touch validate-annotations.md
+
+## vigan
+validate-annotation-collection /data/v2/Vigna/angularis/annotations/Gyeongwon.gnm3.ann1.3Nz5 >> validate-annotations.md
+validate-annotation-collection /data/v2/Vigna/angularis/annotations/Shumari.gnm1.ann1.8BRS >> validate-annotations.md
+
+## vigra
+validate-annotation-collection /data/v2/Vigna/radiata/annotations/VC1973A.gnm6.ann1.M1Qs >> validate-annotations.md
+
+## vigun
+validate-annotation-collection /data/v2/Vigna/unguiculata/annotations/CB5-2.gnm1.ann1.0GKC >> validate-annotations.md
+validate-annotation-collection /data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann1.zb5D >> validate-annotations.md
+validate-annotation-collection /data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann2.FD7K >> validate-annotations.md
+validate-annotation-collection /data/v2/Vigna/unguiculata/annotations/Sanzi.gnm1.ann1.HFH8 >> validate-annotations.md
+validate-annotation-collection /data/v2/Vigna/unguiculata/annotations/Suvita2.gnm1.ann1.1PF6 >> validate-annotations.md
+validate-annotation-collection /data/v2/Vigna/unguiculata/annotations/TZ30.gnm1.ann2.59NL >> validate-annotations.md
+validate-annotation-collection /data/v2/Vigna/unguiculata/annotations/UCR779.gnm1.ann1.VF6G >> validate-annotations.md
+validate-annotation-collection /data/v2/Vigna/unguiculata/annotations/Xiabao_II.gnm1.ann1.4JFL >> validate-annotations.md
+validate-annotation-collection /data/v2/Vigna/unguiculata/annotations/ZN016.gnm1.ann2.C7YV >> validate-annotations.md
+

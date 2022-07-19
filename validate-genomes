@@ -1,0 +1,21 @@
+#!/bin/sh
+
+rm -f validate-genomes.md
+touch validate-genomes.md
+
+## vigan
+validate-genome-collection /data/v2/Vigna/angularis/genomes/Gyeongwon.gnm3.JyYC >> validate-genomes.md
+validate-genome-collection /data/v2/Vigna/angularis/genomes/Shumari.gnm1.V0CS >> validate-genomes.md
+
+## vigra
+validate-genome-collection /data/v2/Vigna/radiata/genomes/VC1973A.gnm6.3nL8 >> validate-genomes.md
+
+## vigun
+validate-genome-collection /data/v2/Vigna/unguiculata/genomes/CB5-2.gnm1.WDTB >> validate-genomes.md
+validate-genome-collection /data/v2/Vigna/unguiculata/genomes/IT97K-499-35.gnm1.QnBW >> validate-genomes.md
+validate-genome-collection /data/v2/Vigna/unguiculata/genomes/Sanzi.gnm1.YNCM >> validate-genomes.md
+validate-genome-collection /data/v2/Vigna/unguiculata/genomes/Suvita2.gnm1.5QLL >> validate-genomes.md
+validate-genome-collection /data/v2/Vigna/unguiculata/genomes/TZ30.gnm1.TX9W >> validate-genomes.md
+validate-genome-collection /data/v2/Vigna/unguiculata/genomes/UCR779.gnm1.M7KZ >> validate-genomes.md
+validate-genome-collection /data/v2/Vigna/unguiculata/genomes/Xiabao_II.gnm1.WDBP >> validate-genomes.md
+validate-genome-collection /data/v2/Vigna/unguiculata/genomes/ZN016.gnm1.997F >> validate-genomes.md

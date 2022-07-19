@@ -611,14 +611,14 @@
     <enrichmentwidgetdisplayer id="genefamily_enrichment"
                                title="Gene Family Enrichment"
                                description="Gene families enriched for genes in this list."
-                               label="GeneFamily"
+                               label="Gene Family"
                                startClass="Gene"
                                startClassDisplay="primaryIdentifier"
-                               enrich="geneFamily.description"
-                               enrichIdentifier="geneFamily.description"
+                               enrich="geneFamilyAssignments.geneFamily.description"
+                               enrichIdentifier="geneFamilyAssignments.geneFamily.identifier"
                                constraints="organism.name=[list]"
                                typeClass="Gene"
-                               views="secondaryIdentifier, organism.name, geneFamily.description"/>
+                               views="secondaryIdentifier, organism.name, geneFamilyAssignments.geneFamily.description"/>
 
     <enrichmentwidgetdisplayer id="pathway_enrichment"
                                title="Pathway Enrichment"

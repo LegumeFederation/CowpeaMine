@@ -7,7 +7,9 @@ echo -e "#################################################################"
 echo -e "############################ ${LP}MARKERS${NC} ############################"
 echo -e "#################################################################"
 
-## vigun
+## vigra
 ./gradlew integrate --stacktrace -Psource=VC1973A.gnm6.mrk.microsatellites
 ./gradlew integrate --stacktrace -Psource=VC1973A.gnm6.mrk.Sandhu_Singh_2020
-#./gradlew integrate --stacktrace -Psource=IT97K-499-35.gnm1.mrk.Cowpea1MSelectedSNPs
+
+## vigun
+./gradlew integrate --stacktrace -Psource=IT97K-499-35.gnm1.mrk.Cowpea1MSelectedSNPs

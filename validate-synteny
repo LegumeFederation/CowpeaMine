@@ -1,0 +1,15 @@
+#!/bin/sh
+
+rm -f validate-synteny.md
+touch validate-synteny.md
+
+## vigan
+validate-synteny-collection /data/v2/Vigna/angularis/synteny/Gyeongwon.gnm3.syn.wCFF >> validate-synteny.md
+
+## vigra
+validate-synteny-collection /data/v2/Vigna/radiata/synteny/VC1973A.gnm6.syn.mcwy >> validate-synteny.md
+
+## vigun
+validate-synteny-collection /data/v2/Vigna/unguiculata/synteny/IT97K-499-35.gnm1.syn.W3NY >> validate-synteny.md
+
+

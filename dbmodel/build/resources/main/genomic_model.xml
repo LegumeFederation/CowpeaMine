@@ -6,19 +6,19 @@
 	<reference name="syntenyBlock" referenced-type="SyntenyBlock" reverse-reference="syntenicRegions"/>
 </class>
 <class name="NonLTRRetrotransposon" extends="Retrotransposon" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000189"></class>
-<class name="GeneFamily" is-interface="true">
-	<attribute name="identifier" type="java.lang.String"/>
-	<attribute name="description" type="java.lang.String"/>
-	<attribute name="name" type="java.lang.String"/>
-	<attribute name="version" type="java.lang.String"/>
-	<attribute name="size" type="java.lang.Integer"/>
-	<reference name="phylotree" referenced-type="Phylotree" reverse-reference="geneFamily"/>
-	<collection name="genes" referenced-type="Gene" reverse-reference="geneFamily"/>
-	<collection name="proteins" referenced-type="Protein" reverse-reference="geneFamily"/>
-	<collection name="proteinDomains" referenced-type="ProteinDomain" reverse-reference="geneFamilies"/>
-	<collection name="dataSets" referenced-type="DataSet"/>
-</class>
 <class name="Helitron" extends="TransposableElement" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000544"></class>
+<class name="ProteinMatch" extends="Annotatable" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000349">
+	<attribute name="source" type="java.lang.String"/>
+	<attribute name="signatureDesc" type="java.lang.String"/>
+	<attribute name="status" type="java.lang.String"/>
+	<attribute name="length" type="java.lang.Integer"/>
+	<attribute name="target" type="java.lang.String"/>
+	<attribute name="name" type="java.lang.String"/>
+	<attribute name="date" type="java.lang.String"/>
+	<attribute name="accession" type="java.lang.String"/>
+	<reference name="protein" referenced-type="Protein" reverse-reference="proteinMatches"/>
+	<reference name="location" referenced-type="Location"/>
+</class>
 <class name="EST" extends="Oligo" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000345">
 	<collection name="overlappingESTSets" referenced-type="OverlappingESTSet" reverse-reference="ESTs"/>
 </class>
@@ -42,6 +42,11 @@
 </class>
 <class name="CRM" extends="RegulatoryRegion" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000727">
 	<collection name="TFBindingSites" referenced-type="TFBindingSite" reverse-reference="CRM"/>
+</class>
+<class name="GeneFamilyTally" is-interface="true">
+	<attribute name="tally" type="java.lang.Integer"/>
+	<reference name="organism" referenced-type="Organism"/>
+	<reference name="geneFamily" referenced-type="GeneFamily" reverse-reference="tallies"/>
 </class>
 <class name="GoldenPathFragment" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000468"></class>
 <class name="TerminalInvertedRepeatElement" extends="TransposableElement" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000208"></class>
@@ -67,6 +72,18 @@
 </class>
 <class name="MiRNAPrimaryTranscript" extends="Transcript" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000647"></class>
 <class name="Primer" extends="Oligo" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000112"></class>
+<class name="ProteinDomain" extends="Annotatable" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000417">
+	<attribute name="description" type="java.lang.String"/>
+	<attribute name="type" type="java.lang.String"/>
+	<attribute name="name" type="java.lang.String"/>
+	<attribute name="shortName" type="java.lang.String"/>
+	<collection name="genes" referenced-type="Gene" reverse-reference="proteinDomains"/>
+	<collection name="geneFamilies" referenced-type="GeneFamily" reverse-reference="proteinDomains"/>
+	<collection name="childFeatures" referenced-type="ProteinDomain"/>
+	<collection name="foundIn" referenced-type="ProteinDomain"/>
+	<collection name="parentFeatures" referenced-type="ProteinDomain"/>
+	<collection name="contains" referenced-type="ProteinDomain"/>
+</class>
 <class name="Strain" is-interface="true" term="http://semanticscience.org/resource/SIO_010055">
 	<attribute name="identifier" type="java.lang.String" term="http://edamontology.org/data_2379"/>
 	<attribute name="description" type="java.lang.String"/>
@@ -76,32 +93,14 @@
 	<reference name="organism" referenced-type="Organism" reverse-reference="strains"/>
 	<collection name="dataSets" referenced-type="DataSet"/>
 </class>
-<class name="Protein" extends="BioEntity" is-interface="true" term="http://semanticscience.org/resource/SIO_010043">
-	<attribute name="geneFamilyScoreMeaning" type="java.lang.String"/>
-	<attribute name="md5checksum" type="java.lang.String" term="http://edamontology.org/data_2190"/>
-	<attribute name="primaryAccession" type="java.lang.String" term="http://edamontology.org/data_2907"/>
-	<attribute name="molecularWeight" type="java.lang.Double" term="http://purl.bioontology.org/ontology/MESH/D008970"/>
-	<attribute name="length" type="java.lang.Integer" term="http://semanticscience.org/resource/SIO_000041"/>
-	<attribute name="geneFamilyScore" type="java.lang.Double"/>
-	<attribute name="isPrimary" type="java.lang.Boolean"/>
-	<reference name="phylonode" referenced-type="Phylonode" reverse-reference="protein"/>
-	<reference name="transcript" referenced-type="Transcript" reverse-reference="protein"/>
-	<reference name="CDS" referenced-type="CDS" reverse-reference="protein"/>
-	<reference name="sequence" referenced-type="Sequence"/>
-	<reference name="geneFamily" referenced-type="GeneFamily" reverse-reference="proteins"/>
-	<collection name="proteinHmmMatches" referenced-type="ProteinHmmMatch" reverse-reference="protein"/>
-	<collection name="genes" referenced-type="Gene" reverse-reference="proteins"/>
-	<collection name="proteinMatches" referenced-type="ProteinMatch" reverse-reference="protein"/>
+<class name="GeneFamilyAssignment" is-interface="true">
+	<attribute name="bestDomainScore" type="java.lang.Double"/>
+	<attribute name="score" type="java.lang.Double"/>
+	<attribute name="evalue" type="java.lang.Double"/>
+	<reference name="geneFamily" referenced-type="GeneFamily"/>
 </class>
 <class name="MobileGeneticElement" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0001037"></class>
 <class name="MiRNA" extends="NcRNA" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000276"></class>
-<class name="Phylotree" is-interface="true">
-	<attribute name="name" type="java.lang.String"/>
-	<attribute name="numLeaves" type="java.lang.Integer"/>
-	<reference name="geneFamily" referenced-type="GeneFamily" reverse-reference="phylotree"/>
-	<reference name="dataSet" referenced-type="DataSet"/>
-	<collection name="nodes" referenced-type="Phylonode" reverse-reference="tree"/>
-</class>
 <class name="LinkageGroupPosition" is-interface="true">
 	<attribute name="position" type="java.lang.Double"/>
 	<attribute name="markerName" type="java.lang.String"/>
@@ -134,9 +133,6 @@
 	<reference name="subject" referenced-type="BioEntity" reverse-reference="synonyms"/>
 	<collection name="dataSets" referenced-type="DataSet"/>
 </class>
-<class name="GenotypingSample" extends="BioEntity" is-interface="true">
-	<reference name="study" referenced-type="GenotypingStudy" reverse-reference="samples"/>
-</class>
 <class name="BioEntity" extends="Annotatable" is-interface="true">
 	<attribute name="description" type="java.lang.String"/>
 	<attribute name="symbol" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000105"/>
@@ -153,17 +149,6 @@
 	<collection name="locatedFeatures" referenced-type="Location" reverse-reference="locatedOn"/>
 </class>
 <class name="Retrotransposon" extends="TransposableElement" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000180"></class>
-<class name="ProteinHmmMatch" extends="BioEntity" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0001831">
-	<attribute name="source" type="java.lang.String"/>
-	<attribute name="signatureDesc" type="java.lang.String"/>
-	<attribute name="status" type="java.lang.String"/>
-	<attribute name="length" type="java.lang.Integer"/>
-	<attribute name="target" type="java.lang.String"/>
-	<attribute name="date" type="java.lang.String"/>
-	<attribute name="accession" type="java.lang.String"/>
-	<reference name="protein" referenced-type="Protein" reverse-reference="proteinHmmMatches"/>
-	<reference name="location" referenced-type="Location"/>
-</class>
 <class name="GeneFlankingRegion" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO_0000239">
 	<attribute name="direction" type="java.lang.String" term="http://purl.obolibrary.org/obo/PATO_0000039"/>
 	<attribute name="distance" type="java.lang.String" term="http://purl.obolibrary.org/obo/PATO_0000040"/>
@@ -182,25 +167,6 @@
 	<collection name="publications" referenced-type="Publication" reverse-reference="meshTerms"/>
 </class>
 <class name="ChromosomeBand" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000341"></class>
-<class name="Gene" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000704">
-	<attribute name="briefDescription" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000136"/>
-	<attribute name="geneFamilyScoreMeaning" type="java.lang.String"/>
-	<attribute name="geneFamilyScore" type="java.lang.Double"/>
-	<reference name="upstreamIntergenicRegion" referenced-type="IntergenicRegion"/>
-	<reference name="downstreamIntergenicRegion" referenced-type="IntergenicRegion"/>
-	<reference name="geneFamily" referenced-type="GeneFamily" reverse-reference="genes"/>
-	<collection name="flankingRegions" referenced-type="GeneFlankingRegion" reverse-reference="gene"/>
-	<collection name="transcripts" referenced-type="Transcript" reverse-reference="gene"/>
-	<collection name="proteins" referenced-type="Protein" reverse-reference="genes"/>
-	<collection name="alleles" referenced-type="Allele" reverse-reference="gene"/>
-	<collection name="introns" referenced-type="Intron" reverse-reference="gene"/>
-	<collection name="CDSs" referenced-type="CDS" reverse-reference="gene"/>
-	<collection name="proteinDomains" referenced-type="ProteinDomain"/>
-	<collection name="exons" referenced-type="Exon" reverse-reference="gene"/>
-	<collection name="pathways" referenced-type="Pathway" reverse-reference="genes"/>
-	<collection name="regulatoryRegions" referenced-type="RegulatoryRegion" reverse-reference="gene"/>
-	<collection name="UTRs" referenced-type="UTR" reverse-reference="gene"/>
-</class>
 <class name="OntologyAnnotation" is-interface="true" term="http://semanticscience.org/resource/SIO_001166">
 	<attribute name="qualifier" type="java.lang.String" term="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C41009"/>
 	<reference name="subject" referenced-type="Annotatable" reverse-reference="ontologyAnnotations"/>
@@ -209,17 +175,6 @@
 	<collection name="evidence" referenced-type="OntologyEvidence"/>
 </class>
 <class name="SOTerm" extends="OntologyTerm" is-interface="true" term="http://edamontology.org/data_0966"></class>
-<class name="ProteinMatch" extends="BioEntity" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000349">
-	<attribute name="source" type="java.lang.String"/>
-	<attribute name="signatureDesc" type="java.lang.String"/>
-	<attribute name="status" type="java.lang.String"/>
-	<attribute name="length" type="java.lang.Integer"/>
-	<attribute name="target" type="java.lang.String"/>
-	<attribute name="date" type="java.lang.String"/>
-	<attribute name="accession" type="java.lang.String"/>
-	<reference name="protein" referenced-type="Protein" reverse-reference="proteinMatches"/>
-	<reference name="location" referenced-type="Location"/>
-</class>
 <class name="TargetSiteDuplication" extends="TransposableElement" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000434"></class>
 <class name="Intron" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000188">
 	<reference name="gene" referenced-type="Gene" reverse-reference="introns"/>
@@ -254,6 +209,26 @@
 	<reference name="threePrimeUTR" referenced-type="ThreePrimeUTR"/>
 	<reference name="fivePrimeUTR" referenced-type="FivePrimeUTR"/>
 </class>
+<class name="GenotypingSample" extends="Annotatable" is-interface="true">
+	<attribute name="description" type="java.lang.String"/>
+	<attribute name="name" type="java.lang.String"/>
+	<reference name="study" referenced-type="GenotypingStudy" reverse-reference="samples"/>
+	<reference name="organism" referenced-type="Organism"/>
+	<reference name="strain" referenced-type="Strain"/>
+	<reference name="dataSet" referenced-type="DataSet"/>
+</class>
+<class name="GeneFamily" is-interface="true">
+	<attribute name="identifier" type="java.lang.String"/>
+	<attribute name="description" type="java.lang.String"/>
+	<attribute name="version" type="java.lang.String"/>
+	<attribute name="size" type="java.lang.Integer"/>
+	<reference name="phylotree" referenced-type="Phylotree" reverse-reference="geneFamily"/>
+	<collection name="genes" referenced-type="Gene"/>
+	<collection name="proteins" referenced-type="Protein"/>
+	<collection name="proteinDomains" referenced-type="ProteinDomain" reverse-reference="geneFamilies"/>
+	<collection name="dataSets" referenced-type="DataSet"/>
+	<collection name="tallies" referenced-type="GeneFamilyTally" reverse-reference="geneFamily"/>
+</class>
 <class name="TRNA" extends="NcRNA" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000253"></class>
 <class name="Author" is-interface="true" term="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42781">
 	<attribute name="firstName" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000181"/>
@@ -270,6 +245,7 @@
 	<collection name="qtls" referenced-type="QTL" reverse-reference="trait"/>
 	<collection name="gwasResults" referenced-type="GWASResult" reverse-reference="trait"/>
 </class>
+<class name="ProteinHmmMatch" extends="ProteinMatch" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0001831"></class>
 <class name="LongTerminalRepeat" extends="LTRRetrotransposon" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000286"></class>
 <class name="ChromosomalDuplication" extends="ChromosomeStructureVariation" is-interface="true" term="http://purl.obolibrary.org/obo/SO:1000037"></class>
 <class name="ThreePrimeUTR" extends="UTR" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000205"></class>
@@ -307,6 +283,34 @@
 	<collection name="genes" referenced-type="Gene"/>
 </class>
 <class name="ReversePrimer" extends="Primer" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000132"></class>
+<class name="Phylonode" is-interface="true">
+	<attribute name="identifier" type="java.lang.String"/>
+	<attribute name="isRoot" type="java.lang.Boolean"/>
+	<attribute name="length" type="java.lang.Double"/>
+	<attribute name="numChildren" type="java.lang.Integer"/>
+	<attribute name="isLeaf" type="java.lang.Boolean"/>
+	<reference name="protein" referenced-type="Protein" reverse-reference="phylonode"/>
+	<reference name="tree" referenced-type="Phylotree" reverse-reference="nodes"/>
+	<reference name="parent" referenced-type="Phylonode" reverse-reference="children"/>
+	<collection name="children" referenced-type="Phylonode" reverse-reference="parent"/>
+</class>
+<class name="Gene" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000704">
+	<attribute name="briefDescription" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000136"/>
+	<reference name="upstreamIntergenicRegion" referenced-type="IntergenicRegion"/>
+	<reference name="downstreamIntergenicRegion" referenced-type="IntergenicRegion"/>
+	<collection name="flankingRegions" referenced-type="GeneFlankingRegion" reverse-reference="gene"/>
+	<collection name="transcripts" referenced-type="Transcript" reverse-reference="gene"/>
+	<collection name="proteins" referenced-type="Protein" reverse-reference="genes"/>
+	<collection name="alleles" referenced-type="Allele" reverse-reference="gene"/>
+	<collection name="geneFamilyAssignments" referenced-type="GeneFamilyAssignment"/>
+	<collection name="introns" referenced-type="Intron" reverse-reference="gene"/>
+	<collection name="CDSs" referenced-type="CDS" reverse-reference="gene"/>
+	<collection name="proteinDomains" referenced-type="ProteinDomain" reverse-reference="genes"/>
+	<collection name="exons" referenced-type="Exon" reverse-reference="gene"/>
+	<collection name="pathways" referenced-type="Pathway" reverse-reference="genes"/>
+	<collection name="regulatoryRegions" referenced-type="RegulatoryRegion" reverse-reference="gene"/>
+	<collection name="UTRs" referenced-type="UTR" reverse-reference="gene"/>
+</class>
 <class name="DataSource" is-interface="true">
 	<attribute name="description" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000136"/>
 	<attribute name="url" type="java.lang.String" term="http://edamontology.org/data_1052"/>
@@ -370,15 +374,6 @@
 	<reference name="sample" referenced-type="ExpressionSample"/>
 	<reference name="feature" referenced-type="SequenceFeature"/>
 </class>
-<class name="ProteinDomain" extends="BioEntity" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000417">
-	<attribute name="type" type="java.lang.String"/>
-	<attribute name="shortName" type="java.lang.String"/>
-	<collection name="geneFamilies" referenced-type="GeneFamily" reverse-reference="proteinDomains"/>
-	<collection name="childFeatures" referenced-type="ProteinDomain"/>
-	<collection name="foundIn" referenced-type="ProteinDomain"/>
-	<collection name="parentFeatures" referenced-type="ProteinDomain"/>
-	<collection name="contains" referenced-type="ProteinDomain"/>
-</class>
 <class name="OntologyRelation" is-interface="true">
 	<attribute name="redundant" type="java.lang.Boolean"/>
 	<attribute name="direct" type="java.lang.Boolean"/>
@@ -394,6 +389,19 @@
 </class>
 <class name="PrimerBindingSite" extends="LTRRetrotransposon" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0005850"></class>
 <class name="ChromosomalTranslocation" extends="ChromosomeStructureVariation SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:1000044"></class>
+<class name="Phylotree" is-interface="true">
+	<attribute name="identifier" type="java.lang.String"/>
+	<attribute name="numLeaves" type="java.lang.Integer"/>
+	<reference name="geneFamily" referenced-type="GeneFamily" reverse-reference="phylotree"/>
+	<reference name="dataSet" referenced-type="DataSet"/>
+	<collection name="nodes" referenced-type="Phylonode" reverse-reference="tree"/>
+</class>
+<class name="Newick" extends="java.lang.Object" is-interface="false">
+	<attribute name="contents" type="java.lang.String"/>
+	<attribute name="identifier" type="java.lang.String"/>
+	<reference name="phylotree" referenced-type="Phylotree"/>
+	<reference name="geneFamily" referenced-type="GeneFamily"/>
+</class>
 <class name="TRNAPrimaryTranscript" extends="Transcript" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000253"></class>
 <class name="OntologyTerm" is-interface="true" term="http://semanticscience.org/resource/SIO_000275">
 	<attribute name="identifier" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000675"/>
@@ -442,12 +450,6 @@
 	<collection name="CDSs" referenced-type="CDS" reverse-reference="transcript"/>
 	<collection name="UTRs" referenced-type="UTR" reverse-reference="transcripts"/>
 </class>
-<class name="Newick" extends="java.lang.Object" is-interface="false">
-	<attribute name="contents" type="java.lang.String"/>
-	<attribute name="name" type="java.lang.String"/>
-	<reference name="phylotree" referenced-type="Phylotree"/>
-	<reference name="geneFamily" referenced-type="GeneFamily"/>
-</class>
 <class name="DataSet" is-interface="true" term="http://semanticscience.org/resource/SIO_000089">
 	<attribute name="description" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000136"/>
 	<attribute name="licence" type="java.lang.String" term="http://purl.org/dc/terms/license"/>
@@ -462,18 +464,6 @@
 <class name="Comment" is-interface="true" term="http://semanticscience.org/resource/SIO_001167">
 	<attribute name="description" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000136"/>
 	<attribute name="type" type="java.lang.String" term="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25284"/>
-</class>
-<class name="Phylonode" is-interface="true">
-	<attribute name="identifier" type="java.lang.String"/>
-	<attribute name="isRoot" type="java.lang.Boolean"/>
-	<attribute name="name" type="java.lang.String"/>
-	<attribute name="length" type="java.lang.Double"/>
-	<attribute name="numChildren" type="java.lang.Integer"/>
-	<attribute name="isLeaf" type="java.lang.Boolean"/>
-	<reference name="protein" referenced-type="Protein" reverse-reference="phylonode"/>
-	<reference name="tree" referenced-type="Phylotree" reverse-reference="nodes"/>
-	<reference name="parent" referenced-type="Phylonode" reverse-reference="children"/>
-	<collection name="children" referenced-type="Phylonode" reverse-reference="parent"/>
 </class>
 <class name="Chromosome" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000340"></class>
 <class name="OntologyEvidence" is-interface="true" term="http://purl.obolibrary.org/obo/ECO_0000000">
@@ -495,6 +485,20 @@
 	<collection name="markers" referenced-type="GeneticMarker" reverse-reference="gwasResults"/>
 </class>
 <class name="TransposableElementGene" extends="Gene" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000111"></class>
+<class name="Protein" extends="BioEntity" is-interface="true" term="http://semanticscience.org/resource/SIO_010043">
+	<attribute name="md5checksum" type="java.lang.String" term="http://edamontology.org/data_2190"/>
+	<attribute name="primaryAccession" type="java.lang.String" term="http://edamontology.org/data_2907"/>
+	<attribute name="molecularWeight" type="java.lang.Double" term="http://purl.bioontology.org/ontology/MESH/D008970"/>
+	<attribute name="length" type="java.lang.Integer" term="http://semanticscience.org/resource/SIO_000041"/>
+	<attribute name="isPrimary" type="java.lang.Boolean"/>
+	<reference name="phylonode" referenced-type="Phylonode" reverse-reference="protein"/>
+	<reference name="transcript" referenced-type="Transcript" reverse-reference="protein"/>
+	<reference name="CDS" referenced-type="CDS" reverse-reference="protein"/>
+	<reference name="sequence" referenced-type="Sequence"/>
+	<collection name="genes" referenced-type="Gene" reverse-reference="proteins"/>
+	<collection name="geneFamilyAssignments" referenced-type="GeneFamilyAssignment"/>
+	<collection name="proteinMatches" referenced-type="ProteinMatch" reverse-reference="protein"/>
+</class>
 <class name="GenotypingStudy" extends="Annotatable" is-interface="true">
 	<attribute name="genotypingPlatform" type="java.lang.String"/>
 	<attribute name="description" type="java.lang.String"/>
