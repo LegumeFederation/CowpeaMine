@@ -142,18 +142,20 @@
   <class className="org.intermine.model.bio.Gene">
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier" label="Identifier"/>
-      <fieldconfig fieldExpr="secondaryIdentifier" label="ALT identifier"/>
+      <fieldconfig fieldExpr="secondaryIdentifier" label="Short identifier"/>
+      <fieldconfig fieldExpr="name" label="Name"/>
       <fieldconfig fieldExpr="organism.name" label="Organism" />
       <fieldconfig fieldExpr="strain.identifier" label="Strain" />
-      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" showInInlineCollection="true" showInSummary="true" />
-      <fieldconfig fieldExpr="description" label="Description" />
-      <fieldconfig fieldExpr="geneFamily.description" label="Gene family"/>
+      <fieldconfig fieldExpr="assemblyVersion" label="Assembly" />
+      <fieldconfig fieldExpr="annotationVersion" label="Annotation" />
+      <fieldconfig fieldExpr="length" displayer="model/sequenceShortDisplayerWithField.jsp" showInInlineCollection="true" showInSummary="true" />
+      <fieldconfig fieldExpr="description" label="Description" doNotTruncate="true" />
     </fields>
     <bagdisplayers>
       <displayer src="heatMap.tile" showOnLeft="true" />
     </bagdisplayers>
   </class>
-
+  
   <!-- extends SequenceFeature; needed for bagdisplayer -->
   <class className="org.intermine.model.bio.GeneFlankingRegion">
     <fields>
@@ -173,21 +175,21 @@
   <class className="org.intermine.model.bio.Protein">
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier" label="Identifier"/>
-      <fieldconfig fieldExpr="secondaryIdentifier" label="ALT identifier"/>
+      <fieldconfig fieldExpr="secondaryIdentifier" label="Short identifier"/>
       <fieldconfig fieldExpr="name" label="Name"/>
       <fieldconfig fieldExpr="organism.name" label="Organism" />
       <fieldconfig fieldExpr="strain.identifier" label="Strain" />
       <fieldconfig fieldExpr="description" label="Description"/>
-      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
+      <fieldconfig fieldExpr="length" displayer="model/sequenceShortDisplayerWithField.jsp" showInInlineCollection="true" showInSummary="true" />
       <fieldconfig fieldExpr="assemblyVersion" label="Assembly" />
       <fieldconfig fieldExpr="annotationVersion" label="Annotation" />
-      <fieldconfig fieldExpr="geneFamily.description" label="Gene family"/>
     </fields>
     <bagdisplayers>
       <displayer src="annotation.tile" showOnLeft="true" />
     </bagdisplayers>
   </class>
 
+  
   <class className="org.intermine.model.bio.Ontology">
     <fields>
       <fieldconfig fieldExpr="name"/>
@@ -307,6 +309,16 @@
     <fields>
       <fieldconfig fieldExpr="description" label="Description"/>
       <fieldconfig fieldExpr="identifier" label="Identifier"/>
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.GeneFamilyAssignment">
+    <fields>
+      <fieldconfig fieldExpr="geneFamily.description" label="Description"/>
+      <fieldconfig fieldExpr="geneFamily.identifier" label="Identifier"/>
+      <fieldconfig fieldExpr="evalue" label="e-value" />
+      <fieldconfig fieldExpr="score" label="Score" />
+      <fieldconfig fieldExpr="bestDomainScore" label="Best Domain Score" />
     </fields>
   </class>
 
@@ -601,7 +613,7 @@
                                startClassDisplay="primaryIdentifier"
                                enrich="ontologyAnnotations.ontologyTerm.name"
                                enrichIdentifier="ontologyAnnotations.ontologyTerm.identifier"
-                               constraints="ontologyAnnotations.ontologyTerm.ontology.name=GO,
+                               constraints="ontologyAnnotations.ontologyTerm.ontology.name=Gene Ontology,
                                             ontologyAnnotations.ontologyTerm.namespace=[Namespace],
                                             organism.name=[list]"
                                views="secondaryIdentifier,primaryIdentifier,organism.name,
