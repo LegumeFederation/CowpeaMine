@@ -11,6 +11,7 @@ echo -e "#################################################################"
 
 ## vigun
 ./gradlew integrate --stacktrace -Psource=CB27_x_IT97K-556-6.gen.Huynh_Ehlers_2015
+./gradlew integrate --stacktrace -Psource=GoldenEyeCream_x_IT98K-476-8.gen.Angira_Zhang_2020
 ./gradlew integrate --stacktrace -Psource=IT99K-573-1-1_x_TVNu-1158.gen.Lo_Munoz-Amatriain_2018
 ./gradlew integrate --stacktrace -Psource=MAGIC-2017.gen.Huynh_Ehlers_2018
 ./gradlew integrate --stacktrace -Psource=Sanzi_x_Vita7.gen.Pottorff_Ehlers_2012

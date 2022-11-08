@@ -1,2 +1,2 @@
-# CowpeaMine
-A mine with cowpea genomic data loaded from the LIS datastore
+# VignaMine
+A mine with Vigna data loaded from the LIS datastore
