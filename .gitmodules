@@ -7,3 +7,9 @@
 [submodule "webapp/src/main/webapp"]
 	path = webapp/src/main/webapp
 	url = https://github.com/legumeinfo/mine-webapp
+[submodule "webapp/src/main/resources"]
+	path = webapp/src/main/resources
+	url = https://github.com/legumeinfo/mine-webapp-resources
+[submodule "dbmodel/resources"]
+	path = dbmodel/resources
+	url = https://github.com/legumeinfo/mine-dbmodel-resources
