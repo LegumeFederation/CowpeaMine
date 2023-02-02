@@ -387,18 +387,14 @@
 
     <!-- LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/ -->
     <source name="legume.genefam.fam1.M65K" type="lis-genefamily" dump="true">
-      <property name="dataSetName" value="legume.genefam.fam1.M65K"/>
       <property name="dataSetUrl" value="https://data.legumeinfo.org/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/" />
-      <property name="dataSetDescription" value="LIS gene families"/>
       <property name="src.data.dir" location="/data/v2/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K"/>
     </source>
 
     <!-- LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/legume.genefam.fam1.M65K.trees_ML_rooted/ -->
     <source name="legume.genefam.fam1.M65K.trees_ML_rooted" type="lis-phylotree" dump="true">
-      <property name="dataSetName" value="legume.genefam.fam1.M65K.trees_ML_rooted"/>
-      <property name="dataSetUrl" value="https://data.legumeinfo.org/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/legume.genefam.fam1.M65K.trees_ML_rooted/" />
-      <property name="dataSetDescription" value="LIS gene family phylogenetic trees"/>
-      <property name="src.data.dir" location="/data/v2/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/legume.genefam.fam1.M65K.trees_ML_rooted"/>
+      <property name="dataSetUrl" value="https://data.legumeinfo.org/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/" />
+      <property name="src.data.dir" location="/data/v2/LEGUMES/Fabaceae/genefamilies"/>
     </source>
 
   </sources>
