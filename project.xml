@@ -7,24 +7,24 @@
 
     <!-- Vigna/angularis/about_this_collection -->
     <source name="Vigna-angularis-description" type="lis-description" dump="true" >
-      <property name="dataSetName" value="Vigna/angularis/about_this_collection" />
+      <property name="dataSetName" value="Vigna-angularis-description" />
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/angularis/about_this_collection/" />
       <property name="dataSetDescription" value="Vigna angularis organism and strain information." />
-      <property name="src.data.dir" location="/data/v2/Vigna/angularis/about_this_collection" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/angularis/about_this_collection" />
     </source>
     <!-- Vigna/radiata/about_this_collection -->
     <source name="Vigna-radiata-description" type="lis-description" dump="true" >
-      <property name="dataSetName" value="Vigna/radiata/about_this_collection" />
+      <property name="dataSetName" value="Vigna-radiata-description" />
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/radiata/about_this_collection/" />
       <property name="dataSetDescription" value="Vigna radiata organism and strain information." />
-      <property name="src.data.dir" location="/data/v2/Vigna/radiata/about_this_collection" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/radiata/about_this_collection" />
     </source>
     <!-- Vigna/unguiculata/about_this_collection -->
     <source name="Vigna-unguiculata-description" type="lis-description" dump="true" >
-      <property name="dataSetName" value="Vigna/unguiculata/about_this_collection" />
+      <property name="dataSetName" value="Vigna-unguiculata-description" />
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/about_this_collection/" />
       <property name="dataSetDescription" value="Vigna unguiculata organism and strain information." />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/about_this_collection" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/about_this_collection" />
     </source>
 
     <!-- Vigna/angularis/genomes/Gyeongwon.gnm3.JyYC -->
@@ -32,294 +32,294 @@
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/angularis/genomes/Gyeongwon.gnm3.JyYC/" />
       <property name="lis-genome.className" value="org.intermine.model.bio.Chromosome" />
       <property name="lis-genome.includes" value="README.Gyeongwon.gnm3.JyYC.yml,vigan.Gyeongwon.gnm3.JyYC.genome_main.fna.gz" />
-      <property name="src.data.dir" location="/data/v2/Vigna/angularis/genomes/Gyeongwon.gnm3.JyYC"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/angularis/genomes/Gyeongwon.gnm3.JyYC"/>
     </source>
     <!-- Vigna/angularis/genomes/Shumari.gnm1.V0CS -->
     <source name="Shumari.gnm1.V0CS" type="lis-genome" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/angularis/genomes/Shumari.gnm1.V0CS/" />
       <property name="lis-genome.className" value="org.intermine.model.bio.Chromosome" />
       <property name="lis-genome.includes" value="README.Shumari.gnm1.V0CS.yml,vigan.Shumari.gnm1.V0CS.genome_main.fna.gz" />
-      <property name="src.data.dir" location="/data/v2/Vigna/angularis/genomes/Shumari.gnm1.V0CS"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/angularis/genomes/Shumari.gnm1.V0CS"/>
     </source>
     <!-- Vigna/radiata/genomes/VC1973A.gnm6.3nL8 -->
     <source name="VC1973A.gnm6.3nL8" type="lis-genome" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/radiata/genomes/VC1973A.gnm6.3nL8/" />
       <property name="lis-genome.className" value="org.intermine.model.bio.Chromosome" />
       <property name="lis-genome.includes" value="README.VC1973A.gnm6.3nL8.yml,vigra.VC1973A.gnm6.3nL8.genome_main.fna.gz" />
-      <property name="src.data.dir" location="/data/v2/Vigna/radiata/genomes/VC1973A.gnm6.3nL8"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/radiata/genomes/VC1973A.gnm6.3nL8"/>
     </source>
     <!-- Vigna/unguiculata/genomes/CB5-2.gnm1.WDTB -->
     <source name="CB5-2.gnm1.WDTB" type="lis-genome" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/genomes/CB5-2.gnm1.WDTB/" />
       <property name="lis-genome.className" value="org.intermine.model.bio.Chromosome" />
       <property name="lis-genome.includes" value="README.CB5-2.gnm1.WDTB.yml,vigun.CB5-2.gnm1.WDTB.genome_main.fna.gz" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/genomes/CB5-2.gnm1.WDTB"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/genomes/CB5-2.gnm1.WDTB"/>
     </source>
     <!-- Vigna/unguiculata/genomes/IT97K-499-35.gnm1.QnBW -->
     <source name="IT97K-499-35.gnm1.QnBW" type="lis-genome" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/genomes/IT97K-499-35.gnm1.QnBW/" />
       <property name="lis-genome.className" value="org.intermine.model.bio.Chromosome" />
       <property name="lis-genome.includes" value="README.IT97K-499-35.gnm1.QnBW.yml,vigun.IT97K-499-35.gnm1.QnBW.genome_main.fna.gz" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/genomes/IT97K-499-35.gnm1.QnBW"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/genomes/IT97K-499-35.gnm1.QnBW"/>
     </source>
     <!-- Vigna/unguiculata/genomes/Sanzi.gnm1.YNCM -->
     <source name="Sanzi.gnm1.YNCM" type="lis-genome" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/genomes/Sanzi.gnm1.YNCM/" />
       <property name="lis-genome.className" value="org.intermine.model.bio.Chromosome" />
       <property name="lis-genome.includes" value="README.Sanzi.gnm1.YNCM.yml,vigun.Sanzi.gnm1.YNCM.genome_main.fna.gz" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/genomes/Sanzi.gnm1.YNCM"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/genomes/Sanzi.gnm1.YNCM"/>
     </source>
     <!-- Vigna/unguiculata/genomes/Suvita2.gnm1.5QLL -->
     <source name="Suvita2.gnm1.5QLL" type="lis-genome" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/genomes/Suvita2.gnm1.5QLL/" />
       <property name="lis-genome.className" value="org.intermine.model.bio.Chromosome" />
       <property name="lis-genome.includes" value="README.Suvita2.gnm1.5QLL.yml,vigun.Suvita2.gnm1.5QLL.genome_main.fna.gz" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/genomes/Suvita2.gnm1.5QLL"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/genomes/Suvita2.gnm1.5QLL"/>
     </source>
     <!-- Vigna/unguiculata/genomes/TZ30.gnm1.TX9W -->
     <source name="TZ30.gnm1.TX9W" type="lis-genome" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/genomes/TZ30.gnm1.TX9W/" />
       <property name="lis-genome.className" value="org.intermine.model.bio.Chromosome" />
       <property name="lis-genome.includes" value="README.TZ30.gnm1.TX9W.yml,vigun.TZ30.gnm1.TX9W.genome_main.fna.gz" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/genomes/TZ30.gnm1.TX9W"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/genomes/TZ30.gnm1.TX9W"/>
     </source>
     <!-- Vigna/unguiculata/genomes/UCR779.gnm1.M7KZ -->
     <source name="UCR779.gnm1.M7KZ" type="lis-genome" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/genomes/UCR779.gnm1.M7KZ/" />
       <property name="lis-genome.className" value="org.intermine.model.bio.Chromosome" />
       <property name="lis-genome.includes" value="README.UCR779.gnm1.M7KZ.yml,vigun.UCR779.gnm1.M7KZ.genome_main.fna.gz" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/genomes/UCR779.gnm1.M7KZ"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/genomes/UCR779.gnm1.M7KZ"/>
     </source>
     <!-- Vigna/unguiculata/genomes/Xiabao_II.gnm1.WDBP -->
     <source name="Xiabao_II.gnm1.WDBP" type="lis-genome" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/genomes/Xiabao_II.gnm1.WDBP/" />
       <property name="lis-genome.className" value="org.intermine.model.bio.Chromosome" />
       <property name="lis-genome.includes" value="README.Xiabao_II.gnm1.WDBP.yml,vigun.Xiabao_II.gnm1.WDBP.genome_main.fna.gz" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/genomes/Xiabao_II.gnm1.WDBP"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/genomes/Xiabao_II.gnm1.WDBP"/>
     </source>
     <!-- Vigna/unguiculata/genomes/ZN016.gnm1.997F -->
     <source name="ZN016.gnm1.997F" type="lis-genome" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/genomes/ZN016.gnm1.997F/" />
       <property name="lis-genome.className" value="org.intermine.model.bio.Chromosome" />
       <property name="lis-genome.includes" value="README.ZN016.gnm1.997F.yml,vigun.ZN016.gnm1.997F.genome_main.fna.gz" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/genomes/ZN016.gnm1.997F"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/genomes/ZN016.gnm1.997F"/>
     </source>
 
     <!-- Vigna/angularis/annotations/Gyeongwon.gnm3.ann1.3Nz5 -->
     <source name="Gyeongwon.gnm3.ann1.3Nz5" type="lis-annotation" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/angularis/annotations/Gyeongwon.gnm3.ann1.3Nz5/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/angularis/annotations/Gyeongwon.gnm3.ann1.3Nz5"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/angularis/annotations/Gyeongwon.gnm3.ann1.3Nz5"/>
     </source>
     <!-- Vigna/angularis/annotations/Shumari.gnm1.ann1.8BRS -->
     <source name="Shumari.gnm1.ann1.8BRS" type="lis-annotation" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/angularis/annotations/Shumari.gnm1.ann1.8BRS/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/angularis/annotations/Shumari.gnm1.ann1.8BRS"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/angularis/annotations/Shumari.gnm1.ann1.8BRS"/>
     </source>
     <!-- Vigna/radiata/annotations/VC1973A.gnm6.ann1.M1Qs -->
     <source name="VC1973A.gnm6.ann1.M1Qs" type="lis-annotation" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/radiata/annotations/VC1973A.gnm6.ann1.M1Qs/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/radiata/annotations/VC1973A.gnm6.ann1.M1Qs"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/radiata/annotations/VC1973A.gnm6.ann1.M1Qs"/>
     </source>
     <!-- Vigna/unguiculata/annotations/CB5-2.gnm1.ann1.0GKC -->
     <source name="CB5-2.gnm1.ann1.0GKC" type="lis-annotation" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/annotations/CB5-2.gnm1.ann1.0GKC/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/annotations/CB5-2.gnm1.ann1.0GKC"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/annotations/CB5-2.gnm1.ann1.0GKC"/>
     </source>
     <!-- Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann1.zb5D -->
     <source name="IT97K-499-35.gnm1.ann1.zb5D" type="lis-annotation" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann1.zb5D/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann1.zb5D"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann1.zb5D"/>
     </source>
     <!-- Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann2.FD7K -->
     <source name="IT97K-499-35.gnm1.ann2.FD7K" type="lis-annotation" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann2.FD7K/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann2.FD7K"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/annotations/IT97K-499-35.gnm1.ann2.FD7K"/>
     </source>
     <!-- Vigna/unguiculata/annotations/Sanzi.gnm1.ann1.HFH8 -->
     <source name="Sanzi.gnm1.ann1.HFH8" type="lis-annotation" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/annotations/Sanzi.gnm1.ann1.HFH8/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/annotations/Sanzi.gnm1.ann1.HFH8"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/annotations/Sanzi.gnm1.ann1.HFH8"/>
     </source>
     <!-- Vigna/unguiculata/annotations/Suvita2.gnm1.ann1.1PF6 -->
     <source name="Suvita2.gnm1.ann1.1PF6" type="lis-annotation" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/annotations/Suvita2.gnm1.ann1.1PF6/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/annotations/Suvita2.gnm1.ann1.1PF6"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/annotations/Suvita2.gnm1.ann1.1PF6"/>
     </source>
     <!-- Vigna/unguiculata/annotations/TZ30.gnm1.ann2.59NL -->
     <source name="TZ30.gnm1.ann2.59NL" type="lis-annotation" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/annotations/TZ30.gnm1.ann2.59NL/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/annotations/TZ30.gnm1.ann2.59NL"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/annotations/TZ30.gnm1.ann2.59NL"/>
     </source>
     <!-- Vigna/unguiculata/annotations/UCR779.gnm1.ann1.VF6G -->
     <source name="UCR779.gnm1.ann1.VF6G" type="lis-annotation" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/annotations/UCR779.gnm1.ann1.VF6G/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/annotations/UCR779.gnm1.ann1.VF6G"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/annotations/UCR779.gnm1.ann1.VF6G"/>
     </source>
     <!-- Vigna/unguiculata/annotations/Xiabao_II.gnm1.ann1.4JFL -->
     <source name="Xiabao_II.gnm1.ann1.4JFL" type="lis-annotation" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/annotations/Xiabao_II.gnm1.ann1.4JFL/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/annotations/Xiabao_II.gnm1.ann1.4JFL"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/annotations/Xiabao_II.gnm1.ann1.4JFL"/>
     </source>
     <!-- Vigna/unguiculata/annotations/ZN016.gnm1.ann2.C7YV -->
     <source name="ZN016.gnm1.ann2.C7YV" type="lis-annotation" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/annotations/ZN016.gnm1.ann2.C7YV/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/annotations/ZN016.gnm1.ann2.C7YV"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/annotations/ZN016.gnm1.ann2.C7YV"/>
     </source>
 
     <!-- Vigna/angularis/synteny/Gyeongwon.gnm3.syn.wCFF -->
     <source name="Gyeongwon.gnm3.syn.wCFF" type="lis-synteny" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/angularis/synteny/Gyeongwon.gnm3.syn.wCFF/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/angularis/synteny/Gyeongwon.gnm3.syn.wCFF" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/angularis/synteny/Gyeongwon.gnm3.syn.wCFF" />
     </source>
     <!-- Vigna/radiata/synteny/VC1973A.gnm6.syn.mcwy -->
     <source name="VC1973A.gnm6.syn.mcwy" type="lis-synteny" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/radiata/synteny/VC1973A.gnm6.syn.mcwy/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/radiata/synteny/VC1973A.gnm6.syn.mcwy" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/radiata/synteny/VC1973A.gnm6.syn.mcwy" />
     </source>
     <!-- Vigna/unguiculata/synteny/IT97K-499-35.gnm1.syn.W3NY -->
     <source name="IT97K-499-35.gnm1.syn.W3NY" type="lis-synteny" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/synteny/IT97K-499-35.gnm1.syn.W3NY/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/synteny/IT97K-499-35.gnm1.syn.W3NY" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/synteny/IT97K-499-35.gnm1.syn.W3NY" />
     </source>
 
     <!-- Vigna/unguiculata/expression/IT97K-499-35.gnm1.ann1.expr.Yao_Jiang_2016 -->
     <source name="IT97K-499-35.gnm1.ann1.expr.Yao_Jiang_2016" type="lis-expression" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/expression/IT97K-499-35.gnm1.ann1.expr.Yao_Jiang_2016/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/expression/IT97K-499-35.gnm1.ann1.expr.Yao_Jiang_2016" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/expression/IT97K-499-35.gnm1.ann1.expr.Yao_Jiang_2016" />
     </source>
 
     <!-- Vigna/radiata/markers/VC1973A.gnm6.mrk.microsatellites -->
     <source name="VC1973A.gnm6.mrk.microsatellites" type="lis-markers" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/radiata/markers/VC1973A.gnm6.mrk.microsatellites/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/radiata/markers/VC1973A.gnm6.mrk.microsatellites" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/radiata/markers/VC1973A.gnm6.mrk.microsatellites" />
     </source>
     <!-- Vigna/radiata/markers/VC1973A.gnm6.mrk.Sandhu_Singh_2020 -->
     <source name="VC1973A.gnm6.mrk.Sandhu_Singh_2020" type="lis-markers" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/radiata/markers/VC1973A.gnm6.mrk.Sandhu_Singh_2020/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/radiata/markers/VC1973A.gnm6.mrk.Sandhu_Singh_2020" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/radiata/markers/VC1973A.gnm6.mrk.Sandhu_Singh_2020" />
     </source>
     <!-- Vigna/unguiculata/markers/IT97K-499-35.gnm1.mrk.Angira_Zhang_2020 -->
     <source name="IT97K-499-35.gnm1.mrk.Angira_Zhang_2020" type="lis-markers" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/markers/IT97K-499-35.gnm1.mrk.Angira_Zhang_2020/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/markers/IT97K-499-35.gnm1.mrk.Angira_Zhang_2020" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/markers/IT97K-499-35.gnm1.mrk.Angira_Zhang_2020" />
     </source>
     <!-- Vigna/unguiculata/markers/IT97K-499-35.gnm1.mrk.Cowpea1MSelectedSNPs -->
     <source name="IT97K-499-35.gnm1.mrk.Cowpea1MSelectedSNPs" type="lis-markers" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/markers/IT97K-499-35.gnm1.mrk.Cowpea1MSelectedSNPs/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/markers/IT97K-499-35.gnm1.mrk.Cowpea1MSelectedSNPs" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/markers/IT97K-499-35.gnm1.mrk.Cowpea1MSelectedSNPs" />
     </source>
 
     <!-- Vigna/radiata/gwas/IA_panel.gwas.Sandhu_Singh_2020 -->
     <source name="IA_panel.gwas.Sandhu_Singh_2020" type="lis-gwas" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/radiata/gwas/IA_panel.gwas.Sandhu_Singh_2020/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/radiata/gwas/IA_panel.gwas.Sandhu_Singh_2020" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/radiata/gwas/IA_panel.gwas.Sandhu_Singh_2020" />
     </source>
     <!-- Vigna/unguiculata/gwas/mixed.gwas.Lo_Muñoz-Amatriaín_2019 -->
     <source name="mixed.gwas.Lo_Munoz-Amatriain_2019" type="lis-gwas" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/gwas/mixed.gwas.Lo_Muñoz-Amatriaín_2019/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/gwas/mixed.gwas.Lo_Muñoz-Amatriaín_2019" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/gwas/mixed.gwas.Lo_Muñoz-Amatriaín_2019" />
     </source>
     <!-- Vigna/unguiculata/gwas/UCR-minicore.gwas.Herniter_Muñoz-Amatriaín_2018 -->
     <source name="UCR-minicore.gwas.Herniter_Munoz-Amatriain_2018" type="lis-gwas" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/gwas/UCR-minicore.gwas.Herniter_Muñoz-Amatriaín_2018/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/gwas/UCR-minicore.gwas.Herniter_Muñoz-Amatriaín_2018" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/gwas/UCR-minicore.gwas.Herniter_Muñoz-Amatriaín_2018" />
     </source>
     <!-- Vigna/unguiculata/gwas/ZN016_x_Zhijiang282.gwas.Xu_Wu_2017 -->
     <source name="ZN016_x_Zhijiang282.gwas.Xu_Wu_2017" type="lis-gwas" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/gwas/ZN016_x_Zhijiang282.gwas.Xu_Wu_2017/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/gwas/ZN016_x_Zhijiang282.gwas.Xu_Wu_2017" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/gwas/ZN016_x_Zhijiang282.gwas.Xu_Wu_2017" />
     </source>
 
     <!-- Vigna/unguiculata/maps/CB27_x_IT82E-18.map.Herniter_Muñoz-Amatriaín_2018 -->
     <source name="CB27_x_IT82E-18.map.Herniter_Munoz-Amatriain_2018" type="lis-map" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/maps/CB27_x_IT82E-18.map.Herniter_Muñoz-Amatriaín_2018/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/maps/CB27_x_IT82E-18.map.Herniter_Muñoz-Amatriaín_2018" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/maps/CB27_x_IT82E-18.map.Herniter_Muñoz-Amatriaín_2018" />
     </source>
     <!-- Vigna/unguiculata/maps/GoldenEyeCream_x_IT98K-476-8.map.Angira_Zhang_2020 -->
     <source name="GoldenEyeCream_x_IT98K-476-8.map.Angira_Zhang_2020" type="lis-map" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/maps/GoldenEyeCream_x_IT98K-476-8.map.Angira_Zhang_2020/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/maps/GoldenEyeCream_x_IT98K-476-8.map.Angira_Zhang_2020" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/maps/GoldenEyeCream_x_IT98K-476-8.map.Angira_Zhang_2020" />
     </source>
     <!-- Vigna/unguiculata/maps/iSelect-consensus-2016.map.Muñoz-Amatriaín_Mirebrahim_2017 -->
     <source name="iSelect-consensus-2016.map.Munoz-Amatriain_Mirebrahim_2017" type="lis-map" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/maps/iSelect-consensus-2016.map.Muñoz-Amatriaín_Mirebrahim_2017/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/maps/iSelect-consensus-2016.map.Muñoz-Amatriaín_Mirebrahim_2017" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/maps/iSelect-consensus-2016.map.Muñoz-Amatriaín_Mirebrahim_2017" />
     </source>
     <!-- Vigna/unguiculata/maps/IT99K-573-1-1_x_TVNu-1158.map.Lo_Muñoz-Amatriaín_2018 -->
     <source name="IT99K-573-1-1_x_TVNu-1158.map.Lo_Munoz-Amatriain_2018" type="lis-map" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/maps/IT99K-573-1-1_x_TVNu-1158.map.Lo_Muñoz-Amatriaín_2018/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/maps/IT99K-573-1-1_x_TVNu-1158.map.Lo_Muñoz-Amatriaín_2018" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/maps/IT99K-573-1-1_x_TVNu-1158.map.Lo_Muñoz-Amatriaín_2018" />
     </source>
     <!-- Vigna/unguiculata/maps/MAGIC-2017.map.Huynh_Ehlers_2018 -->
     <source name="MAGIC-2017.map.Huynh_Ehlers_2018" type="lis-map" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/maps/MAGIC-2017.map.Huynh_Ehlers_2018/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/maps/MAGIC-2017.map.Huynh_Ehlers_2018" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/maps/MAGIC-2017.map.Huynh_Ehlers_2018" />
     </source>
     <!-- Vigna/unguiculata/maps/mixed.map.Burridge_Schneider_2017 -->
     <source name="mixed.map.Burridge_Schneider_2017" type="lis-map" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/maps/mixed.map.Burridge_Schneider_2017/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/maps/mixed.map.Burridge_Schneider_2017" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/maps/mixed.map.Burridge_Schneider_2017" />
     </source>
     <!-- Vigna/unguiculata/maps/Sanzi_x_Vita7.map.Herniter_Muñoz-Amatriaín_2018 -->
     <source name="Sanzi_x_Vita7.map.Herniter_Munoz-Amatriain_2018" type="lis-map" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/maps/Sanzi_x_Vita7.map.Herniter_Muñoz-Amatriaín_2018/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/maps/Sanzi_x_Vita7.map.Herniter_Muñoz-Amatriaín_2018" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/maps/Sanzi_x_Vita7.map.Herniter_Muñoz-Amatriaín_2018" />
     </source>
     <!-- Vigna/unguiculata/maps/Sanzi_x_Vita7.map.Pottorff_Ehlers_2012 -->
     <source name="Sanzi_x_Vita7.map.Pottorff_Ehlers_2012" type="lis-map" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/maps/Sanzi_x_Vita7.map.Pottorff_Ehlers_2012/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/maps/Sanzi_x_Vita7.map.Pottorff_Ehlers_2012" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/maps/Sanzi_x_Vita7.map.Pottorff_Ehlers_2012" />
     </source>
     <!-- Vigna/unguiculata/maps/ZN016_x_Zhijiang282.map.Xu_Wu_2017 -->
     <source name="ZN016_x_Zhijiang282.map.Xu_Wu_2017" type="lis-map" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/maps/ZN016_x_Zhijiang282.map.Xu_Wu_2017/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/maps/ZN016_x_Zhijiang282.map.Xu_Wu_2017" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/maps/ZN016_x_Zhijiang282.map.Xu_Wu_2017" />
     </source>
 
     <!-- Vigna/unguiculata/qtl/CB27_x_IT97K-556-6.qtl.Huynh_Ehlers_2015 -->
     <source name="CB27_x_IT97K-556-6.qtl.Huynh_Ehlers_2015" type="lis-qtl" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/qtl/CB27_x_IT97K-556-6.qtl.Huynh_Ehlers_2015/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/qtl/CB27_x_IT97K-556-6.qtl.Huynh_Ehlers_2015" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/qtl/CB27_x_IT97K-556-6.qtl.Huynh_Ehlers_2015" />
     </source>
     <!-- Vigna/unguiculata/qtl/GoldenEyeCream_x_IT98K-476-8.qtl.Angira_Zhang_2020 -->
     <source name="GoldenEyeCream_x_IT98K-476-8.qtl.Angira_Zhang_2020" type="lis-qtl" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/qtl/GoldenEyeCream_x_IT98K-476-8.qtl.Angira_Zhang_2020/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/qtl/GoldenEyeCream_x_IT98K-476-8.qtl.Angira_Zhang_2020" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/qtl/GoldenEyeCream_x_IT98K-476-8.qtl.Angira_Zhang_2020" />
     </source>
     <!-- Vigna/unguiculata/qtl/IT99K-573-1-1_x_TVNu-1158.qtl.Lo_Muñoz-Amatriaín_2018 -->
     <source name="IT99K-573-1-1_x_TVNu-1158.qtl.Lo_Munoz-Amatriain_2018" type="lis-qtl" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/qtl/IT99K-573-1-1_x_TVNu-1158.qtl.Lo_Muñoz-Amatriaín_2018/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/qtl/IT99K-573-1-1_x_TVNu-1158.qtl.Lo_Muñoz-Amatriaín_2018" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/qtl/IT99K-573-1-1_x_TVNu-1158.qtl.Lo_Muñoz-Amatriaín_2018" />
     </source>
     <!-- Vigna/unguiculata/qtl/MAGIC-2017.qtl.Huynh_Ehlers_2018 -->
     <source name="MAGIC-2017.qtl.Huynh_Ehlers_2018" type="lis-qtl" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/qtl/MAGIC-2017.qtl.Huynh_Ehlers_2018/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/qtl/MAGIC-2017.qtl.Huynh_Ehlers_2018" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/qtl/MAGIC-2017.qtl.Huynh_Ehlers_2018" />
     </source>
     <!-- Vigna/unguiculata/qtl/mixed.qtl.Burridge_Schneider_2017 -->
     <source name="mixed.qtl.Burridge_Schneider_2017" type="lis-qtl" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/qtl/mixed.qtl.Burridge_Schneider_2017/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/qtl/mixed.qtl.Burridge_Schneider_2017" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/qtl/mixed.qtl.Burridge_Schneider_2017" />
     </source>
     <!-- Vigna/unguiculata/qtl/mixed.qtl.Herniter_Muñoz-Amatriaín_2018 -->
     <source name="mixed.qtl.Herniter_Munoz-Amatriain_2018" type="lis-qtl" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/qtl/mixed.qtl.Herniter_Muñoz-Amatriaín_2018/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/qtl/mixed.qtl.Herniter_Muñoz-Amatriaín_2018" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/qtl/mixed.qtl.Herniter_Muñoz-Amatriaín_2018" />
     </source>
     <!-- Vigna/unguiculata/qtl/mixed.qtl.Huynh_Matthews_2016 -->
     <source name="mixed.qtl.Huynh_Matthews_2016" type="lis-qtl" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/qtl/mixed.qtl.Huynh_Matthews_2016/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/qtl/mixed.qtl.Huynh_Matthews_2016" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/qtl/mixed.qtl.Huynh_Matthews_2016" />
     </source>
     <!-- Vigna/unguiculata/qtl/Sanzi_x_Vita7.qtl.Pottorff_Ehlers_2012 -->
     <source name="Sanzi_x_Vita7.qtl.Pottorff_Ehlers_2012" type="lis-qtl" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/qtl/Sanzi_x_Vita7.qtl.Pottorff_Ehlers_2012/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/qtl/Sanzi_x_Vita7.qtl.Pottorff_Ehlers_2012" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/qtl/Sanzi_x_Vita7.qtl.Pottorff_Ehlers_2012" />
     </source>
     <!-- Vigna/unguiculata/qtl/ZN016_x_Zhijiang282.qtl.Xu_Wu_2017 -->
     <source name="ZN016_x_Zhijiang282.qtl.Xu_Wu_2017" type="lis-qtl" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/qtl/ZN016_x_Zhijiang282.qtl.Xu_Wu_2017/" />
-      <property name="src.data.dir" location="/data/v2/Vigna/unguiculata/qtl/ZN016_x_Zhijiang282.qtl.Xu_Wu_2017" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/unguiculata/qtl/ZN016_x_Zhijiang282.qtl.Xu_Wu_2017" />
     </source>
 
     
@@ -327,37 +327,37 @@
     
     <!-- INTERPRO -->
     <source name="interpro" type="interpro">
-      <property name="src.data.dir" location="/data/InterPro/"/>
+      <property name="src.data.dir" location="/home/shokin/data/InterPro/"/>
     </source>
 
     <!-- InterPro2GO -->
     <source name="interpro-go" type="interpro-go">
-      <property name="src.data.dir" location="/data/InterPro/ontology/"/>
+      <property name="src.data.dir" location="/home/shokin/data/InterPro/ontology/"/>
     </source>
 
     <!-- Pfam terms -->
     <source name="pfam-term" type="pfam-term">
-      <property name="src.data.dir" location="/data/Pfam/"/>
+      <property name="src.data.dir" location="/home/shokin/data/Pfam/"/>
     </source>
 
     <!-- PANTHER terms -->
     <source name="panther-term" type="panther-term">
-      <property name="src.data.dir" location="/data/PANTHER/"/>
+      <property name="src.data.dir" location="/home/shokin/data/PANTHER/"/>
     </source>
 
     <!-- gene ontology -->
     <source name="go" type="go">
-      <property name="src.data.file" location="/data/gene-ontology/go-basic.obo"/>
+      <property name="src.data.file" location="/home/shokin/data/gene-ontology/go-basic.obo"/>
     </source>
 
     <!-- sequence ontology -->
     <source name="so" type="so">
-      <property name="src.data.file" location="/data/SO-Ontologies/Ontology_Files/so-simple.obo"/>
+      <property name="src.data.file" location="/home/shokin/data/SO-Ontologies/Ontology_Files/so-simple.obo"/>
     </source>
 
     <!-- plant ontology -->
     <source name="plant-ontology" type="obo">
-      <property name="src.data.file" location="/data/plant-ontology/po.obo"/>
+      <property name="src.data.file" location="/home/shokin/data/plant-ontology/po.obo"/>
       <property name="ontology.prefix" value="PO"/>
       <property name="obo.ontology.name" value="Plant Ontology"/>
       <property name="obo.ontology.url" value="http://planteome.org/"/>
@@ -367,7 +367,7 @@
 
     <!-- plant trait ontology -->
     <source name="plant-trait-ontology" type="obo">
-      <property name="src.data.file" location="/data/plant-trait-ontology/to.obo"/>
+      <property name="src.data.file" location="/home/shokin/data/plant-trait-ontology/to.obo"/>
       <property name="ontology.prefix" value="TO"/>
       <property name="obo.ontology.name" value="Plant Trait Ontology"/>
       <property name="obo.ontology.url" value="http://www.obofoundry.org/ontology/to.html"/>
@@ -377,7 +377,7 @@
 
     <!-- cowpea crop ontology -->
     <source name="cowpea-crop-ontology" type="obo">
-      <property name="src.data.file" location="/data/crop-ontology/CO_340.obo"/>
+      <property name="src.data.file" location="/home/shokin/data/crop-ontology/CO_340.obo"/>
       <property name="ontology.prefix" value="CO_340"/>
       <property name="obo.ontology.name" value="Cowpea Crop Ontology"/>
       <property name="obo.ontology.url" value="https://www.cropontology.org/ontology/CO_340/Cowpea"/>
@@ -388,13 +388,13 @@
     <!-- LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/ -->
     <source name="legume.genefam.fam1.M65K" type="lis-genefamily" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/" />
-      <property name="src.data.dir" location="/data/v2/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K"/>
     </source>
 
     <!-- LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/legume.genefam.fam1.M65K.trees_ML_rooted/ -->
     <source name="legume.genefam.fam1.M65K.trees_ML_rooted" type="lis-phylotree" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/" />
-      <property name="src.data.dir" location="/data/v2/LEGUMES/Fabaceae/genefamilies"/>
+      <property name="src.data.dir" location="/home/shokin/data/v2/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K"/>
     </source>
 
   </sources>
