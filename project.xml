@@ -48,6 +48,12 @@
       <property name="lis-genome.includes" value="README.VC1973A.gnm6.3nL8.yml,vigra.VC1973A.gnm6.3nL8.genome_main.fna.gz" />
       <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/radiata/genomes/VC1973A.gnm6.3nL8"/>
     </source>
+    <!-- Vigna/radiata/genomes/VC1973A.gnm7.SB53 -->
+    <source name="VC1973A.gnm7.SB53" type="lis-genome" dump="true">
+      <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/radiata/genomes/VC1973A.gnm7.SB53/" />
+      <property name="lis-genome.includes" value="README.VC1973A.gnm7.SB53.yml,vigra.VC1973A.gnm7.SB53.genome_main.fna.gz" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/radiata/genomes/VC1973A.gnm7.SB53"/>
+    </source>
     <!-- Vigna/unguiculata/genomes/CB5-2.gnm1.WDTB -->
     <source name="CB5-2.gnm1.WDTB" type="lis-genome" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/unguiculata/genomes/CB5-2.gnm1.WDTB/" />
@@ -119,6 +125,11 @@
     <source name="VC1973A.gnm6.ann1.M1Qs" type="lis-annotation" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/radiata/annotations/VC1973A.gnm6.ann1.M1Qs/" />
       <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/radiata/annotations/VC1973A.gnm6.ann1.M1Qs"/>
+    </source>
+    <!-- Vigna/radiata/annotations/VC1973A.gnm7.ann1.RWBG -->
+    <source name="VC1973A.gnm7.ann1.RWBG" type="lis-annotation" dump="true">
+      <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/radiata/annotations/VC1973A.gnm7.ann1.RWBG/" />
+      <property name="src.data.dir" location="/home/shokin/data/v2/Vigna/radiata/annotations/VC1973A.gnm7.ann1.RWBG"/>
     </source>
     <!-- Vigna/unguiculata/annotations/CB5-2.gnm1.ann1.0GKC -->
     <source name="CB5-2.gnm1.ann1.0GKC" type="lis-annotation" dump="true">
@@ -414,7 +425,6 @@
     <post-process name="create-gene-flanking-features"/>
 
     <!-- LIS -->
-    <post-process name="lis-populate-publications"/>
     <post-process name="lis-create-genefamilytally"/>
     <post-process name="lis-populate-gwasresult-markers"/>
     <post-process name="lis-populate-marker-linkagegrouppositions"/>
