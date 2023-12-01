@@ -345,10 +345,10 @@
       <property name="src.data.dir" location="/home/shokin/v2/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K"/>
     </source>
 
-    <!-- Vigna/GENUS/pangenes/Vigna.pan1.X2PC -->
-    <source name="Vigna.pan1.X2PC" type="lis-pangene" dump="true">
-      <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/GENUS/pngenes/Vigna.pan1.X2PC/" />
-      <property name="src.data.dir" location="/home/shokin/v2/Vigna/GENUS/pangenes/Vigna.pan1.X2PC"/>
+    <!-- Vigna/GENUS/pangenes/Vigna.pan2.MQQM -->
+    <source name="Vigna.pan2.MQQM" type="lis-pangene" dump="true">
+      <property name="dataSetUrl" value="https://data.legumeinfo.org/Vigna/GENUS/pngenes/Vigna.pan2.MQQM/" />
+      <property name="src.data.dir" location="/home/shokin/v2/Vigna/GENUS/pangenes/Vigna.pan2.MQQM"/>
     </source>
 
     <!-- ######################### NON-LIS ######################### -->
@@ -425,9 +425,9 @@
     <post-process name="make-spanning-locations"/>
     <post-process name="create-chromosome-locations-and-lengths"/>
     <post-process name="create-intergenic-region-features"/>
-    <post-process name="transfer-sequences"/>
     <post-process name="populate-child-features"/>
     <post-process name="create-gene-flanking-features"/>
+    <post-process name="transfer-sequences"/>
 
     <!-- LIS -->
     <post-process name="lis-create-genefamilytally"/>
